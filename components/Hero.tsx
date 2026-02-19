@@ -1,13 +1,12 @@
 import React from 'react';
 import { ChevronRight, Play, Star, Activity } from 'lucide-react';
+import { scrollToSection as scrollToTarget } from '../utils/scrollToSection';
+import currentTrainer from '../data/currentTrainer';
 
 const Hero: React.FC = () => {
-  const scrollToSection = (e: React.MouseEvent, id: string) => {
+  const handleScrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToTarget(id, { updateHash: true });
   };
 
   return (
@@ -26,55 +25,54 @@ const Hero: React.FC = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
             </span>
             <span className="text-xs font-bold tracking-widest uppercase text-zinc-400">
-              Przyjmuję nowych podopiecznych
+              Przyjmuje nowych podopiecznych
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight">
-            PRZEKROCZ <br />
+            {currentTrainer.heroTitleTop} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-500">
-              WŁASNE LIMITY.
+              {currentTrainer.heroTitleAccent}
             </span>
           </h1>
 
           <p className="text-lg text-zinc-400 max-w-lg leading-relaxed">
-            Nie sprzedaję tylko planów treningowych. Buduję <b>kompletny ekosystem</b> Twojego sukcesu. 
-            Trenuj mądrze, jedz smacznie i osiągaj wyniki, o których inni tylko marzą.
+            {currentTrainer.heroText}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <a 
               href="#contact" 
-              onClick={(e) => scrollToSection(e, 'contact')}
+              onClick={(e) => handleScrollToSection(e, 'contact')}
               className="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold text-lg rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
             >
-              Darmowa Konsultacja
+              Bezplatna Konsultacja
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="#transformations" 
-              onClick={(e) => scrollToSection(e, 'transformations')}
+              href="#start" 
+              onClick={(e) => handleScrollToSection(e, 'start')}
               className="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-bold text-lg rounded-xl transition-all flex items-center justify-center gap-2"
             >
-              Zobacz Metamorfozy
+              Odbierz Plan Startowy
             </a>
           </div>
 
           <div className="flex items-center gap-6 mt-8 pt-8 border-t border-zinc-800/50">
             <div className="flex flex-col">
-              <span className="text-3xl font-black text-white">500+</span>
-              <span className="text-sm text-zinc-500 uppercase tracking-wider">Podopiecznych</span>
+              <span className="text-3xl font-black text-white">{currentTrainer.rating.toFixed(1)}/5</span>
+              <span className="text-sm text-zinc-500 uppercase tracking-wider">Ocena profilu</span>
             </div>
             <div className="w-px h-12 bg-zinc-800"></div>
             <div className="flex flex-col">
-              <span className="text-3xl font-black text-white">100%</span>
-              <span className="text-sm text-zinc-500 uppercase tracking-wider">Zaangażowania</span>
+              <span className="text-3xl font-black text-white">{currentTrainer.city}</span>
+              <span className="text-sm text-zinc-500 uppercase tracking-wider">Lokalizacja</span>
             </div>
             <div className="w-px h-12 bg-zinc-800"></div>
             <div className="flex items-center gap-1">
                <div className="flex -space-x-3">
                   {[1,2,3,4].map(i => (
-                    <img key={i} src={`https://picsum.photos/40/40?random=${i+10}`} className="w-10 h-10 rounded-full border-2 border-zinc-950" alt="Client" />
+                    <img key={i} src={`https://picsum.photos/40/40?random=${i+10}`} loading="lazy" decoding="async" className="w-10 h-10 rounded-full border-2 border-zinc-950" alt="Klient" />
                   ))}
                </div>
                <div className="flex flex-col ml-3">

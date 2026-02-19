@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Target, Users, Zap } from 'lucide-react';
+import currentTrainer from '../data/currentTrainer';
 
 const About: React.FC = () => {
   return (
@@ -11,6 +12,8 @@ const About: React.FC = () => {
               <img 
                 src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1887&auto=format&fit=crop" 
                 alt="Trener Personalny" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
@@ -29,15 +32,15 @@ const About: React.FC = () => {
           <div>
             <span className="text-brand-500 font-bold tracking-wider uppercase text-sm">Poznaj mnie lepiej</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-8">
-              Nazywam się Andrew i pomogę Ci <span className="text-brand-500">odmienić Twoje życie.</span>
+              {currentTrainer.fullName} - <span className="text-brand-500">trener personalny {currentTrainer.city}</span>
             </h2>
             
             <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
               <p>
-                Moja przygoda ze sportem zaczęła się ponad dekadę temu. Przez te lata zrozumiałem, że fitness to nie tylko "przerzucanie ciężarów", ale przede wszystkim praca nad mentalnością i zdrowymi nawykami.
+                Nazywam sie {currentTrainer.fullName}. Pracuje z osobami, ktore chca poprawic sylwetke, kondycje i zdrowie bez przypadkowych metod.
               </p>
               <p>
-                Jako certyfikowany trener i dietetyk, stawiam na <b>podejście oparte na dowodach naukowych</b> (Evidence Based). Nie obiecuję cudownych diet w 2 tygodnie – obiecuję systematyczną pracę, która przyniesie trwałe rezultaty.
+                {currentTrainer.aboutText}
               </p>
             </div>
 

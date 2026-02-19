@@ -2,11 +2,9 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Run the trainer website locally
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1GW1GqLon1Z80bWMXH4KHum3_WB8mh8kM
+This repository contains one reusable website template for many personal trainers.
 
 ## Run Locally
 
@@ -15,6 +13,14 @@ View your app in AI Studio: https://ai.studio/apps/drive/1GW1GqLon1Z80bWMXH4KHum
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Generate all trainer profiles from CSV:
+   `python scripts/generate_client_profiles.py`
 3. Run the app:
    `npm run dev`
+
+## Notes
+
+- Forms are ready for production flow, but in draft mode they store submissions locally.
+- To send leads to your backend later, set `VITE_LEAD_WEBHOOK_URL` in `.env.local`.
+- You can preview a specific trainer with `?trainer=<slug>` or `/t/<slug>`.
+- For Vercel per-client deployment set `VITE_CLIENT_SLUG=<slug>` in project env vars.

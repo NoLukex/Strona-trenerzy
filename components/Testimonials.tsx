@@ -27,7 +27,7 @@ const Testimonials: React.FC = () => {
     <section className="py-24 bg-zinc-900 border-t border-zinc-800">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-black text-white mb-16 text-center">
-          Głosy tych, którzy <br/> <span className="text-brand-500">już wygrali</span>
+          Opinie podopiecznych <br/> <span className="text-brand-500">po wspolpracy</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -37,7 +37,7 @@ const Testimonials: React.FC = () => {
               <p className="text-zinc-300 mb-8 leading-relaxed relative z-10">"{review.text}"</p>
               
               <div className="flex items-center gap-4">
-                <img src={review.image} alt={review.name} className="w-12 h-12 rounded-full border border-zinc-700" />
+                <img src={review.image} alt={review.name} loading="lazy" decoding="async" className="w-12 h-12 rounded-full border border-zinc-700" />
                 <div>
                   <h4 className="text-white font-bold">{review.name}</h4>
                   <p className="text-zinc-500 text-xs">{review.role}</p>

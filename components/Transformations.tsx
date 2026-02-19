@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Star, TrendingUp, Trophy, Zap, ChevronDown, ChevronUp, UserCheck, Activity, Heart } from 'lucide-react';
+import { scrollToSection } from '../utils/scrollToSection';
 
 const Transformations: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
@@ -9,18 +10,18 @@ const Transformations: React.FC = () => {
       id: 1,
       name: "Tomek",
       age: 34,
-      image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1770&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=1887&auto=format&fit=crop",
       result: "-24 kg",
       time: "6 miesięcy",
       type: "Redukcja",
-      quote: "Myślałem, że po 30-tce metabolizm zwalnia. Andrew udowodnił mi, że to tylko wymówka. Czułem się ciężki i bez energii, teraz przygotowuję się do półmaratonu.",
+      quote: "Myslalem, ze po 30-tce metabolizm zwalnia. W praktyce okazalo sie, ze najwazniejsze sa regularnosc i dobrze ustawiony plan. Dzis przygotowuje sie do polmaratonu.",
       icon: <TrendingUp className="text-brand-500" size={20} />
     },
     {
       id: 2,
       name: "Magda",
       age: 28,
-      image: "https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?q=80&w=1887&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1887&auto=format&fit=crop",
       result: "+6 kg",
       time: "8 miesięcy",
       type: "Budowa Pośladków",
@@ -31,7 +32,7 @@ const Transformations: React.FC = () => {
       id: 3,
       name: "Piotr",
       age: 41,
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
+      image: "https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=1200",
       result: "Rekomp.",
       time: "4 miesiące",
       type: "Zdrowy Kręgosłup",
@@ -42,7 +43,7 @@ const Transformations: React.FC = () => {
       id: 4,
       name: "Kasia",
       age: 45,
-      image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=2070&auto=format&fit=crop",
+      image: "https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?auto=compress&cs=tinysrgb&w=1200",
       result: "-12 kg",
       time: "5 miesięcy",
       type: "Zdrowie & Witalność",
@@ -53,18 +54,18 @@ const Transformations: React.FC = () => {
       id: 5,
       name: "Marek",
       age: 22,
-      image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1887&auto=format&fit=crop",
+      image: "https://images.pexels.com/photos/3837757/pexels-photo-3837757.jpeg?auto=compress&cs=tinysrgb&w=1200",
       result: "+8 kg",
       time: "12 miesięcy",
       type: "Masa Mięśniowa",
-      quote: "Zawsze byłem tym 'chudym'. Andrew rozpisał mi plan, który w końcu ruszył moją wagę w górę bez zalewania się tłuszczem. 40cm w ramieniu pękło!",
+      quote: "Zawsze bylem tym chudym. Dobrze dobrany trening i dieta ruszyly wage w gore bez nadmiaru tluszczu. W koncu widze realny progres.",
       icon: <UserCheck className="text-brand-500" size={20} />
     },
     {
       id: 6,
       name: "Anna",
       age: 33,
-      image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1887&auto=format&fit=crop",
       result: "-15 cm",
       time: "3 miesiące",
       type: "Powrót do formy",
@@ -75,10 +76,7 @@ const Transformations: React.FC = () => {
 
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection('contact', { updateHash: true });
   };
 
   const visibleTransformations = showAll ? transformations : transformations.slice(0, 3);
@@ -88,12 +86,12 @@ const Transformations: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-brand-500 font-bold tracking-wider uppercase text-sm">Realne Wyniki</span>
+            <span className="text-brand-500 font-bold tracking-wider uppercase text-sm">Przykladowe Historie</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mt-2">
-              Oni już <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-500">zmienili swoje życie.</span>
+              Zobacz format <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-500">prezentacji efektow.</span>
             </h2>
             <p className="text-zinc-400 mt-4 text-lg">
-                To nie są modele ze stocka. To prawdziwi ludzie, tacy jak Ty, którzy zaufali procesowi i wykonali pracę.
+                Historie pokazuja typowe rezultaty uzyskiwane przy regularnym treningu, dobrze dobranej diecie i systematycznej pracy.
             </p>
           </div>
           <a 
@@ -105,13 +103,15 @@ const Transformations: React.FC = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {visibleTransformations.map((item) => (
-            <div key={item.id} className="group relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-[4/5] bg-zinc-900 border border-zinc-800 animate-fade-in-up">
+            <div key={item.id} className="group relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-[4/5] bg-zinc-900 border border-zinc-800">
                 {/* Image Background */}
                 <img 
                     src={item.image} 
                     alt={`Metamorfoza ${item.name}`}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
                 />
                 
@@ -129,7 +129,7 @@ const Transformations: React.FC = () => {
 
                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         {/* Quote */}
-                        <div className="mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        <div className="mb-6">
                             <div className="flex text-brand-500 mb-2">
                                 <Star size={12} fill="currentColor" />
                                 <Star size={12} fill="currentColor" />

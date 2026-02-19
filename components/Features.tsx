@@ -15,8 +15,8 @@ const Features: React.FC = () => {
     },
     {
       icon: <MessageCircle className="w-8 h-8 text-brand-500" />,
-      title: "Support 24/7",
-      desc: "Masz gorszy dzień? Nie wiesz co zjeść na mieście? Piszesz na WhatsApp i dostajesz odpowiedź."
+      title: "Szybki Kontakt",
+      desc: "Masz pytanie o trening lub diete? Dostajesz szybka odpowiedz i jasne wskazowki do wdrozenia."
     },
     {
       icon: <Smartphone className="w-8 h-8 text-brand-500" />,

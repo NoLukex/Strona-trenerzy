@@ -1,7 +1,10 @@
 import React from 'react';
-import { Instagram, Facebook, Twitter, Dumbbell, ArrowUp } from 'lucide-react';
+import { Instagram, Facebook, Globe, Dumbbell, ArrowUp } from 'lucide-react';
+import currentTrainer from '../data/currentTrainer';
 
 const Footer: React.FC = () => {
+  const year = new Date().getFullYear();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -15,16 +18,17 @@ const Footer: React.FC = () => {
                 <Dumbbell className="text-brand-500 w-5 h-5" />
             </div>
             <span className="text-xl font-bold text-white">
-            TITANIUM<span className="text-brand-500">PHYSIQUE</span>
+            {currentTrainer.brandName.toUpperCase()}
             </span>
         </div>
 
         <div className="text-zinc-500 text-sm text-center md:text-right flex flex-col md:flex-row items-center gap-6">
-            <p>&copy; 2024 Titanium Physique. Wszelkie prawa zastrzeżone.</p>
+            <p>&copy; {year} {currentTrainer.brandName}. Wszelkie prawa zastrzezone.</p>
             <div className="flex justify-center md:justify-end gap-6">
-                <a href="#" className="hover:text-white transition-colors"><Instagram size={20} /></a>
-                <a href="#" className="hover:text-white transition-colors"><Facebook size={20} /></a>
-                <a href="#" className="hover:text-white transition-colors"><Twitter size={20} /></a>
+                {currentTrainer.instagram && <a href={currentTrainer.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram size={20} /></a>}
+                {currentTrainer.facebook && <a href={currentTrainer.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook size={20} /></a>}
+                {currentTrainer.website && <a href={currentTrainer.website} target="_blank" rel="noreferrer" aria-label="Strona internetowa" className="hover:text-white transition-colors"><Globe size={20} /></a>}
+                <a href="/polityka-prywatnosci.html" className="hover:text-white transition-colors">Polityka prywatnosci</a>
             </div>
             
             <button 

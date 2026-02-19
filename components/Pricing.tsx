@@ -1,13 +1,11 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import { scrollToSection } from '../utils/scrollToSection';
 
 const Pricing: React.FC = () => {
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection('contact', { updateHash: true });
   };
 
   return (
@@ -30,7 +28,7 @@ const Pricing: React.FC = () => {
               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Atlas ćwiczeń wideo</li>
               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Raz w miesiącu korekta planu</li>
             </ul>
-            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer">Wybieram</a>
+            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer">Wybieram plan treningowy</a>
           </div>
 
           {/* Plan 2 - Featured */}
@@ -46,9 +44,9 @@ const Pricing: React.FC = () => {
               <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Wszystko z pakietu podstawowego</li>
               <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Plan żywieniowy / makroskładniki</li>
               <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Cotygodniowe raporty i analiza</li>
-              <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Kontakt WhatsApp 24/7</li>
+              <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Kontakt WhatsApp w godzinach 8-20</li>
             </ul>
-            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 bg-brand-500 text-zinc-950 rounded-lg text-center font-bold hover:bg-brand-400 transition-colors cursor-pointer">Wybieram</a>
+            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 bg-brand-500 text-zinc-950 rounded-lg text-center font-bold hover:bg-brand-400 transition-colors cursor-pointer">Wybieram opieke 1:1</a>
           </div>
 
           {/* Plan 3 */}
@@ -59,11 +57,11 @@ const Pricing: React.FC = () => {
             
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Pełna opieka online</li>
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> 4 treningi personalne (Warszawa)</li>
+               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> 4 treningi personalne (Bydgoszcz)</li>
               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Analiza składu ciała co miesiąc</li>
               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Wspólne zakupy / edukacja</li>
             </ul>
-            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer">Wybieram</a>
+            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer">Wybieram pakiet VIP</a>
           </div>
         </div>
       </div>

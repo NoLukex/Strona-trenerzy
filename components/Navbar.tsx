@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Dumbbell } from 'lucide-react';
+import { scrollToSection } from '../utils/scrollToSection';
+import currentTrainer from '../data/currentTrainer';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,27 +15,36 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     setMobileMenuOpen(false);
 
-    const targetId = href.replace('#', '');
-    
     if (href === '#') {
-       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-       const element = document.getElementById(targetId);
-       if (element) {
-         element.scrollIntoView({ behavior: 'smooth' });
-       }
+       e.preventDefault();
+       scrollToSection('top', { updateHash: true });
+       return;
+    }
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      scrollToSection(href.replace('#', ''), { updateHash: true });
     }
   };
 
   const navLinks = [
     { name: 'O Mnie', href: '#about' },
+    { name: 'Start', href: '#start' },
     { name: 'Metamorfozy', href: '#transformations' },
-    { name: 'AI Trener', href: '#ai-tool' },
-    // Removed 'Wiedza'
     { name: 'Oferta', href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
   ];
@@ -51,7 +62,7 @@ const Navbar: React.FC = () => {
             <Dumbbell className="text-zinc-950 w-6 h-6" />
           </div>
           <span className="text-2xl font-black tracking-tighter text-white">
-            TITANIUM<span className="text-brand-500">PHYSIQUE</span>
+            {currentTrainer.navName.toUpperCase().split(' ')[0]}<span className="text-brand-500">{currentTrainer.navName.toUpperCase().split(' ').slice(1).join(' ')}</span>
           </span>
         </a>
 
@@ -80,6 +91,9 @@ const Navbar: React.FC = () => {
         <button 
           className="md:hidden text-zinc-300 hover:text-brand-500 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Zamknij menu' : 'Otworz menu'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -87,7 +101,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl">
+        <div id="mobile-menu" className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-zinc-800 p-6 flex flex-col gap-4 shadow-2xl">
            {navLinks.map((link) => (
             <a 
               key={link.name} 

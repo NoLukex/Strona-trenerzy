@@ -34,13 +34,21 @@ const FAQ: React.FC = () => {
               <button 
                 className="w-full flex justify-between items-center p-6 text-left hover:bg-zinc-900 transition-colors"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                aria-expanded={openIndex === idx}
+                aria-controls={`faq-content-${idx}`}
+                id={`faq-button-${idx}`}
               >
                 <span className="font-bold text-white">{faq.q}</span>
                 {openIndex === idx ? <Minus className="text-brand-500" /> : <Plus className="text-zinc-500" />}
               </button>
-              
+               
               {openIndex === idx && (
-                <div className="p-6 pt-0 text-zinc-400 leading-relaxed animate-fade-in">
+                <div
+                  id={`faq-content-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-button-${idx}`}
+                  className="p-6 pt-0 text-zinc-400 leading-relaxed"
+                >
                   {faq.a}
                 </div>
               )}
