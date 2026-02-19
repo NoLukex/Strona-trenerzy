@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'arkadiusz-czajkowski-trener-personalny',
-  fullName: 'Arkadiusz Czajkowski - Trener Personalny',
-  brandName: 'Arkadiusz Czajkowski - Trener Personalny',
+  fullName: 'Arkadiusz Czajkowski',
+  brandName: 'Arkadiusz Czajkowski',
   navName: 'Arkadiusz Czajkowski',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Arkadiusz Czajkowski - Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Arkadiusz Czajkowski - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#22c55e',

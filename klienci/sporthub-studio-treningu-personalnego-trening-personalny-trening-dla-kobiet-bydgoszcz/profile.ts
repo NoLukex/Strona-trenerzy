@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'sporthub-studio-treningu-personalnego-trening-personalny-trening-dla-kobiet-bydgoszcz',
   fullName: 'SportHub - Studio Treningu Personalnego - trening personalny, trening dla kobiet Bydgoszcz',
   brandName: 'SportHub - Studio Treningu Personalnego - trening personalny, trening dla kobiet Bydgoszcz',
-  navName: 'SportHub',
+  navName: 'SportHub - Studio Treningu Personalnego - trening personalny, trening dla kobiet Bydgoszcz',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Stefana Okrzei 2, 85-317 Bydgoszcz, Polska',

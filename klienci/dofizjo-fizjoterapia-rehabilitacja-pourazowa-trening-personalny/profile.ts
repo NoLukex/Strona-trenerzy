@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'dofizjo-fizjoterapia-rehabilitacja-pourazowa-trening-personalny',
   fullName: 'DOFizjo - Fizjoterapia | Rehabilitacja pourazowa | Trening personalny',
   brandName: 'DOFizjo - Fizjoterapia | Rehabilitacja pourazowa | Trening personalny',
-  navName: 'DOFizjo',
+  navName: 'DOFizjo - Fizjoterapia | Rehabilitacja pourazowa | Trening personalny',
   brandTagline: 'Fizjoterapeuta',
   city: 'Bydgoszcz',
   address: 'Boczna 31, 85-734 Bydgoszcz, Polska',

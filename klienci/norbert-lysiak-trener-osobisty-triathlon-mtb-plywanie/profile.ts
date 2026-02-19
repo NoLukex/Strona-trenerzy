@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'norbert-lysiak-trener-osobisty-triathlon-mtb-plywanie',
-  fullName: 'Norbert Łysiak - trener osobisty triathlon, mtb, pływanie',
-  brandName: 'Norbert Łysiak - trener osobisty triathlon, mtb, pływanie',
+  fullName: 'Norbert Łysiak',
+  brandName: 'Norbert Łysiak',
   navName: 'Norbert Łysiak',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Norbert Łysiak - trener osobisty triathlon, mtb, pływanie - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Norbert Łysiak - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#94c918',

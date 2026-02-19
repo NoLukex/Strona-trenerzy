@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'ruch-studio-treningu-trener-personalny-bydgoszcz',
   fullName: 'RUCH. Studio Treningu | Trener personalny Bydgoszcz',
   brandName: 'RUCH. Studio Treningu | Trener personalny Bydgoszcz',
-  navName: 'RUCH. Studio Treningu |',
+  navName: 'RUCH. Studio Treningu | Trener personalny Bydgoszcz',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: '11 Listopada 13, 85-624 Bydgoszcz, Polska',

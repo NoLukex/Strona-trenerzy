@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'trener-radoslaw-habera',
-  fullName: 'Trener Radosław Habera',
-  brandName: 'Trener Radosław Habera',
-  navName: 'Trener Radosław Habera',
+  fullName: 'Radosław Habera',
+  brandName: 'Radosław Habera',
+  navName: 'Radosław Habera',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Fordońska 144, 85-752 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Trener Radosław Habera - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Radosław Habera - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

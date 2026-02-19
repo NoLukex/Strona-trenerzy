@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'trenerka-werka-weronika-szyczewska-tchorzewska',
-  fullName: 'Werka Weronika Szyczewska- Tchorzewska',
-  brandName: 'Werka Weronika Szyczewska- Tchorzewska',
-  navName: 'Werka Weronika Szyczewska- Tchorzewska',
+  fullName: 'Werka Weronika',
+  brandName: 'Werka Weronika',
+  navName: 'Werka Weronika',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Bydgoskiego Batalionu Obrony Narodowej, 85-825 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Werka Weronika Szyczewska- Tchorzewska - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Werka Weronika - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

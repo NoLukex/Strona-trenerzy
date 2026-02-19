@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'dietetyk-bydgoszcz-tomasz-giza',
-  fullName: 'Dietetyk Bydgoszcz - Tomasz Giza',
-  brandName: 'Dietetyk Bydgoszcz - Tomasz Giza',
-  navName: 'Dietetyk Bydgoszcz',
+  fullName: 'Tomasz Giza',
+  brandName: 'Tomasz Giza',
+  navName: 'Tomasz Giza',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Artura Grottgera 4, 85-227 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Dietetyk Bydgoszcz - Tomasz Giza - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Tomasz Giza - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#ef4444',

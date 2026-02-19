@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'kamil-rzepka-body-practiz-trener-personalny-trener-osobisty',
-  fullName: 'Kamil Rzepka Body Practiz - trener personalny - trener osobisty',
-  brandName: 'Kamil Rzepka Body Practiz - trener personalny - trener osobisty',
-  navName: 'Kamil Rzepka Body Practiz',
+  fullName: 'Kamil Rzepka',
+  brandName: 'Kamil Rzepka',
+  navName: 'Kamil Rzepka',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Jagiellońska 39, 85-001 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Kamil Rzepka Body Practiz - trener personalny - trener osobisty - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Kamil Rzepka - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

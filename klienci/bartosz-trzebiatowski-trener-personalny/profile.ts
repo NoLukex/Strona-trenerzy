@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'bartosz-trzebiatowski-trener-personalny',
-  fullName: 'Bartosz Trzebiatowski - Trener Personalny',
-  brandName: 'Bartosz Trzebiatowski - Trener Personalny',
+  fullName: 'Bartosz Trzebiatowski',
+  brandName: 'Bartosz Trzebiatowski',
   navName: 'Bartosz Trzebiatowski',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Bartosz Trzebiatowski - Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Bartosz Trzebiatowski - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#22c55e',

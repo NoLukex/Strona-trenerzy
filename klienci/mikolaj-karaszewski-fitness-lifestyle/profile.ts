@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'mikolaj-karaszewski-fitness-lifestyle',
-  fullName: 'Mikołaj Karaszewski Fitness&Lifestyle',
-  brandName: 'Mikołaj Karaszewski Fitness&Lifestyle',
-  navName: 'Mikołaj Karaszewski Fitness&Lifestyle',
+  fullName: 'Mikołaj Karaszewski',
+  brandName: 'Mikołaj Karaszewski',
+  navName: 'Mikołaj Karaszewski',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Stanisława Skarżyńskiego 10, 85-791 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Mikołaj Karaszewski Fitness&Lifestyle - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Mikołaj Karaszewski - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#22c55e',

@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'anna-mikolajska-trener-personalny',
-  fullName: 'Anna Mikołajska - Trener personalny',
-  brandName: 'Anna Mikołajska - Trener personalny',
+  fullName: 'Anna Mikołajska',
+  brandName: 'Anna Mikołajska',
   navName: 'Anna Mikołajska',
   brandTagline: 'Trener personalny kobiet',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'BUDUJ FORME',
   heroTitleAccent: 'Z PLANEM DOPASOWANYM DO CIEBIE.',
   heroText: 'Program treningowy i nawyki dopasowane do codziennego rytmu dnia, celu sylwetkowego i poziomu zaawansowania.',
-  aboutHeading: 'Anna Mikołajska - Trener personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Anna Mikołajska - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#94c918',

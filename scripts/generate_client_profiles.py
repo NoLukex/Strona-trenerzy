@@ -197,27 +197,52 @@ def category_copy(category: str) -> tuple[str, str, str]:
 def derive_names(title: str) -> tuple[str, str]:
     normalized = title.strip()
     normalized = re.sub(r"^[^A-Za-z0-9]+", "", normalized)
-    lower = normalized.lower()
 
-    if lower.startswith("trener personalny bydgoszcz "):
-        normalized = normalized.split(" ", 3)[3]
-    elif lower.startswith("trener personalny "):
-        normalized = normalized.split(" ", 2)[2]
-    elif lower.startswith("trenerka "):
-        normalized = normalized.split(" ", 1)[1]
+    # Remove common trainer prefixes first
+    normalized = re.sub(
+        r"(?i)^(trener personalny bydgoszcz|trener personalny|trenerka|trener biegania bydgoszcz|trener biegania)\s*[-|:]?\s*",
+        "",
+        normalized,
+    )
 
-    normalized = normalized.strip(" -")
-    if not normalized:
-        normalized = title
+    stop_words = {
+        "trener",
+        "personalny",
+        "osobisty",
+        "bydgoszcz",
+        "studio",
+        "treningu",
+        "trening",
+        "dla",
+        "kobiet",
+        "fizjoterapia",
+        "rehabilitacja",
+        "medyczny",
+        "gym",
+        "fit",
+    }
 
-    brand_name = normalized
-    nav_name = brand_name
-    if " - " in nav_name:
-        nav_name = nav_name.split(" - ", 1)[0]
-    if len(nav_name.split()) > 4:
-        nav_name = " ".join(nav_name.split()[:4])
+    person_word = re.compile(r"^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$")
 
-    return brand_name, nav_name
+    # Split title by common separators and try to extract first + last name
+    segments = [s.strip() for s in re.split(r"[|\-–—]", normalized) if s.strip()]
+    for segment in segments + [normalized]:
+        words = re.findall(r"[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]+", segment)
+        words = [w for w in words if w.lower() not in stop_words]
+        if len(words) >= 2:
+            first, last = words[0], words[1]
+            if (
+                len(first) >= 2
+                and len(last) >= 2
+                and person_word.match(first)
+                and person_word.match(last)
+            ):
+                person = f"{first} {last}"
+                return person, person
+
+    # Last resort fallback
+    fallback = normalized.strip() or title.strip()
+    return fallback, fallback
 
 
 def build_profile(row: dict, slug: str) -> str:
@@ -292,7 +317,7 @@ def build_registry(slugs: list[str]) -> str:
     imports_text = "\n".join(imports)
     entries_text = "\n".join(entries)
 
-    default_slug = slugs[0] if slugs else ""
+    default_slug = ""
 
     return f"""import type {{ TrainerProfile }} from './trainerProfile';
 {imports_text}

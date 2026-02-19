@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'balance-motion-zuzanna-majewska',
-  fullName: 'Balance & Motion Zuzanna Majewska',
-  brandName: 'Balance & Motion Zuzanna Majewska',
-  navName: 'Balance & Motion Zuzanna',
+  fullName: 'Balance Motion',
+  brandName: 'Balance Motion',
+  navName: 'Balance Motion',
   brandTagline: 'Trener personalny kobiet',
   city: 'Bydgoszcz',
   address: 'Just GYM, Artura Grottgera 4, 85-227 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'BUDUJ FORME',
   heroTitleAccent: 'Z PLANEM DOPASOWANYM DO CIEBIE.',
   heroText: 'Program treningowy i nawyki dopasowane do codziennego rytmu dnia, celu sylwetkowego i poziomu zaawansowania.',
-  aboutHeading: 'Balance & Motion Zuzanna Majewska - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Balance Motion - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#eab308',

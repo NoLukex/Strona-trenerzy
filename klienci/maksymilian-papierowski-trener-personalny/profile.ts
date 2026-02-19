@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'maksymilian-papierowski-trener-personalny',
-  fullName: 'Maksymilian Papierowski - Trener Personalny',
-  brandName: 'Maksymilian Papierowski - Trener Personalny',
+  fullName: 'Maksymilian Papierowski',
+  brandName: 'Maksymilian Papierowski',
   navName: 'Maksymilian Papierowski',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Maksymilian Papierowski - Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Maksymilian Papierowski - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#94c918',

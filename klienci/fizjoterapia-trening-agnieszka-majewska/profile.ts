@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'fizjoterapia-trening-agnieszka-majewska',
-  fullName: 'Fizjoterapia&Trening Agnieszka Majewska',
-  brandName: 'Fizjoterapia&Trening Agnieszka Majewska',
-  navName: 'Fizjoterapia&Trening Agnieszka Majewska',
+  fullName: 'Agnieszka Majewska',
+  brandName: 'Agnieszka Majewska',
+  navName: 'Agnieszka Majewska',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Strefa Sprawnych Mięśni, Bydgoskiego Batalionu Obrony Narodowej 4, 85-825 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Fizjoterapia&Trening Agnieszka Majewska - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Agnieszka Majewska - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

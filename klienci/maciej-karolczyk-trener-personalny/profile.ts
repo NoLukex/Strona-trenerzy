@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'maciej-karolczyk-trener-personalny',
-  fullName: 'Maciej Karolczyk Trener Personalny',
-  brandName: 'Maciej Karolczyk Trener Personalny',
-  navName: 'Maciej Karolczyk Trener Personalny',
+  fullName: 'Maciej Karolczyk',
+  brandName: 'Maciej Karolczyk',
+  navName: 'Maciej Karolczyk',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Świecka 8, 85-040 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Maciej Karolczyk Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Maciej Karolczyk - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#22c55e',

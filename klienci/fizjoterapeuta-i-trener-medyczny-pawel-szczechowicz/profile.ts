@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'fizjoterapeuta-i-trener-medyczny-pawel-szczechowicz',
   fullName: 'Fizjoterapeuta I Trener Medyczny Paweł Szczechowicz',
   brandName: 'Fizjoterapeuta I Trener Medyczny Paweł Szczechowicz',
-  navName: 'Fizjoterapeuta I Trener Medyczny',
+  navName: 'Fizjoterapeuta I Trener Medyczny Paweł Szczechowicz',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Al. Wojska Polskiego 1, Bydgoszcz, PL',

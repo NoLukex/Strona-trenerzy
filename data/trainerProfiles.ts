@@ -113,4 +113,4 @@ export const trainerProfiles: Record<string, TrainerProfile> = {
   'kaja-narkun': kaja_narkun,
 };
 
-export const defaultTrainerSlug = 'fusion-pole-gym';
+export const defaultTrainerSlug = '';

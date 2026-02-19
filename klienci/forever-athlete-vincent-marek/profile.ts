@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'forever-athlete-vincent-marek',
-  fullName: 'Forever Athlete - Vincent Marek',
-  brandName: 'Forever Athlete - Vincent Marek',
+  fullName: 'Forever Athlete',
+  brandName: 'Forever Athlete',
   navName: 'Forever Athlete',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Forever Athlete - Vincent Marek - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Forever Athlete - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#ef4444',

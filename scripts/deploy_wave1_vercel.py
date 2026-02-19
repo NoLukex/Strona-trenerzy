@@ -98,10 +98,54 @@ def potential_score(row: dict) -> float:
     return score
 
 
+def extract_person_name(title: str) -> str:
+    text = normalize(title)
+    text = re.sub(
+        r"(?i)^(trener personalny bydgoszcz|trener personalny|trenerka|trener biegania bydgoszcz|trener biegania)\s*[-|:]?\s*",
+        "",
+        text,
+    )
+
+    stop_words = {
+        "trener",
+        "personalny",
+        "osobisty",
+        "bydgoszcz",
+        "studio",
+        "treningu",
+        "trening",
+        "dla",
+        "kobiet",
+        "fizjoterapia",
+        "rehabilitacja",
+        "medyczny",
+        "gym",
+        "fit",
+    }
+
+    person_word = re.compile(r"^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$")
+
+    segments = [s.strip() for s in re.split(r"[|\-–—]", text) if s.strip()]
+    for segment in segments + [text]:
+        words = re.findall(r"[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]+", segment)
+        words = [w for w in words if w.lower() not in stop_words]
+        if len(words) >= 2:
+            first, last = words[0], words[1]
+            if (
+                len(first) >= 2
+                and len(last) >= 2
+                and person_word.match(first)
+                and person_word.match(last)
+            ):
+                return f"{first} {last}"
+
+    return ""
+
+
 def read_token() -> str:
     cfg = json.loads(MCP_CONFIG.read_text(encoding="utf-8"))
     env = cfg.get("mcpServers", {}).get("vercel-mcp", {}).get("env", {})
-    token = env.get("VERCEL_TOKEN", "") or env.get("VERCEL_ACCESS_TOKEN", "").strip()
+    token = (env.get("VERCEL_TOKEN", "") or env.get("VERCEL_ACCESS_TOKEN", "")).strip()
     if not token or token in {"YOUR_VERCEL_ACCESS_TOKEN", "YOUR_VERCEL_TOKEN"}:
         raise RuntimeError("Missing real Vercel token in mcp_config.json")
     return token
@@ -189,7 +233,8 @@ def main() -> None:
         title = normalize(row.get("Title", ""))
         slug_by_title[title] = slugify(title, used)
 
-    ranked = sorted(rows, key=potential_score, reverse=True)[:10]
+    person_rows = [row for row in rows if extract_person_name(row.get("Title", ""))]
+    ranked = sorted(person_rows, key=potential_score, reverse=True)[:10]
 
     results: list[dict[str, str]] = []
 

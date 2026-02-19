@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'lukasz-dziennik-atletyczna-sila',
-  fullName: 'ukasz Dziennik - Atletyczna Siła',
-  brandName: 'ukasz Dziennik - Atletyczna Siła',
-  navName: 'ukasz Dziennik',
+  fullName: 'Atletyczna Siła',
+  brandName: 'Atletyczna Siła',
+  navName: 'Atletyczna Siła',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Świecka 8, 85-040 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'ukasz Dziennik - Atletyczna Siła - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Atletyczna Siła - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#eab308',

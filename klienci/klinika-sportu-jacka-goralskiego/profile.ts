@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'klinika-sportu-jacka-goralskiego',
-  fullName: 'Klinika Sportu Jacka Góralskiego',
-  brandName: 'Klinika Sportu Jacka Góralskiego',
-  navName: 'Klinika Sportu Jacka Góralskiego',
+  fullName: 'Klinika Sportu',
+  brandName: 'Klinika Sportu',
+  navName: 'Klinika Sportu',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Poznańska 25/7, 85-129 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Klinika Sportu Jacka Góralskiego - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Klinika Sportu - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#f97316',

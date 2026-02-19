@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'stf-studio-treningu-funkcjonalnego-trener-osobisty-bydgoszcz',
   fullName: 'STF Studio Treningu Funkcjonalnego - Trener Osobisty Bydgoszcz',
   brandName: 'STF Studio Treningu Funkcjonalnego - Trener Osobisty Bydgoszcz',
-  navName: 'STF Studio Treningu Funkcjonalnego',
+  navName: 'STF Studio Treningu Funkcjonalnego - Trener Osobisty Bydgoszcz',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Chmurna 5, 85-411 Bydgoszcz, Polska',

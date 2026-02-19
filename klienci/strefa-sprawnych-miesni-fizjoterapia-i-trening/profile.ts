@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'strefa-sprawnych-miesni-fizjoterapia-i-trening',
   fullName: 'Strefa sprawnych mięśni Fizjoterapia i Trening',
   brandName: 'Strefa sprawnych mięśni Fizjoterapia i Trening',
-  navName: 'Strefa sprawnych mięśni Fizjoterapia',
+  navName: 'Strefa sprawnych mięśni Fizjoterapia i Trening',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Lokal znajduje się na parterze bloku, wjazd od strony szpitala Świętego Łukasza, Bydgoskiego Batalionu Obrony Narodowej 4, 85-825 Bydgoszcz, Polska',

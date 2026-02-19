@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'daria-michalowska-trener-personalny',
-  fullName: 'Daria Michałowska - Trener personalny',
-  brandName: 'Daria Michałowska - Trener personalny',
+  fullName: 'Daria Michałowska',
+  brandName: 'Daria Michałowska',
   navName: 'Daria Michałowska',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Daria Michałowska - Trener personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Daria Michałowska - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

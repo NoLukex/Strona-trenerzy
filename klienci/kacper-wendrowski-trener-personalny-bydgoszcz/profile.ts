@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'kacper-wendrowski-trener-personalny-bydgoszcz',
-  fullName: 'Kacper Wendrowski Trener Personalny Bydgoszcz',
-  brandName: 'Kacper Wendrowski Trener Personalny Bydgoszcz',
-  navName: 'Kacper Wendrowski Trener Personalny',
+  fullName: 'Kacper Wendrowski',
+  brandName: 'Kacper Wendrowski',
+  navName: 'Kacper Wendrowski',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Jagiellońska 1, 85-059 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Kacper Wendrowski Trener Personalny Bydgoszcz - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Kacper Wendrowski - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#f97316',

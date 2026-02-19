@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'trener-biegania-bydgoszcz-brzezinski',
-  fullName: 'Trener Biegania Bydgoszcz - Brzeziński',
-  brandName: 'Trener Biegania Bydgoszcz - Brzeziński',
-  navName: 'Trener Biegania Bydgoszcz',
+  fullName: 'Brzeziński',
+  brandName: 'Brzeziński',
+  navName: 'Brzeziński',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Gdańska 163, 85-643 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Trener Biegania Bydgoszcz - Brzeziński - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Brzeziński - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

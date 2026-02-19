@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'jakub-stypczynski-trener-personalny-bydgoszcz',
-  fullName: 'Jakub Stypczyński Trener Personalny Bydgoszcz',
-  brandName: 'Jakub Stypczyński Trener Personalny Bydgoszcz',
-  navName: 'Jakub Stypczyński Trener Personalny',
+  fullName: 'Jakub Stypczyński',
+  brandName: 'Jakub Stypczyński',
+  navName: 'Jakub Stypczyński',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Świecka 8, 85-040 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Jakub Stypczyński Trener Personalny Bydgoszcz - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Jakub Stypczyński - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

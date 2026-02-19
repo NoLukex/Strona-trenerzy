@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'patryk-michalek-trener-personalny',
-  fullName: 'Patryk Michałek - Trener Personalny',
-  brandName: 'Patryk Michałek - Trener Personalny',
+  fullName: 'Patryk Michałek',
+  brandName: 'Patryk Michałek',
   navName: 'Patryk Michałek',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Patryk Michałek - Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Patryk Michałek - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#f97316',

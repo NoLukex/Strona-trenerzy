@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'bartosz-jaszczak-trener-personalny-bydgoszcz',
-  fullName: 'Bartosz Jaszczak - Trener Personalny Bydgoszcz',
-  brandName: 'Bartosz Jaszczak - Trener Personalny Bydgoszcz',
+  fullName: 'Bartosz Jaszczak',
+  brandName: 'Bartosz Jaszczak',
   navName: 'Bartosz Jaszczak',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Bartosz Jaszczak - Trener Personalny Bydgoszcz - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Bartosz Jaszczak - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#eab308',

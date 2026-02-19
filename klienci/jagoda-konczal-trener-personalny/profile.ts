@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'jagoda-konczal-trener-personalny',
-  fullName: 'Jagoda Kończal Trener Personalny',
-  brandName: 'Jagoda Kończal Trener Personalny',
-  navName: 'Jagoda Kończal Trener Personalny',
+  fullName: 'Jagoda Kończal',
+  brandName: 'Jagoda Kończal',
+  navName: 'Jagoda Kończal',
   brandTagline: 'Trener personalny kobiet',
   city: 'Bydgoszcz',
   address: 'Artura Grottgera 4, 85-227 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'BUDUJ FORME',
   heroTitleAccent: 'Z PLANEM DOPASOWANYM DO CIEBIE.',
   heroText: 'Program treningowy i nawyki dopasowane do codziennego rytmu dnia, celu sylwetkowego i poziomu zaawansowania.',
-  aboutHeading: 'Jagoda Kończal Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Jagoda Kończal - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#94c918',

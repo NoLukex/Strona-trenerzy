@@ -4,7 +4,7 @@ const profile: TrainerProfile = {
   slug: 'smart-sport-education-center',
   fullName: 'SMART Sport & Education Center',
   brandName: 'SMART Sport & Education Center',
-  navName: 'SMART Sport & Education',
+  navName: 'SMART Sport & Education Center',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Świecka 8, 85-046 Bydgoszcz, Polska',

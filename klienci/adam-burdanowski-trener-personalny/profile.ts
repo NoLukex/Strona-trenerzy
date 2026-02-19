@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'adam-burdanowski-trener-personalny',
-  fullName: 'Adam Burdanowski Trener Personalny',
-  brandName: 'Adam Burdanowski Trener Personalny',
-  navName: 'Adam Burdanowski Trener Personalny',
+  fullName: 'Adam Burdanowski',
+  brandName: 'Adam Burdanowski',
+  navName: 'Adam Burdanowski',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Chabrowa 9, 85-813 Bydgoszcz, Polska',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Adam Burdanowski Trener Personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Adam Burdanowski - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#06b6d4',

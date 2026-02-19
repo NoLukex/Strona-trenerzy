@@ -2,8 +2,8 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'marcin-osak-trener-personalny',
-  fullName: 'Marcin Osak - trener personalny',
-  brandName: 'Marcin Osak - trener personalny',
+  fullName: 'Marcin Osak',
+  brandName: 'Marcin Osak',
   navName: 'Marcin Osak',
   brandTagline: 'Siłownia',
   city: 'Bydgoszcz',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Marcin Osak - trener personalny - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Marcin Osak - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#ef4444',
