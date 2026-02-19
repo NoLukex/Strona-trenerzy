@@ -220,6 +220,9 @@ def derive_names(title: str) -> tuple[str, str]:
         "medyczny",
         "gym",
         "fit",
+        "sport",
+        "sports",
+        "bioneuro",
     }
 
     person_word = re.compile(r"^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$")

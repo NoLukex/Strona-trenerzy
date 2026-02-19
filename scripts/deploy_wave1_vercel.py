@@ -5,6 +5,7 @@ import json
 import re
 import shutil
 import subprocess
+import argparse
 import urllib.request
 from pathlib import Path
 
@@ -14,7 +15,8 @@ BASE = ROOT.parent
 FILTERED_CSV = BASE / "trenerzy_bydgoszcz_personalni.csv"
 QUEUE_CSV = ROOT / "clients_deploy_queue.csv"
 MCP_CONFIG = Path(r"C:\Users\Krysiek\.gemini\antigravity\mcp_config.json")
-LOG_CSV = ROOT / "wave1_deploy_results.csv"
+DEFAULT_WAVE_NAME = "wave1"
+DEFAULT_WAVE_SIZE = 10
 
 
 def detect_vercel_cmd() -> list[str]:
@@ -121,6 +123,9 @@ def extract_person_name(title: str) -> str:
         "medyczny",
         "gym",
         "fit",
+        "sport",
+        "sports",
+        "bioneuro",
     }
 
     person_word = re.compile(r"^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$")
@@ -221,11 +226,25 @@ def set_env(token: str, scope: str, value: str, environment: str) -> tuple[bool,
     return False, err.strip()
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Deploy next trainer wave to Vercel")
+    parser.add_argument("--wave-name", default=DEFAULT_WAVE_NAME)
+    parser.add_argument("--size", type=int, default=DEFAULT_WAVE_SIZE)
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
+    log_csv = ROOT / f"{args.wave_name}_deploy_results.csv"
+
     token = read_token()
     scope = detect_scope(token)
 
     rows = list(csv.DictReader(FILTERED_CSV.open(encoding="utf-8-sig", newline="")))
+    queue_rows = list(csv.DictReader(QUEUE_CSV.open(encoding="utf-8", newline="")))
+    ready_slugs = {
+        row.get("slug", "") for row in queue_rows if row.get("status") == "ready"
+    }
 
     used = set()
     slug_by_title: dict[str, str] = {}
@@ -233,8 +252,13 @@ def main() -> None:
         title = normalize(row.get("Title", ""))
         slug_by_title[title] = slugify(title, used)
 
-    person_rows = [row for row in rows if extract_person_name(row.get("Title", ""))]
-    ranked = sorted(person_rows, key=potential_score, reverse=True)[:10]
+    person_rows = [
+        row
+        for row in rows
+        if extract_person_name(row.get("Title", ""))
+        and slug_by_title.get(normalize(row.get("Title", "")), "") in ready_slugs
+    ]
+    ranked = sorted(person_rows, key=potential_score, reverse=True)[: args.size]
 
     results: list[dict[str, str]] = []
 
@@ -328,7 +352,7 @@ def main() -> None:
             }
         )
 
-    with LOG_CSV.open("w", encoding="utf-8", newline="") as f:
+    with log_csv.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(
             f,
             fieldnames=["slug", "title", "project", "status", "url", "note"],
@@ -336,7 +360,6 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(results)
 
-    queue_rows = list(csv.DictReader(QUEUE_CSV.open(encoding="utf-8", newline="")))
     status_by_slug = {r["slug"]: r["status"] for r in results}
     for row in queue_rows:
         slug = row.get("slug", "")
@@ -350,10 +373,10 @@ def main() -> None:
         writer.writerows(queue_rows)
 
     deployed = sum(1 for r in results if r["status"] == "deployed")
-    print(f"wave1_total={len(results)}")
-    print(f"wave1_deployed={deployed}")
-    print(f"wave1_failed={len(results) - deployed}")
-    print(f"report={LOG_CSV}")
+    print(f"{args.wave_name}_total={len(results)}")
+    print(f"{args.wave_name}_deployed={deployed}")
+    print(f"{args.wave_name}_failed={len(results) - deployed}")
+    print(f"report={log_csv}")
 
 
 if __name__ == "__main__":

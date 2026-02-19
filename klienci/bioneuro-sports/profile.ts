@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'bioneuro-sports',
-  fullName: 'Bioneuro Sports',
-  brandName: 'Bioneuro Sports',
-  navName: 'Bioneuro Sports',
+  fullName: 'Bioneuro-Sports',
+  brandName: 'Bioneuro-Sports',
+  navName: 'Bioneuro-Sports',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Adama Grzymały Siedleckiego 14, Bydgoszcz, PL',
@@ -18,7 +18,7 @@ const profile: TrainerProfile = {
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',
   heroText: 'Indywidualne prowadzenie treningowe w Bydgoszczy i online. Jasny plan, regularna kontrola progresu i wsparcie na kazdym etapie.',
-  aboutHeading: 'Bioneuro Sports - profesjonalne prowadzenie treningowe w Bydgoszczy.',
+  aboutHeading: 'Bioneuro-Sports - profesjonalne prowadzenie treningowe w Bydgoszczy.',
   aboutText: 'Wspolpraca opiera sie na czytelnym planie, regularnych korektach i dopasowaniu treningu do celu oraz stylu zycia.',
   theme: {
     accent: '#ef4444',
