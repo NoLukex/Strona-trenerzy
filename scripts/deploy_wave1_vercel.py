@@ -126,6 +126,7 @@ def extract_person_name(title: str) -> str:
         "sport",
         "sports",
         "bioneuro",
+        "klinika",
     }
 
     person_word = re.compile(r"^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$")
@@ -233,6 +234,41 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def profile_name_is_person(slug: str) -> bool:
+    profile_path = ROOT / "klienci" / slug / "profile.ts"
+    if not profile_path.exists():
+        return False
+
+    text = profile_path.read_text(encoding="utf-8")
+    m = re.search(r"fullName: '([^']*)'", text)
+    full = (m.group(1) if m else "").strip()
+    if not full:
+        return False
+
+    name_pat = re.compile(
+        r"^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+\s+[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$"
+    )
+    bad_tokens = {
+        "studio",
+        "gym",
+        "fit",
+        "dietetyk",
+        "sports",
+        "sport",
+        "centrum",
+        "trener",
+        "personalny",
+        "bydgoszcz",
+        "bioneuro",
+        "klinika",
+    }
+    if not name_pat.match(full):
+        return False
+    if any(tok in full.lower() for tok in bad_tokens):
+        return False
+    return True
+
+
 def main() -> None:
     args = parse_args()
     log_csv = ROOT / f"{args.wave_name}_deploy_results.csv"
@@ -257,6 +293,9 @@ def main() -> None:
         for row in rows
         if extract_person_name(row.get("Title", ""))
         and slug_by_title.get(normalize(row.get("Title", "")), "") in ready_slugs
+        and profile_name_is_person(
+            slug_by_title.get(normalize(row.get("Title", "")), "")
+        )
     ]
     ranked = sorted(person_rows, key=potential_score, reverse=True)[: args.size]
 
