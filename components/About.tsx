@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Target, Users, Zap } from 'lucide-react';
+import { Award, Target, Zap } from 'lucide-react';
 import currentTrainer from '../data/currentTrainer';
 
 const About: React.FC = () => {
@@ -32,8 +32,14 @@ const About: React.FC = () => {
           <div>
             <span className="text-brand-500 font-bold tracking-wider uppercase text-sm">Poznaj mnie lepiej</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-8">
-              {currentTrainer.fullName} - <span className="text-brand-500">trener personalny {currentTrainer.city}</span>
+              {currentTrainer.aboutHeading}
             </h2>
+
+            {currentTrainer.nicheLabel && (
+              <p className="mb-6 text-sm font-semibold uppercase tracking-wide text-brand-400">
+                Segment: {currentTrainer.nicheLabel}
+              </p>
+            )}
             
             <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
               <p>

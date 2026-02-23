@@ -1,5 +1,7 @@
 import { defaultTrainerSlug, trainerProfiles } from './trainerProfiles';
 import fallbackTrainer from './fallbackTrainer';
+import { emailTrainerPersonalization } from './emailTrainerPersonalization';
+import type { TrainerProfile } from './trainerProfile';
 
 const getSlugFromEnv = (): string | null => {
   const envSlug = (import.meta.env.VITE_CLIENT_SLUG || '').trim().toLowerCase();
@@ -67,9 +69,15 @@ const useLocalDefault =
   typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
-const currentTrainer =
+const baseTrainer =
   (resolvedSlug && trainerProfiles[resolvedSlug]) ||
   (useLocalDefault ? trainerProfiles[defaultTrainerSlug] : null) ||
   fallbackTrainer;
+
+const trainerOverride = emailTrainerPersonalization[baseTrainer.slug];
+
+const currentTrainer: TrainerProfile = trainerOverride
+  ? { ...baseTrainer, ...trainerOverride }
+  : baseTrainer;
 
 export default currentTrainer;

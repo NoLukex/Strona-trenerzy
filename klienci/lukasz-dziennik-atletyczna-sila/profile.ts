@@ -2,9 +2,9 @@ import type { TrainerProfile } from '../../data/trainerProfile';
 
 const profile: TrainerProfile = {
   slug: 'lukasz-dziennik-atletyczna-sila',
-  fullName: 'Atletyczna Siła',
+  fullName: 'Lukasz Dziennik',
   brandName: 'Atletyczna Siła',
-  navName: 'Atletyczna Siła',
+  navName: 'Lukasz Dziennik',
   brandTagline: 'Trener osobisty',
   city: 'Bydgoszcz',
   address: 'Świecka 8, 85-040 Bydgoszcz, Polska',
@@ -13,7 +13,7 @@ const profile: TrainerProfile = {
   email: 'kontakt@repspolska.pl',
   website: 'https://repspolska.pl/index.php/trener/Lukasz-Dziennik/REPS-TR-1621',
   instagram: 'https://www.instagram.com/dziennik.lukasz',
-  facebook: 'https://facebook.com/athletic.strength.dziennik; https://www.facebook.com/repspolska',
+  facebook: 'https://facebook.com/athletic.strength.dziennik',
   rating: 5.0,
   heroTitleTop: 'TRENUJ',
   heroTitleAccent: 'MADRZE I SKUTECZNIE.',

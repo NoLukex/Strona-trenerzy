@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import CrmApp from './crm/CrmApp';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -8,8 +9,10 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
+const isCrmPath = window.location.pathname === '/crm' || window.location.pathname.startsWith('/crm/');
+
 root.render(
   <React.StrictMode>
-    <App />
+    {isCrmPath ? <CrmApp /> : <App />}
   </React.StrictMode>
 );

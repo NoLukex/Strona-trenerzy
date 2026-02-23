@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { submitLead } from '../services/leadService';
 import currentTrainer from '../data/currentTrainer';
+import { getQuickWinConfig } from '../data/quickWinConfig';
+import { clearLeadIntent, readLeadIntent, subscribeLeadIntent } from '../utils/leadIntent';
 
 const ContactForm: React.FC = () => {
   const cleanPhone = currentTrainer.phone.replace(/\D/g, '');
+  const quickWin = getQuickWinConfig(currentTrainer.slug);
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -15,10 +18,56 @@ const ContactForm: React.FC = () => {
     email: '',
     phone: '',
     goal: 'Chcę schudnąć',
+    timeline: '',
+    budget: '',
+    consultationType: '',
+    note: '',
     consent: false,
     marketingConsent: false,
     website: '',
   });
+
+  const baseGoalOptions = ['Chcę schudnąć', 'Chcę zbudować mięśnie', 'Chcę poprawić zdrowie', 'Inne / Konsultacja'];
+  const baseTimelineOptions = ['Od razu / ten tydzien', 'W ciagu 2 tygodni', 'W ciagu miesiaca', 'Najpierw konsultacja, potem decyzja'];
+  const baseBudgetOptions = ['Do 300 zl', '300-600 zl', '600-1000 zl', 'Powyzej 1000 zl'];
+
+  const goalOptions = baseGoalOptions.includes(formData.goal)
+    ? baseGoalOptions
+    : [formData.goal, ...baseGoalOptions];
+
+  const timelineOptions = formData.timeline && !baseTimelineOptions.includes(formData.timeline)
+    ? [formData.timeline, ...baseTimelineOptions]
+    : baseTimelineOptions;
+
+  const budgetOptions = formData.budget && !baseBudgetOptions.includes(formData.budget)
+    ? [formData.budget, ...baseBudgetOptions]
+    : baseBudgetOptions;
+
+  React.useEffect(() => {
+    const applyIntent = (intent: {
+      goal?: string;
+      timeline?: string;
+      budget?: string;
+      consultationType?: string;
+      note?: string;
+    }) => {
+      setFormData((prev) => ({
+        ...prev,
+        goal: intent.goal || prev.goal,
+        timeline: intent.timeline || prev.timeline,
+        budget: intent.budget || prev.budget,
+        consultationType: intent.consultationType || prev.consultationType,
+        note: intent.note || prev.note,
+      }));
+    };
+
+    const existingIntent = readLeadIntent();
+    if (existingIntent) {
+      applyIntent(existingIntent);
+    }
+
+    return subscribeLeadIntent(applyIntent);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -41,6 +90,11 @@ const ContactForm: React.FC = () => {
       return;
     }
 
+    if (quickWin.contactMode === 'qualification-3q' && (!formData.timeline.trim() || !formData.budget.trim())) {
+      setError('Dla kwalifikacji uzupelnij termin startu i budzet.');
+      return;
+    }
+
     setLoading(true);
     setError('');
     const result = await submitLead(
@@ -50,6 +104,10 @@ const ContactForm: React.FC = () => {
         email: formData.email,
         phone: formData.phone,
         goal: formData.goal,
+        timeline: formData.timeline || undefined,
+        budget: formData.budget || undefined,
+        consultationType: formData.consultationType || undefined,
+        note: formData.note || undefined,
         consent: formData.consent,
         marketingConsent: formData.marketingConsent,
         honeypot: formData.website,
@@ -69,10 +127,15 @@ const ContactForm: React.FC = () => {
       email: '',
       phone: '',
       goal: 'Chcę schudnąć',
+      timeline: '',
+      budget: '',
+      consultationType: '',
+      note: '',
       consent: false,
       marketingConsent: false,
       website: '',
     });
+    clearLeadIntent();
     setLoading(false);
   };
 
@@ -85,9 +148,12 @@ const ContactForm: React.FC = () => {
         <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl grid md:grid-cols-2">
             
             <div className="p-10 md:p-16 flex flex-col justify-center">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Zacznijmy Twoją <br /><span className="text-brand-500">Przemianę</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-6">{quickWin.contactMode === 'qualification-3q' ? <>Formularz <br /><span className="text-brand-500">Kwalifikacyjny</span></> : <>Zacznijmy Twoją <br /><span className="text-brand-500">Przemianę</span></>}</h2>
                 <p className="text-zinc-400 mb-8">
-                    Wypelnij formularz, a oddzwonie w ciagu 24h i ustalimy plan dzialania.{cleanPhone ? <> Mozesz tez zadzwonic bezposrednio: <a className="text-brand-400 hover:underline" href={`tel:${cleanPhone}`}>{currentTrainer.phone}</a>.</> : ''}
+                    {quickWin.contactMode === 'qualification-3q'
+                      ? 'Uzupelnij 3 kluczowe pytania (cel, termin, budzet), zebym dopasowal najlepszy wariant wspolpracy.'
+                      : 'Wypelnij formularz, a oddzwonie w ciagu 24h i ustalimy plan dzialania.'}
+                    {cleanPhone ? <> Mozesz tez zadzwonic bezposrednio: <a className="text-brand-400 hover:underline" href={`tel:${cleanPhone}`}>{currentTrainer.phone}</a>.</> : ''}
                 </p>
                 <div className="space-y-4">
                     <div className="flex items-center gap-4">
@@ -111,7 +177,7 @@ const ContactForm: React.FC = () => {
                         <CheckCircle className="w-20 h-20 text-brand-500 mb-6" />
                         <h3 className="text-2xl font-bold text-white mb-2">Zgloszenie wyslane</h3>
                         <p className="text-zinc-400">Dziekujemy za kontakt. Odpowiedz wraca zazwyczaj w ciagu 24 godzin.</p>
-                        <button onClick={() => setSubmitted(false)} className="mt-8 text-brand-500 hover:underline">Wyslij nowe zgloszenie</button>
+                        <button onClick={() => setSubmitted(false)} className="mt-8 text-brand-500 hover:underline cursor-pointer min-h-[44px]">Wyslij nowe zgloszenie</button>
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -181,12 +247,54 @@ const ContactForm: React.FC = () => {
                                 onChange={handleChange}
                                 className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-white focus:border-brand-500 outline-none transition-colors"
                             >
-                                <option>Chcę schudnąć</option>
-                                <option>Chcę zbudować mięśnie</option>
-                                <option>Chcę poprawić zdrowie</option>
-                                <option>Inne / Konsultacja</option>
+                                {goalOptions.map((option) => (
+                                  <option key={option}>{option}</option>
+                                ))}
                             </select>
                         </div>
+
+                        {quickWin.contactMode === 'qualification-3q' && (
+                          <>
+                            <div>
+                              <label htmlFor="contact-timeline" className="block text-xs font-bold uppercase text-zinc-500 mb-2">Termin Startu</label>
+                              <select
+                                id="contact-timeline"
+                                name="timeline"
+                                value={formData.timeline}
+                                onChange={handleChange}
+                                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-white focus:border-brand-500 outline-none transition-colors"
+                              >
+                                <option value="">Wybierz termin</option>
+                                {timelineOptions.map((option) => (
+                                  <option key={option}>{option}</option>
+                                ))}
+                              </select>
+                            </div>
+
+                            <div>
+                              <label htmlFor="contact-budget" className="block text-xs font-bold uppercase text-zinc-500 mb-2">Budzet Miesieczny</label>
+                              <select
+                                id="contact-budget"
+                                name="budget"
+                                value={formData.budget}
+                                onChange={handleChange}
+                                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-white focus:border-brand-500 outline-none transition-colors"
+                              >
+                                <option value="">Wybierz budzet</option>
+                                {budgetOptions.map((option) => (
+                                  <option key={option}>{option}</option>
+                                ))}
+                              </select>
+                            </div>
+                          </>
+                        )}
+
+                        {(formData.consultationType || formData.note) && (
+                          <div className="rounded-lg border border-brand-500/40 bg-brand-500/10 p-3 text-sm text-zinc-200">
+                            {formData.consultationType && <p><span className="font-semibold">Typ konsultacji:</span> {formData.consultationType}</p>}
+                            {formData.note && <p className="mt-1"><span className="font-semibold">Notatka:</span> {formData.note}</p>}
+                          </div>
+                        )}
 
                         <div className="space-y-3 text-sm text-zinc-400">
                             <label className="flex items-start gap-3">
@@ -226,7 +334,7 @@ const ContactForm: React.FC = () => {
 
                         <p className="text-xs text-zinc-500">Po wyslaniu formularza oddzwaniam zwykle w ciagu 24h.</p>
 
-                        <button type="submit" disabled={loading} className="w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed">
+                        <button type="submit" disabled={loading} className="w-full bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer min-h-[44px] disabled:opacity-60 disabled:cursor-not-allowed">
                             {loading ? 'Wysylam...' : 'Wyslij zgloszenie'}
                             <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                         </button>

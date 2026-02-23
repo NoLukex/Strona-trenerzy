@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import currentTrainer from '../data/currentTrainer';
+import { getQuickWinConfig } from '../data/quickWinConfig';
 
 const FAQ: React.FC = () => {
+  const quickWin = getQuickWinConfig(currentTrainer.slug);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs = [
+  const defaultFaqs = [
     {
       q: "Czy muszę chodzić na siłownię?",
       a: "Nie. Układam plany treningowe również do wykonania w domu, z minimalnym sprzętem lub masą własnego ciała."
@@ -23,10 +26,35 @@ const FAQ: React.FC = () => {
     }
   ];
 
+  const faqsBase = (currentTrainer.faqItems && currentTrainer.faqItems.length > 0)
+    ? currentTrainer.faqItems
+    : defaultFaqs;
+
+  const beginnerFaqs = [
+    {
+      q: 'Nigdy nie cwiczylem regularnie. Czy dam rade?',
+      a: 'Tak. Zaczynamy od prostego planu i lekkiego progu wejscia, zeby od pierwszego tygodnia zlapac regularnosc.',
+    },
+    {
+      q: 'Ile czasu tygodniowo musze zarezerwowac?',
+      a: 'Na start zwykle wystarcza 2-3 treningi tygodniowo plus krotki check-in postepu.',
+    },
+  ];
+
+  const faqs = quickWin.showBeginnerFaqIntro
+    ? [...beginnerFaqs, ...faqsBase]
+    : faqsBase;
+
   return (
     <section id="faq" className="py-24 scroll-mt-20 bg-zinc-900">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-black text-white mb-12 text-center">Częste Pytania</h2>
+
+        {quickWin.showBeginnerFaqIntro && (
+          <div className="mb-6 rounded-xl border border-zinc-800 bg-zinc-950 p-4 text-sm text-zinc-300">
+            Sekcja dla poczatkujacych: odpowiedzi na najczestsze obawy przed pierwszym treningiem.
+          </div>
+        )}
         
         <div className="space-y-4">
           {faqs.map((faq, idx) => (

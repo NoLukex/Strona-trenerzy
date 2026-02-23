@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { Download, CheckCircle2 } from 'lucide-react';
 import { submitLead } from '../services/leadService';
+import currentTrainer from '../data/currentTrainer';
+import { getQuickWinConfig } from '../data/quickWinConfig';
 
 const TrafficEssentials: React.FC = () => {
+  const quickWin = getQuickWinConfig(currentTrainer.slug);
+  const leadMagnetTitle = currentTrainer.leadMagnetTitle || 'Pobierz plan startowy na 7 dni';
+  const leadMagnetText = currentTrainer.leadMagnetText || 'Uniwersalny punkt wejscia dla kazdego trenera: lead magnet, szybka wartosc i naturalne przejscie do wspolpracy 1:1.';
+
   const [email, setEmail] = useState('');
   const [goal, setGoal] = useState('Redukcja tkanki tluszczowej');
+  const [timeline, setTimeline] = useState('');
   const [consent, setConsent] = useState(false);
   const [marketingConsent, setMarketingConsent] = useState(false);
   const [honeypot, setHoneypot] = useState('');
@@ -27,6 +34,10 @@ const TrafficEssentials: React.FC = () => {
         source: 'lead-magnet',
         email,
         goal,
+        timeline: timeline || undefined,
+        note: quickWin.leadMagnetFollowup
+          ? 'Automatyczny follow-up: D+1, D+3, D+7.'
+          : undefined,
         consent,
         marketingConsent,
         honeypot,
@@ -42,6 +53,7 @@ const TrafficEssentials: React.FC = () => {
 
     setSubmitted(true);
     setEmail('');
+    setTimeline('');
     setConsent(false);
     setMarketingConsent(false);
     setHoneypot('');
@@ -56,9 +68,9 @@ const TrafficEssentials: React.FC = () => {
             <Download size={14} />
             Darmowy material startowy
           </div>
-          <h2 className="text-3xl font-black text-white mb-4">Pobierz plan startowy na 7 dni</h2>
+          <h2 className="text-3xl font-black text-white mb-4">{leadMagnetTitle}</h2>
           <p className="text-zinc-400 mb-6">
-            Uniwersalny punkt wejscia dla kazdego trenera: lead magnet, szybka wartosc i naturalne przejscie do wspolpracy 1:1.
+            {leadMagnetText}
           </p>
 
           {submitted ? (
@@ -99,6 +111,31 @@ const TrafficEssentials: React.FC = () => {
                   <option>Powrot po kontuzji</option>
                 </select>
               </div>
+
+              {quickWin.leadMagnetFollowup && (
+                <>
+                  <div>
+                    <label htmlFor="lead-timeline" className="block text-xs font-bold uppercase text-zinc-500 mb-2">
+                      Kiedy chcesz zaczac?
+                    </label>
+                    <select
+                      id="lead-timeline"
+                      value={timeline}
+                      onChange={(e) => setTimeline(e.target.value)}
+                      className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-white focus:border-brand-500 outline-none"
+                    >
+                      <option value="">Wybierz termin</option>
+                      <option>Od razu</option>
+                      <option>W ciagu 14 dni</option>
+                      <option>W ciagu miesiaca</option>
+                      <option>Najpierw konsultacja</option>
+                    </select>
+                  </div>
+                  <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-xs text-zinc-400">
+                    Po zapisie uruchamia sie automatyczny follow-up: D+1 (start), D+3 (korekta), D+7 (plan wdrozenia).
+                  </div>
+                </>
+              )}
               <div className="space-y-2 text-sm text-zinc-400">
                 <label className="flex items-start gap-3">
                   <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} required className="mt-1" />

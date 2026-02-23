@@ -1,10 +1,64 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollToSection';
+import currentTrainer from '../data/currentTrainer';
+import { getQuickWinConfig } from '../data/quickWinConfig';
+import { saveLeadIntent } from '../utils/leadIntent';
 
 const Pricing: React.FC = () => {
-  const handleScrollToContact = (e: React.MouseEvent) => {
+  const quickWin = getQuickWinConfig(currentTrainer.slug);
+  const defaultPlans = [
+    {
+      name: 'Plan Treningowy',
+      subtitle: 'Dla tych, ktorzy potrzebuja tylko mapy.',
+      price: '199 zl',
+      period: '/ msc',
+      features: [
+        'Indywidualny plan treningowy',
+        'Atlas cwiczen wideo',
+        'Raz w miesiacu korekta planu',
+      ],
+      ctaLabel: 'Wybieram plan treningowy',
+    },
+    {
+      name: 'Opieka 1:1 Online',
+      subtitle: 'Kompleksowe prowadzenie dla najlepszych efektow.',
+      price: '349 zl',
+      period: '/ msc',
+      features: [
+        'Wszystko z pakietu podstawowego',
+        'Plan zywieniowy / makroskladniki',
+        'Cotygodniowe raporty i analiza',
+        'Kontakt WhatsApp w godzinach 8-20',
+      ],
+      ctaLabel: 'Wybieram opieke 1:1',
+      featured: true,
+    },
+    {
+      name: 'VIP Hybryda',
+      subtitle: 'Polaczenie online z treningami personalnymi.',
+      price: '999 zl',
+      period: '/ msc',
+      features: [
+        'Pelna opieka online',
+        '4 treningi personalne (Bydgoszcz)',
+        'Analiza skladu ciala co miesiac',
+        'Wspolne zakupy / edukacja',
+      ],
+      ctaLabel: 'Wybieram pakiet VIP',
+    },
+  ];
+
+  const plans = (currentTrainer.pricingPlans && currentTrainer.pricingPlans.length > 0)
+    ? currentTrainer.pricingPlans
+    : defaultPlans;
+
+  const handleScrollToContact = (e: React.MouseEvent, planName: string) => {
     e.preventDefault();
+    saveLeadIntent({
+      goal: planName,
+      source: 'pricing-cta',
+    });
     scrollToSection('contact', { updateHash: true });
   };
 
@@ -17,52 +71,49 @@ const Pricing: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Plan 1 */}
-          <div className="p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col">
-            <h3 className="text-xl font-bold text-white mb-2">Plan Treningowy</h3>
-            <p className="text-zinc-500 text-sm mb-6">Dla tych, którzy potrzebują tylko mapy.</p>
-            <div className="text-3xl font-black text-white mb-6">199 zł <span className="text-sm font-normal text-zinc-500">/ msc</span></div>
-            
-            <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Indywidualny plan treningowy</li>
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Atlas ćwiczeń wideo</li>
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Raz w miesiącu korekta planu</li>
-            </ul>
-            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer">Wybieram plan treningowy</a>
-          </div>
+          {plans.map((plan, idx) => {
+            const featured = Boolean(plan.featured);
+            return (
+              <div
+                key={`${plan.name}-${idx}`}
+                className={featured
+                  ? 'p-8 rounded-2xl bg-zinc-900 border-2 border-brand-500 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-brand-900/20'
+                  : 'p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col'}
+              >
+                {featured && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-zinc-950 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+                    Bestseller
+                  </div>
+                )}
+                <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+                <p className="text-zinc-500 text-sm mb-6">{plan.subtitle}</p>
+                <div className="text-3xl font-black text-white mb-6">
+                  {plan.price} <span className="text-sm font-normal text-zinc-500">{plan.period}</span>
+                </div>
 
-          {/* Plan 2 - Featured */}
-          <div className="p-8 rounded-2xl bg-zinc-900 border-2 border-brand-500 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-brand-900/20">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-zinc-950 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider">
-              Bestseller
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Opieka 1:1 Online</h3>
-            <p className="text-zinc-500 text-sm mb-6">Kompleksowe prowadzenie dla najlepszych efektów.</p>
-            <div className="text-3xl font-black text-white mb-6">349 zł <span className="text-sm font-normal text-zinc-500">/ msc</span></div>
-            
-            <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Wszystko z pakietu podstawowego</li>
-              <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Plan żywieniowy / makroskładniki</li>
-              <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Cotygodniowe raporty i analiza</li>
-              <li className="flex items-center gap-3 text-white text-sm font-medium"><Check size={16} className="text-brand-500" /> Kontakt WhatsApp w godzinach 8-20</li>
-            </ul>
-            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 bg-brand-500 text-zinc-950 rounded-lg text-center font-bold hover:bg-brand-400 transition-colors cursor-pointer">Wybieram opieke 1:1</a>
-          </div>
-
-          {/* Plan 3 */}
-          <div className="p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col">
-            <h3 className="text-xl font-bold text-white mb-2">VIP Hybryda</h3>
-            <p className="text-zinc-500 text-sm mb-6">Połączenie online z treningami personalnymi.</p>
-            <div className="text-3xl font-black text-white mb-6">999 zł <span className="text-sm font-normal text-zinc-500">/ msc</span></div>
-            
-            <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Pełna opieka online</li>
-               <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> 4 treningi personalne (Bydgoszcz)</li>
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Analiza składu ciała co miesiąc</li>
-              <li className="flex items-center gap-3 text-zinc-300 text-sm"><Check size={16} className="text-brand-500" /> Wspólne zakupy / edukacja</li>
-            </ul>
-            <a href="#contact" onClick={handleScrollToContact} className="w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer">Wybieram pakiet VIP</a>
-          </div>
+                <ul className="space-y-4 mb-8 flex-1">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={`${plan.name}-${feature}`}
+                      className={featured ? 'flex items-center gap-3 text-white text-sm font-medium' : 'flex items-center gap-3 text-zinc-300 text-sm'}
+                    >
+                      <Check size={16} className="text-brand-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  onClick={(e) => handleScrollToContact(e, plan.name)}
+                  className={featured
+                    ? 'w-full py-3 bg-brand-500 text-zinc-950 rounded-lg text-center font-bold hover:bg-brand-400 transition-colors cursor-pointer min-h-[44px]'
+                    : 'w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer min-h-[44px]'}
+                >
+                  {quickWin.singleContactCta ? 'Umow konsultacje' : plan.ctaLabel}
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

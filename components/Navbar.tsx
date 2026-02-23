@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-zinc-300 hover:text-brand-500 transition-colors"
+          className="md:hidden w-11 h-11 flex items-center justify-center text-zinc-300 hover:text-brand-500 transition-colors cursor-pointer"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Zamknij menu' : 'Otworz menu'}
           aria-expanded={mobileMenuOpen}
@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
               key={link.name} 
               href={link.href} 
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-lg font-medium text-zinc-300 hover:text-brand-500"
+              className="text-lg font-medium text-zinc-300 hover:text-brand-500 py-2"
             >
               {link.name}
             </a>

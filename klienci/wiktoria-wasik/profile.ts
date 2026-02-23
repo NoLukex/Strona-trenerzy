@@ -24,13 +24,8 @@ const profile: TrainerProfile = {
     accent: '#ef4444',
     accentDark: '#b91c1c',
     accentSoft: '#fca5a5',
-    bg: '#120707',
-    bgSoft: '#1d0d0d',
-    surface: '#291313',
-    surfaceAlt: '#391818',
-    border: '#512222',
-    textMuted: '#d0acac',
   },
 };
 
 export default profile;
+  

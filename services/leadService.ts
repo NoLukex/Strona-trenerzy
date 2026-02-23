@@ -6,6 +6,10 @@ export interface LeadPayload {
   email?: string;
   phone?: string;
   goal?: string;
+  timeline?: string;
+  budget?: string;
+  consultationType?: string;
+  note?: string;
   consent: boolean;
   marketingConsent: boolean;
   honeypot?: string;

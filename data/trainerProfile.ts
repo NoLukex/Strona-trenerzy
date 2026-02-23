@@ -10,6 +10,26 @@ export interface TrainerTheme {
   textMuted: string;
 }
 
+export interface TrainerFeatureItem {
+  title: string;
+  desc: string;
+}
+
+export interface TrainerPricingPlan {
+  name: string;
+  subtitle: string;
+  price: string;
+  period: string;
+  features: string[];
+  ctaLabel: string;
+  featured?: boolean;
+}
+
+export interface TrainerFaqItem {
+  q: string;
+  a: string;
+}
+
 export interface TrainerProfile {
   slug: string;
   fullName: string;
@@ -30,5 +50,15 @@ export interface TrainerProfile {
   heroText: string;
   aboutHeading: string;
   aboutText: string;
+  nicheLabel?: string;
+  quickWin?: string;
+  researchCue?: string;
+  researchSource?: string;
+  researchConfidence?: string;
+  valueProps?: TrainerFeatureItem[];
+  pricingPlans?: TrainerPricingPlan[];
+  faqItems?: TrainerFaqItem[];
+  leadMagnetTitle?: string;
+  leadMagnetText?: string;
   theme: TrainerTheme;
 }

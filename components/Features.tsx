@@ -1,29 +1,31 @@
 import React from 'react';
 import { ShieldCheck, MessageCircle, TrendingUp, Smartphone } from 'lucide-react';
+import currentTrainer from '../data/currentTrainer';
 
 const Features: React.FC = () => {
-  const features = [
+  const defaultFeatures = [
     {
-      icon: <ShieldCheck className="w-8 h-8 text-brand-500" />,
       title: "Plan Szyty na Miarę",
       desc: "Koniec z metodą 'kopiuj-wklej'. Twój plan uwzględnia Twoją anatomię, historię kontuzji i tryb życia."
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-brand-500" />,
       title: "Stały Progres",
       desc: "Monitorujemy wyniki co tydzień. Jeśli waga stanie, reagujemy natychmiast. Żadnych przestojów."
     },
     {
-      icon: <MessageCircle className="w-8 h-8 text-brand-500" />,
       title: "Szybki Kontakt",
       desc: "Masz pytanie o trening lub diete? Dostajesz szybka odpowiedz i jasne wskazowki do wdrozenia."
     },
     {
-      icon: <Smartphone className="w-8 h-8 text-brand-500" />,
       title: "Wygodna Aplikacja",
       desc: "Dostęp do planów, filmów instruktażowych i raportów w jednej, intuicyjnej aplikacji."
     }
   ];
+
+  const icons = [ShieldCheck, TrendingUp, MessageCircle, Smartphone];
+  const features = (currentTrainer.valueProps && currentTrainer.valueProps.length > 0)
+    ? currentTrainer.valueProps
+    : defaultFeatures;
 
   return (
     <section id="features" className="py-24 bg-zinc-950 relative overflow-hidden">
@@ -39,15 +41,18 @@ const Features: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, idx) => (
-            <div key={idx} className="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 hover:border-brand-500/50 transition-all hover:bg-zinc-900 group">
-              <div className="mb-6 bg-zinc-950 w-16 h-16 rounded-xl flex items-center justify-center border border-zinc-800 group-hover:scale-110 transition-transform shadow-lg shadow-black">
-                {feature.icon}
+          {features.map((feature, idx) => {
+            const Icon = icons[idx % icons.length];
+            return (
+              <div key={idx} className="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 hover:border-brand-500/50 transition-all hover:bg-zinc-900 group">
+                <div className="mb-6 bg-zinc-950 w-16 h-16 rounded-xl flex items-center justify-center border border-zinc-800 group-hover:scale-110 transition-transform shadow-lg shadow-black">
+                  <Icon className="w-8 h-8 text-brand-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{feature.desc}</p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">{feature.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

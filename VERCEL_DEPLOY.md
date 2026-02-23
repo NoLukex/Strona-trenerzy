@@ -39,3 +39,22 @@ Optional:
 After env var is set, deploy the project.
 
 Each client gets isolated URL and sees only their own version.
+
+## GitHub auto-deploy for many projects
+
+Vercel has a Git repository connection limit (max 10 projects per one repo link).
+
+For larger batches, use GitHub Actions workflow instead of direct Git linking:
+
+- Workflow file: `.github/workflows/deploy-all-vercel.yml`
+- Script: `scripts/deploy_all_projects_from_repo.py`
+
+Required GitHub repository secrets:
+
+- `VERCEL_TOKEN` - Vercel access token
+- `VERCEL_TEAM_ID` - team id (for example `team_xxx`)
+
+Behavior:
+
+- On every push to `main`, workflow deploys all projects with status `deployed` from `clients_deploy_queue.csv`.
+- Each deployment sets `VITE_CLIENT_SLUG` during build and targets the specific Vercel project from queue.
