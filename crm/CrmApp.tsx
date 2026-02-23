@@ -344,6 +344,49 @@ function initialState(): CrmState {
   };
 }
 
+function syncLeadsWithSeed(state: CrmState): CrmState {
+  const seedLeads = buildSeedLeads(BYDGOSZCZ_PROJECT_ID);
+  const currentProjectLeads = state.leads.filter((lead) => lead.projectId === BYDGOSZCZ_PROJECT_ID);
+  const otherProjectLeads = state.leads.filter((lead) => lead.projectId !== BYDGOSZCZ_PROJECT_ID);
+
+  const existingBySlug = new Map(currentProjectLeads.map((lead) => [lead.slug, lead]));
+  const mergedBySlug = new Map<string, Lead>();
+
+  currentProjectLeads.forEach((lead) => {
+    mergedBySlug.set(lead.slug, lead);
+  });
+
+  seedLeads.forEach((seedLead) => {
+    const existing = existingBySlug.get(seedLead.slug);
+    if (!existing) {
+      mergedBySlug.set(seedLead.slug, seedLead);
+      return;
+    }
+
+    mergedBySlug.set(seedLead.slug, {
+      ...existing,
+      deploymentStatus: seedLead.deploymentStatus || existing.deploymentStatus,
+      title: existing.title && existing.title !== existing.slug ? existing.title : seedLead.title,
+      email: existing.email || seedLead.email,
+      emailStatus: existing.email ? existing.emailStatus : seedLead.emailStatus,
+      phone: existing.phone || seedLead.phone,
+      website: existing.website || seedLead.website,
+      facebook: existing.facebook || seedLead.facebook,
+      instagram: existing.instagram || seedLead.instagram,
+      vercelProject: seedLead.vercelProject || existing.vercelProject,
+      vercelUrl: seedLead.vercelUrl || existing.vercelUrl,
+      priority: existing.priority || seedLead.priority,
+    });
+  });
+
+  const mergedProjectLeads = Array.from(mergedBySlug.values()).sort((a, b) => a.title.localeCompare(b.title));
+
+  return {
+    ...state,
+    leads: [...otherProjectLeads, ...mergedProjectLeads],
+  };
+}
+
 function loadState(): CrmState {
   const stored = localStorage.getItem(STORAGE_KEY);
   if (!stored) {
@@ -355,9 +398,10 @@ function loadState(): CrmState {
     if (!parsed.projects || !parsed.leads || !parsed.notes || !parsed.activity || !parsed.imports) {
       return initialState();
     }
+    const synced = syncLeadsWithSeed(parsed);
     return {
-      ...parsed,
-      leads: parsed.leads.map((lead) => normalizeLead(lead)),
+      ...synced,
+      leads: synced.leads.map((lead) => normalizeLead(lead)),
     };
   } catch {
     return initialState();
@@ -441,9 +485,9 @@ export default function CrmApp() {
   const [search, setSearch] = React.useState('');
   const [emailFilter, setEmailFilter] = React.useState<(typeof EMAIL_FILTERS)[number]>('all');
   const [workflowFilter, setWorkflowFilter] = React.useState<(typeof WORKFLOW_FILTERS)[number]>('all');
-  const [deployGroupFilter, setDeployGroupFilter] = React.useState<(typeof DEPLOY_GROUP_FILTERS)[number]>('new_deploy');
+  const [deployGroupFilter, setDeployGroupFilter] = React.useState<(typeof DEPLOY_GROUP_FILTERS)[number]>('all');
   const [sortMode, setSortMode] = React.useState<(typeof TABLE_SORT_MODES)[number]>('ready_new_first');
-  const [readyOnly, setReadyOnly] = React.useState(true);
+  const [readyOnly, setReadyOnly] = React.useState(false);
   const [newProjectName, setNewProjectName] = React.useState('');
   const [newProjectDescription, setNewProjectDescription] = React.useState('');
   const [importMode, setImportMode] = React.useState<'merge' | 'replace'>('merge');
@@ -494,16 +538,15 @@ export default function CrmApp() {
   }, [outreachPlans]);
 
   const syncFromSourceCsv = React.useCallback(() => {
-    const next = initialState();
-    setState(next);
-    setActiveProjectId(next.projects[0]?.id || '');
+    setState((prev) => syncLeadsWithSeed(prev));
+    setActiveProjectId((prev) => prev || BYDGOSZCZ_PROJECT_ID);
     setSelectedLeadId('');
     setEmailFilter('all');
     setWorkflowFilter('all');
-    setDeployGroupFilter('new_deploy');
+    setDeployGroupFilter('all');
     setSortMode('ready_new_first');
-    setReadyOnly(true);
-    setLastImportMsg('Synced from source CSV files.');
+    setReadyOnly(false);
+    setLastImportMsg('Synced from source CSV files (manual emails preserved).');
   }, []);
 
   React.useEffect(() => {

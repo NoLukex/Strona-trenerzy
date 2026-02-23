@@ -14,6 +14,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_CSV = ROOT / "clients_deploy_queue.csv"
+CONTACTS_CSV = ROOT / "outreach" / "deployed_contacts.csv"
+REDEPLOY_RESULTS_CSV = ROOT / "reports" / "redeploy_meta_refresh_results.csv"
 LOCAL_VERCEL_DIR = ROOT / ".vercel"
 LOCAL_PROJECT_JSON = LOCAL_VERCEL_DIR / "project.json"
 
@@ -60,6 +62,21 @@ def parse_args() -> argparse.Namespace:
         default=0.2,
         help="Delay between deployments to avoid bursts",
     )
+    parser.add_argument(
+        "--require-email",
+        action="store_true",
+        help="Deploy only leads with non-empty email in outreach/deployed_contacts.csv",
+    )
+    parser.add_argument(
+        "--new-deploy-only",
+        action="store_true",
+        help="Deploy only slugs marked as deployed in reports/redeploy_meta_refresh_results.csv",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print targets only (no Vercel deploy calls)",
+    )
     return parser.parse_args()
 
 
@@ -97,9 +114,14 @@ def get_projects_index(token: str, team_id: str) -> dict[str, dict]:
     return projects
 
 
-def load_targets(status: str, limit: int) -> list[dict[str, str]]:
+def load_targets(
+    status: str,
+    limit: int,
+    require_email: bool,
+    new_deploy_only: bool,
+) -> list[dict[str, str]]:
     rows = list(csv.DictReader(QUEUE_CSV.open(encoding="utf-8", newline="")))
-    targets = [
+    targets: list[dict[str, str]] = [
         {
             "slug": (row.get("slug") or "").strip(),
             "project": (row.get("vercel_project") or "").strip(),
@@ -109,6 +131,24 @@ def load_targets(status: str, limit: int) -> list[dict[str, str]]:
         and (row.get("slug") or "").strip()
         and (row.get("vercel_project") or "").strip()
     ]
+
+    if require_email:
+        contacts = {
+            (row.get("slug") or "").strip(): (row.get("email") or "").strip()
+            for row in csv.DictReader(CONTACTS_CSV.open(encoding="utf-8", newline=""))
+        }
+        targets = [item for item in targets if contacts.get(item["slug"], "").strip()]
+
+    if new_deploy_only:
+        redeploy_status = {
+            (row.get("slug") or "").strip(): (row.get("status") or "").strip()
+            for row in csv.DictReader(
+                REDEPLOY_RESULTS_CSV.open(encoding="utf-8", newline="")
+            )
+        }
+        targets = [
+            item for item in targets if redeploy_status.get(item["slug"]) == "deployed"
+        ]
 
     if limit and limit > 0:
         return targets[:limit]
@@ -165,9 +205,24 @@ def main() -> int:
         print("Missing VERCEL_TEAM_ID (--team-id)", file=sys.stderr)
         return 1
 
-    targets = load_targets(status=args.status, limit=args.limit)
+    targets = load_targets(
+        status=args.status,
+        limit=args.limit,
+        require_email=args.require_email,
+        new_deploy_only=args.new_deploy_only,
+    )
     if not targets:
         print("No target projects found")
+        return 0
+
+    print(
+        f"TARGETS count={len(targets)} status={args.status} "
+        f"require_email={args.require_email} new_deploy_only={args.new_deploy_only}"
+    )
+    if args.dry_run:
+        for item in targets:
+            print(f"DRY {item['project']} ({item['slug']})")
+        print("DONE dry-run")
         return 0
 
     index = get_projects_index(args.token, args.team_id)
