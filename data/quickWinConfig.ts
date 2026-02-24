@@ -1,3 +1,5 @@
+import { torunTrainerQuickWinOverrides } from './torunTrainerQuickWinOverrides';
+
 export type HeroMode =
   | 'default'
   | 'split-goals'
@@ -150,6 +152,7 @@ const quickWinOverrides: Record<string, Partial<QuickWinConfig>> = {
     hideBasePricing: true,
     singleContactCta: true,
   },
+  ...(torunTrainerQuickWinOverrides as Record<string, Partial<QuickWinConfig>>),
 };
 
 export const getQuickWinConfig = (slug: string): QuickWinConfig => ({

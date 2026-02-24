@@ -1,11 +1,17 @@
 import { defaultTrainerSlug, trainerProfiles } from './trainerProfiles';
 import fallbackTrainer from './fallbackTrainer';
 import { emailTrainerPersonalization } from './emailTrainerPersonalization';
+import { torunTrainerProfiles } from './torunTrainerProfiles';
 import type { TrainerProfile } from './trainerProfile';
+
+const allTrainerProfiles: Record<string, TrainerProfile> = {
+  ...trainerProfiles,
+  ...torunTrainerProfiles,
+};
 
 const getSlugFromEnv = (): string | null => {
   const envSlug = (import.meta.env.VITE_CLIENT_SLUG || '').trim().toLowerCase();
-  if (envSlug && trainerProfiles[envSlug]) {
+  if (envSlug && allTrainerProfiles[envSlug]) {
     return envSlug;
   }
 
@@ -18,12 +24,12 @@ const getSlugFromPath = (): string | null => {
   }
 
   const querySlug = (new URLSearchParams(window.location.search).get('trainer') || '').trim().toLowerCase();
-  if (querySlug && trainerProfiles[querySlug]) {
+  if (querySlug && allTrainerProfiles[querySlug]) {
     return querySlug;
   }
 
   const match = window.location.pathname.match(/^\/t\/([a-z0-9-]+)/i);
-  if (match && trainerProfiles[match[1]]) {
+  if (match && allTrainerProfiles[match[1]]) {
     return match[1];
   }
 
@@ -37,9 +43,9 @@ const getSlugFromHostname = (): string | null => {
 
   const host = window.location.hostname.toLowerCase();
   const firstLabel = host.split('.')[0];
-  const allSlugs = Object.keys(trainerProfiles);
+  const allSlugs = Object.keys(allTrainerProfiles);
 
-  if (trainerProfiles[firstLabel]) {
+  if (allTrainerProfiles[firstLabel]) {
     return firstLabel;
   }
 
@@ -47,7 +53,7 @@ const getSlugFromHostname = (): string | null => {
     ? firstLabel.replace(/^trener-/, '')
     : firstLabel;
 
-  if (trainerProfiles[candidate]) {
+  if (allTrainerProfiles[candidate]) {
     return candidate;
   }
 
@@ -70,8 +76,8 @@ const useLocalDefault =
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
 const baseTrainer =
-  (resolvedSlug && trainerProfiles[resolvedSlug]) ||
-  (useLocalDefault ? trainerProfiles[defaultTrainerSlug] : null) ||
+  (resolvedSlug && allTrainerProfiles[resolvedSlug]) ||
+  (useLocalDefault ? allTrainerProfiles[defaultTrainerSlug] : null) ||
   fallbackTrainer;
 
 const trainerOverride = emailTrainerPersonalization[baseTrainer.slug];

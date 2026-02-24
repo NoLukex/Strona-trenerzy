@@ -28,6 +28,7 @@ import wave4ReplacementCsvRaw from '../data/deploy_reports/wave4-replacement_dep
 import wave4Replacement2CsvRaw from '../data/deploy_reports/wave4-replacement2_deploy_results.csv?raw';
 import redeployResultsCsvRaw from '../reports/redeploy_meta_refresh_results.csv?raw';
 import outreachPlaybookCsvRaw from '../outreach/personalized_outreach_playbook.csv?raw';
+import torunLeadsCsvRaw from '../data/torun_trenerzy_personalny_2024.csv?raw';
 
 type Project = {
   id: string;
@@ -122,6 +123,7 @@ type OutreachPlan = {
 
 const STORAGE_KEY = 'trainer_crm_state_v4';
 const BYDGOSZCZ_PROJECT_ID = 'project-trenerzy-personalni-bydgoszcz';
+const TORUN_PROJECT_ID = 'project-trenerzy-personalni-torun';
 const EMAIL_FILTERS = ['all', 'verified', 'not_found'] as const;
 const WORKFLOW_FILTERS = ['all', 'new', 'review', 'ready_to_send', 'sent', 'follow_up', 'closed'] as const;
 const DEPLOY_GROUP_FILTERS = ['all', 'new_deploy', 'old_deploy'] as const;
@@ -133,6 +135,21 @@ function nowIso(): string {
 
 function uid(prefix: string): string {
   return `${prefix}-${Math.random().toString(36).slice(2, 10)}-${Date.now().toString(36)}`;
+}
+
+function getDefaultProjectId(projects: Project[]): string {
+  const torunProject = projects.find((project) => project.id === TORUN_PROJECT_ID);
+  return torunProject?.id || projects[0]?.id || '';
+}
+
+function slugify(value: string): string {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-{2,}/g, '-');
 }
 
 function parseCsv(raw: string): string[][] {
@@ -271,6 +288,52 @@ function buildSeedLeads(projectId: string): Lead[] {
   return leads.sort((a, b) => a.title.localeCompare(b.title));
 }
 
+function buildTorunSeedLeads(projectId: string): Lead[] {
+  const records = parseCsvObjects(torunLeadsCsvRaw);
+  const usedSlugs = new Set<string>();
+
+  const leads = records
+    .filter((row) => row.nazwa)
+    .map((row, i) => {
+      const normalizedSlug = slugify(row.nazwa || '') || `lead-${i + 1}`;
+      const baseSlug = `torun-${normalizedSlug}`;
+      let slug = baseSlug;
+      let suffix = 2;
+      while (usedSlugs.has(slug)) {
+        slug = `${baseSlug}-${suffix}`;
+        suffix += 1;
+      }
+      usedSlugs.add(slug);
+
+      const email = (row.email || '').split(';')[0]?.trim() || '';
+      const emailStatus: Lead['emailStatus'] = email ? 'verified' : 'not_found';
+
+      return {
+        id: uid('lead'),
+        projectId,
+        deploymentStatus: 'imported',
+        slug,
+        title: row.nazwa || slug,
+        email,
+        emailStatus,
+        workflowStatus: email ? 'review' : 'new',
+        phone: row.telefon || '',
+        website: row.strona_www || '',
+        facebook: row.facebook || '',
+        instagram: row.instagram || '',
+        vercelProject: '',
+        vercelUrl: '',
+        priority: 'medium',
+        owner: '',
+        tags: ['torun_2024'],
+        nextActionDate: '',
+        updatedAt: nowIso(),
+      } satisfies Lead;
+    });
+
+  return leads.sort((a, b) => a.title.localeCompare(b.title));
+}
+
 function csvToLeads(raw: string, projectId: string): Lead[] {
   const records = parseCsvObjects(raw);
   return records.map((row, i) => {
@@ -327,34 +390,36 @@ function buildLocalTrainerUrl(slug: string): string {
 
 function initialState(): CrmState {
   const ts = nowIso();
-  const project: Project = {
+  const bydgoszczProject: Project = {
     id: BYDGOSZCZ_PROJECT_ID,
     name: 'Trenerzy personalni - Bydgoszcz',
     description: 'Projekt glowny: leady i strony trenerow z Bydgoszczy.',
     createdAt: ts,
     updatedAt: ts,
   };
+  const torunProject: Project = {
+    id: TORUN_PROJECT_ID,
+    name: 'Trenerzy personalni - Torun',
+    description: 'Projekt: baza leadow trenerow personalnych z Torunia.',
+    createdAt: ts,
+    updatedAt: ts,
+  };
 
   return {
-    projects: [project],
-    leads: buildSeedLeads(BYDGOSZCZ_PROJECT_ID),
+    projects: [bydgoszczProject, torunProject],
+    leads: [...buildSeedLeads(BYDGOSZCZ_PROJECT_ID), ...buildTorunSeedLeads(TORUN_PROJECT_ID)],
     notes: [],
     activity: [],
     imports: [],
   };
 }
 
-function syncLeadsWithSeed(state: CrmState): CrmState {
-  const seedLeads = buildSeedLeads(BYDGOSZCZ_PROJECT_ID);
-  const currentProjectLeads = state.leads.filter((lead) => lead.projectId === BYDGOSZCZ_PROJECT_ID);
-  const otherProjectLeads = state.leads.filter((lead) => lead.projectId !== BYDGOSZCZ_PROJECT_ID);
+function mergeProjectSeedLeads(state: CrmState, projectId: string, seedLeads: Lead[]): CrmState {
+  const currentProjectLeads = state.leads.filter((lead) => lead.projectId === projectId);
+  const otherProjectLeads = state.leads.filter((lead) => lead.projectId !== projectId);
 
   const existingBySlug = new Map(currentProjectLeads.map((lead) => [lead.slug, lead]));
   const mergedBySlug = new Map<string, Lead>();
-
-  currentProjectLeads.forEach((lead) => {
-    mergedBySlug.set(lead.slug, lead);
-  });
 
   seedLeads.forEach((seedLead) => {
     const existing = existingBySlug.get(seedLead.slug);
@@ -367,8 +432,8 @@ function syncLeadsWithSeed(state: CrmState): CrmState {
       ...existing,
       deploymentStatus: seedLead.deploymentStatus || existing.deploymentStatus,
       title: existing.title && existing.title !== existing.slug ? existing.title : seedLead.title,
-      email: existing.email || seedLead.email,
-      emailStatus: existing.email ? existing.emailStatus : seedLead.emailStatus,
+      email: seedLead.email || existing.email,
+      emailStatus: seedLead.email ? seedLead.emailStatus : existing.emailStatus,
       phone: existing.phone || seedLead.phone,
       website: existing.website || seedLead.website,
       facebook: existing.facebook || seedLead.facebook,
@@ -385,6 +450,38 @@ function syncLeadsWithSeed(state: CrmState): CrmState {
     ...state,
     leads: [...otherProjectLeads, ...mergedProjectLeads],
   };
+}
+
+function syncLeadsWithSeed(state: CrmState): CrmState {
+  const seededProjects: Project[] = [
+    {
+      id: BYDGOSZCZ_PROJECT_ID,
+      name: 'Trenerzy personalni - Bydgoszcz',
+      description: 'Projekt glowny: leady i strony trenerow z Bydgoszczy.',
+      createdAt: nowIso(),
+      updatedAt: nowIso(),
+    },
+    {
+      id: TORUN_PROJECT_ID,
+      name: 'Trenerzy personalni - Torun',
+      description: 'Projekt: baza leadow trenerow personalnych z Torunia.',
+      createdAt: nowIso(),
+      updatedAt: nowIso(),
+    },
+  ];
+
+  const existingIds = new Set(state.projects.map((project) => project.id));
+  const mergedProjects = [...state.projects];
+  seededProjects.forEach((project) => {
+    if (!existingIds.has(project.id)) {
+      mergedProjects.push(project);
+    }
+  });
+
+  let merged = { ...state, projects: mergedProjects };
+  merged = mergeProjectSeedLeads(merged, BYDGOSZCZ_PROJECT_ID, buildSeedLeads(BYDGOSZCZ_PROJECT_ID));
+  merged = mergeProjectSeedLeads(merged, TORUN_PROJECT_ID, buildTorunSeedLeads(TORUN_PROJECT_ID));
+  return merged;
 }
 
 function loadState(): CrmState {
@@ -479,7 +576,7 @@ function downloadText(filename: string, text: string): void {
 
 export default function CrmApp() {
   const [state, setState] = React.useState<CrmState>(() => loadState());
-  const [activeProjectId, setActiveProjectId] = React.useState<string>(() => loadState().projects[0]?.id || '');
+  const [activeProjectId, setActiveProjectId] = React.useState<string>(() => getDefaultProjectId(loadState().projects));
   const [activeTab, setActiveTab] = React.useState<'leads' | 'mailing'>('leads');
   const [selectedLeadId, setSelectedLeadId] = React.useState<string>('');
   const [search, setSearch] = React.useState('');
@@ -539,7 +636,7 @@ export default function CrmApp() {
 
   const syncFromSourceCsv = React.useCallback(() => {
     setState((prev) => syncLeadsWithSeed(prev));
-    setActiveProjectId((prev) => prev || BYDGOSZCZ_PROJECT_ID);
+    setActiveProjectId((prev) => prev || TORUN_PROJECT_ID);
     setSelectedLeadId('');
     setEmailFilter('all');
     setWorkflowFilter('all');
@@ -555,7 +652,7 @@ export default function CrmApp() {
 
   React.useEffect(() => {
     if (!activeProjectId && state.projects[0]) {
-      setActiveProjectId(state.projects[0].id);
+      setActiveProjectId(getDefaultProjectId(state.projects));
     }
   }, [activeProjectId, state.projects]);
 
