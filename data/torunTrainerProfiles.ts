@@ -18,11 +18,11 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 4.8,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Wspolpraca oparta o analize ruchu, bezpieczna progresje i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "Karolina Łapińska Trenerka Medyczna - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciazeniami i z celem bezpiecznego powrotu do formy. Priorytet na stronie: Dodac cennik 3 pakietow i uzupelnic linki social (IG/FB).",
+    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Dodać cennik 3 pakietów i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
-    "quickWin": "Dodac cennik 3 pakietow i uzupelnic linki social (IG/FB).",
+    "quickWin": "Dodać cennik 3 pakietów i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Karolina Łapińska Trenerka Medyczna",
     "researchSource": "https://karolinatreningmedyczny.pl/",
     "researchConfidence": "high",
@@ -32,21 +32,21 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Najpierw diagnoza ruchowa i jasny plan pierwszych 4 tygodni."
       },
       {
-        "title": "Sciezka bol -> forma",
-        "desc": "Plan prowadzi od bezpiecznych wzorcow ruchu do regularnego treningu."
+        "title": "Ścieżka bol -> forma",
+        "desc": "Plan prowadzi od bezpiecznych wzorców ruchu do regularnego treningu."
       },
       {
         "title": "Cotygodniowa korekta",
-        "desc": "Regulujemy obciazenie i technike na podstawie realnych reakcji ciala."
+        "desc": "Regulujemy obciążenie i technikę na podstawie realnych reakcji ciała."
       },
       {
         "title": "Wyniki mierzalne",
-        "desc": "Mniej bolu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
+        "desc": "Mniej bólu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
       }
     ],
     "pricingPlans": [
       {
-        "name": "Start Bez Bolu",
+        "name": "Start Bez Bólu",
         "subtitle": "Pierwsze 4 tygodnie pod kontrola.",
         "price": "299 zl",
         "period": "/ mies",
@@ -55,7 +55,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
           "Plan medyczny pod objawy",
           "Korekta techniki 1x tygodniowo"
         ],
-        "ctaLabel": "Wybieram Start Bez Bolu"
+        "ctaLabel": "Wybieram Start Bez Bólu"
       },
       {
         "name": "Ruch + Sila",
@@ -86,7 +86,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy moge trenowac przy bolu plecow lub kolan?",
+        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -98,12 +98,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Nie zawsze. Start mozliwy jest rowniez w domu z podstawowym sprzetem."
       },
       {
-        "q": "Czy jest kontakt miedzy treningami?",
-        "a": "Tak, szybkie korekty miedzy sesjami pomagaja utrzymac bezpieczny progres."
+        "q": "Czy jest kontakt między treningami?",
+        "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bolu",
-    "leadMagnetText": "Krotki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#06b6d4",
       "accentDark": "#0e7490",
@@ -132,10 +132,10 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Kany Personal - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
     "nicheLabel": "trening personalny 1:1",
     "quickWin": "Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
     "researchCue": "Profil lokalny: Kany Personal",
@@ -147,8 +147,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -156,13 +156,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -174,14 +174,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -194,31 +194,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#eab308",
       "accentDark": "#a16207",
@@ -247,12 +247,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "https://www.facebook.com/hasacademytorun",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "HAS ACADEMY Studio Treningu Personalnego - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "quickWin": "Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "researchCue": "Profil lokalny: HAS ACADEMY Studio Treningu Personalnego",
     "researchSource": "http://www.hasacademy.pl/",
     "researchConfidence": "high",
@@ -262,8 +262,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -271,13 +271,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -289,14 +289,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -309,31 +309,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#ef4444",
       "accentDark": "#b91c1c",
@@ -362,12 +362,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "FIT ROOM by Zawada - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: FIT ROOM by Zawada",
     "researchSource": "",
     "researchConfidence": "medium",
@@ -377,8 +377,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -386,13 +386,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -404,14 +404,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -424,31 +424,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#eab308",
       "accentDark": "#a16207",
@@ -478,11 +478,11 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Wspolpraca oparta o analize ruchu, bezpieczna progresje i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "PoProstu Siłka - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciazeniami i z celem bezpiecznego powrotu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
-    "quickWin": "Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: PoProstu Siłka - Nikola Detmer (Trening Medyczny)",
     "researchSource": "",
     "researchConfidence": "medium",
@@ -492,21 +492,21 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Najpierw diagnoza ruchowa i jasny plan pierwszych 4 tygodni."
       },
       {
-        "title": "Sciezka bol -> forma",
-        "desc": "Plan prowadzi od bezpiecznych wzorcow ruchu do regularnego treningu."
+        "title": "Ścieżka bol -> forma",
+        "desc": "Plan prowadzi od bezpiecznych wzorców ruchu do regularnego treningu."
       },
       {
         "title": "Cotygodniowa korekta",
-        "desc": "Regulujemy obciazenie i technike na podstawie realnych reakcji ciala."
+        "desc": "Regulujemy obciążenie i technikę na podstawie realnych reakcji ciała."
       },
       {
         "title": "Wyniki mierzalne",
-        "desc": "Mniej bolu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
+        "desc": "Mniej bólu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
       }
     ],
     "pricingPlans": [
       {
-        "name": "Start Bez Bolu",
+        "name": "Start Bez Bólu",
         "subtitle": "Pierwsze 4 tygodnie pod kontrola.",
         "price": "299 zl",
         "period": "/ mies",
@@ -515,7 +515,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
           "Plan medyczny pod objawy",
           "Korekta techniki 1x tygodniowo"
         ],
-        "ctaLabel": "Wybieram Start Bez Bolu"
+        "ctaLabel": "Wybieram Start Bez Bólu"
       },
       {
         "name": "Ruch + Sila",
@@ -546,7 +546,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy moge trenowac przy bolu plecow lub kolan?",
+        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -558,12 +558,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Nie zawsze. Start mozliwy jest rowniez w domu z podstawowym sprzetem."
       },
       {
-        "q": "Czy jest kontakt miedzy treningami?",
-        "a": "Tak, szybkie korekty miedzy sesjami pomagaja utrzymac bezpieczny progres."
+        "q": "Czy jest kontakt między treningami?",
+        "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bolu",
-    "leadMagnetText": "Krotki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -592,12 +592,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Trener Personalny Piotr Siemiński - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac cennik 3 pakietow, formularz lead i szybka rezerwacje konsultacji.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać cennik 3 pakietów, formularz lead i szybką rezerwację konsultacji.",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac cennik 3 pakietow, formularz lead i szybka rezerwacje konsultacji.",
+    "quickWin": "Dodać cennik 3 pakietów, formularz lead i szybką rezerwację konsultacji.",
     "researchCue": "Profil lokalny: Trener Personalny Piotr Siemiński",
     "researchSource": "https://sieminskitp.my.canva.site/",
     "researchConfidence": "high",
@@ -607,8 +607,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -616,13 +616,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -634,14 +634,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -654,31 +654,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#eab308",
       "accentDark": "#a16207",
@@ -707,12 +707,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Trener Personalny Paweł Barański - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac cennik 3 pakietow, formularz lead i sekcje opinii z Google.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać cennik 3 pakietów, formularz lead i sekcje opinii z Google.",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac cennik 3 pakietow, formularz lead i sekcje opinii z Google.",
+    "quickWin": "Dodać cennik 3 pakietów, formularz lead i sekcje opinii z Google.",
     "researchCue": "Profil lokalny: Trener Personalny Paweł Barański",
     "researchSource": "https://www.trytostopme.pl/",
     "researchConfidence": "high",
@@ -722,8 +722,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -731,13 +731,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -749,14 +749,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -769,31 +769,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -822,12 +822,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 4.8,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Trener Personalny Sebastian Trenuje - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Trener Personalny Sebastian Trenuje",
     "researchSource": "",
     "researchConfidence": "medium",
@@ -837,8 +837,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -846,13 +846,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -864,14 +864,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -884,31 +884,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#ef4444",
       "accentDark": "#b91c1c",
@@ -937,12 +937,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "https://www.facebook.com/profile.php?id=100066918219003",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Body Development Mateusz Golus - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "quickWin": "Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "researchCue": "Profil lokalny: Body Development Mateusz Golus",
     "researchSource": "http://mateuszgolus.pl/",
     "researchConfidence": "high",
@@ -952,8 +952,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -961,13 +961,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -979,14 +979,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -999,31 +999,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#ef4444",
       "accentDark": "#b91c1c",
@@ -1052,12 +1052,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Pure Power Studio Treningu Personalnego - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Pure Power Studio Treningu Personalnego",
     "researchSource": "",
     "researchConfidence": "medium",
@@ -1067,8 +1067,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1076,13 +1076,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -1094,14 +1094,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -1114,31 +1114,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#ef4444",
       "accentDark": "#b91c1c",
@@ -1167,12 +1167,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 4.8,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Radek Skonieczny - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Naprawic dzialajaca strone WWW i uzupelnic linki social (IG/FB).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Naprawic dzialajaca strone WWW i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Naprawic dzialajaca strone WWW i uzupelnic linki social (IG/FB).",
+    "quickWin": "Naprawic dzialajaca strone WWW i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Radek Skonieczny - Trener Personalny",
     "researchSource": "http://www.radekskonieczny.pl/",
     "researchConfidence": "high",
@@ -1182,8 +1182,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1191,13 +1191,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -1209,14 +1209,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -1229,31 +1229,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#22c55e",
       "accentDark": "#15803d",
@@ -1283,11 +1283,11 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Wspolpraca oparta o analize ruchu, bezpieczna progresje i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "JUST Pilates Toruń - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciazeniami i z celem bezpiecznego powrotu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
-    "quickWin": "Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: JUST Pilates Toruń - Justyna Krauze",
     "researchSource": "",
     "researchConfidence": "medium",
@@ -1297,21 +1297,21 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Najpierw diagnoza ruchowa i jasny plan pierwszych 4 tygodni."
       },
       {
-        "title": "Sciezka bol -> forma",
-        "desc": "Plan prowadzi od bezpiecznych wzorcow ruchu do regularnego treningu."
+        "title": "Ścieżka bol -> forma",
+        "desc": "Plan prowadzi od bezpiecznych wzorców ruchu do regularnego treningu."
       },
       {
         "title": "Cotygodniowa korekta",
-        "desc": "Regulujemy obciazenie i technike na podstawie realnych reakcji ciala."
+        "desc": "Regulujemy obciążenie i technikę na podstawie realnych reakcji ciała."
       },
       {
         "title": "Wyniki mierzalne",
-        "desc": "Mniej bolu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
+        "desc": "Mniej bólu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
       }
     ],
     "pricingPlans": [
       {
-        "name": "Start Bez Bolu",
+        "name": "Start Bez Bólu",
         "subtitle": "Pierwsze 4 tygodnie pod kontrola.",
         "price": "299 zl",
         "period": "/ mies",
@@ -1320,7 +1320,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
           "Plan medyczny pod objawy",
           "Korekta techniki 1x tygodniowo"
         ],
-        "ctaLabel": "Wybieram Start Bez Bolu"
+        "ctaLabel": "Wybieram Start Bez Bólu"
       },
       {
         "name": "Ruch + Sila",
@@ -1351,7 +1351,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy moge trenowac przy bolu plecow lub kolan?",
+        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -1363,12 +1363,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Nie zawsze. Start mozliwy jest rowniez w domu z podstawowym sprzetem."
       },
       {
-        "q": "Czy jest kontakt miedzy treningami?",
-        "a": "Tak, szybkie korekty miedzy sesjami pomagaja utrzymac bezpieczny progres."
+        "q": "Czy jest kontakt między treningami?",
+        "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bolu",
-    "leadMagnetText": "Krotki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#22c55e",
       "accentDark": "#15803d",
@@ -1400,24 +1400,24 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "heroTitleAccent": "KROK PO KROKU.",
     "heroText": "Program pod redukcje lub budowe sylwetki z jasnym procesem, kontrola postepu i wsparciem 1:1.",
     "aboutHeading": "Anaboliczny trener - trening personalny w Toruniu.",
-    "aboutText": "Wspolpraca skupiona na realnych efektach, prostym planie i utrzymaniu regularnosci na co dzien. Priorytet na stronie: Dodac szybka rezerwacje konsultacji i mocniejsze CTA na stronie glownej.",
+    "aboutText": "Współpraca skupiona na realnych efektach, prostym planie i utrzymaniu regularnosci na co dzien. Priorytet na stronie: Dodać szybką rezerwację konsultacji i mocniejsze CTA na stronie glownej.",
     "nicheLabel": "metamorfoza sylwetki",
-    "quickWin": "Dodac szybka rezerwacje konsultacji i mocniejsze CTA na stronie glownej.",
+    "quickWin": "Dodać szybką rezerwację konsultacji i mocniejsze CTA na stronie glownej.",
     "researchCue": "Profil lokalny: Anaboliczny trener",
     "researchSource": "http://www.anabolicznytrener.pl/",
     "researchConfidence": "high",
     "valueProps": [
       {
         "title": "Plan pierwszych 30 dni",
-        "desc": "Jasny start: diagnoza, plan i pierwsze nawyki bez przeciazenia."
+        "desc": "Jasny start: diagnoza, plan i pierwsze nawyki bez przeciążeńia."
       },
       {
         "title": "Dowody efektow",
-        "desc": "Case studies z wynikiem, czasem wspolpracy i kontekstem klienta."
+        "desc": "Case studies z wynikiem, czasem współpracy i kontekstem klienta."
       },
       {
         "title": "Jeden glowny CTA",
-        "desc": "Krotka droga od wejscia na strone do umowienia konsultacji."
+        "desc": "Krotka droga od wejscia na strone do umówienia konsultacji."
       },
       {
         "title": "Cotygodniowe korekty",
@@ -1427,12 +1427,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "pricingPlans": [
       {
         "name": "Start Sylwetka",
-        "subtitle": "Plan i wdrozenie na 4 tygodnie.",
+        "subtitle": "Plan i wdrożenie na 4 tygodnie.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
           "Plan treningowy pod cel",
-          "Podstawy odzywiania i nawykow",
+          "Podstawy odżywiania i nawykow",
           "Kontrola postepu raz w tygodniu"
         ],
         "ctaLabel": "Wybieram Start Sylwetka"
@@ -1445,7 +1445,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
-          "Plan zywieniowy i monitoring",
+          "Plan żywieniowy i monitoring",
           "Cotygodniowy raport",
           "Kontakt biezacy"
         ],
@@ -1459,7 +1459,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe konsultacje",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Metamorfoza"
       }
@@ -1471,11 +1471,11 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "q": "Kiedy widac pierwsze efekty?",
-        "a": "Najczesciej po 3-4 tygodniach widac pierwsze roznice w obwodach i samopoczuciu."
+        "a": "Najczęśćiej po 3-4 tygodniach widac pierwsze roznice w obwodach i samopoczuciu."
       },
       {
         "q": "Czy dieta jest restrykcyjna?",
-        "a": "Nie. Priorytetem sa nawyki i plan, ktory da sie utrzymac dlugoterminowo."
+        "a": "Nie. Priorytetem sa nawyki i plan, który da sie utrzymac dlugoterminowo."
       },
       {
         "q": "Jak wyglada kontakt?",
@@ -1512,12 +1512,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "https://www.facebook.com/speedfitEMS",
     "rating": 4.9,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "SpeedFit EMS by Paula Wisienka - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "quickWin": "Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "researchCue": "Profil lokalny: SpeedFit EMS by Paula Wisienka",
     "researchSource": "http://www.speedfittorun.pl/",
     "researchConfidence": "high",
@@ -1527,8 +1527,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1536,13 +1536,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -1554,14 +1554,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -1574,31 +1574,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#eab308",
       "accentDark": "#a16207",
@@ -1627,12 +1627,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "4Ever Young Studio Treningowe - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Naprawic dzialajaca strone WWW i uzupelnic linki social (IG/FB).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Naprawic dzialajaca strone WWW i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Naprawic dzialajaca strone WWW i uzupelnic linki social (IG/FB).",
+    "quickWin": "Naprawic dzialajaca strone WWW i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: 4Ever Young Studio Treningowe",
     "researchSource": "http://4everyoungstudio.pl/",
     "researchConfidence": "high",
@@ -1642,8 +1642,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1651,13 +1651,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -1669,14 +1669,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -1689,31 +1689,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#94c918",
       "accentDark": "#73a10f",
@@ -1742,12 +1742,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "http://facebook.com/ImStudioTorun",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "I'M STUDIO Trening Personalny Terapia Ruchem - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac sekcje opinii i gwiazdki Google na stronie glownej.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać sekcje opinii i gwiazdki Google na stronie glownej.",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac sekcje opinii i gwiazdki Google na stronie glownej.",
+    "quickWin": "Dodać sekcje opinii i gwiazdki Google na stronie glownej.",
     "researchCue": "Profil lokalny: I'M STUDIO Trening Personalny Terapia Ruchem",
     "researchSource": "https://imstudio.eu/",
     "researchConfidence": "high",
@@ -1757,8 +1757,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1766,13 +1766,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -1784,14 +1784,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -1804,31 +1804,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#06b6d4",
       "accentDark": "#0e7490",
@@ -1857,10 +1857,10 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Adam Zieliński - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
     "nicheLabel": "trening personalny 1:1",
     "quickWin": "Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
     "researchCue": "Profil lokalny: Adam Zieliński",
@@ -1872,8 +1872,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1881,13 +1881,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -1899,14 +1899,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -1919,31 +1919,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#94c918",
       "accentDark": "#73a10f",
@@ -1972,12 +1972,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "",
     "rating": 4.3,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Polak Academy EMS & Personal Training - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac cennik 3 pakietow, formularz lead i szybka rezerwacje konsultacji.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać cennik 3 pakietów, formularz lead i szybką rezerwację konsultacji.",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac cennik 3 pakietow, formularz lead i szybka rezerwacje konsultacji.",
+    "quickWin": "Dodać cennik 3 pakietów, formularz lead i szybką rezerwację konsultacji.",
     "researchCue": "Profil lokalny: Polak Academy EMS & Personal Training",
     "researchSource": "https://www.facebook.com/PolakAcademyTorun",
     "researchConfidence": "high",
@@ -1987,8 +1987,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -1996,13 +1996,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -2014,14 +2014,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -2034,31 +2034,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#94c918",
       "accentDark": "#73a10f",
@@ -2087,12 +2087,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "https://www.facebook.com/TwardyFitnessCenter",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Twardy Fitness Center - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac cennik 3 pakietow, formularz lead i szybka rezerwacje konsultacji.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać cennik 3 pakietów, formularz lead i szybką rezerwację konsultacji.",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac cennik 3 pakietow, formularz lead i szybka rezerwacje konsultacji.",
+    "quickWin": "Dodać cennik 3 pakietów, formularz lead i szybką rezerwację konsultacji.",
     "researchCue": "Profil lokalny: Twardy Fitness Center",
     "researchSource": "http://twardyfitnesscenter.pl/",
     "researchConfidence": "high",
@@ -2102,8 +2102,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -2111,13 +2111,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -2129,14 +2129,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -2149,31 +2149,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#ef4444",
       "accentDark": "#b91c1c",
@@ -2202,12 +2202,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "https://www.facebook.com/DrylaPRO",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "DRYLA PRO - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "nicheLabel": "trening personalny 1:1",
-    "quickWin": "Dodac szybka rezerwacje konsultacji (Booksy lub kalendarz).",
+    "quickWin": "Dodać szybką rezerwację konsultacji (Booksy lub kalendarz).",
     "researchCue": "Profil lokalny: DRYLA PRO",
     "researchSource": "https://www.dryla.pro/",
     "researchConfidence": "high",
@@ -2217,8 +2217,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -2226,13 +2226,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -2244,14 +2244,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -2264,31 +2264,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -2317,10 +2317,10 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "http://www.facebook.com/nn.trener",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "TRENNER Nina Nadolny - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
     "nicheLabel": "trening personalny 1:1",
     "quickWin": "Uruchomic 1-page landing: oferta, 3 pakiety i jedno glowne CTA.",
     "researchCue": "Profil lokalny: TRENNER Nina Nadolny",
@@ -2332,8 +2332,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -2341,13 +2341,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -2359,14 +2359,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -2379,31 +2379,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#94c918",
       "accentDark": "#73a10f",
@@ -2433,11 +2433,11 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Wspolpraca oparta o analize ruchu, bezpieczna progresje i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "Masterfizjotrener - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciazeniami i z celem bezpiecznego powrotu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
-    "quickWin": "Uruchomic 1-page landing i uzupelnic linki social (IG/FB).",
+    "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Masterfizjotrener",
     "researchSource": "",
     "researchConfidence": "medium",
@@ -2447,21 +2447,21 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Najpierw diagnoza ruchowa i jasny plan pierwszych 4 tygodni."
       },
       {
-        "title": "Sciezka bol -> forma",
-        "desc": "Plan prowadzi od bezpiecznych wzorcow ruchu do regularnego treningu."
+        "title": "Ścieżka bol -> forma",
+        "desc": "Plan prowadzi od bezpiecznych wzorców ruchu do regularnego treningu."
       },
       {
         "title": "Cotygodniowa korekta",
-        "desc": "Regulujemy obciazenie i technike na podstawie realnych reakcji ciala."
+        "desc": "Regulujemy obciążenie i technikę na podstawie realnych reakcji ciała."
       },
       {
         "title": "Wyniki mierzalne",
-        "desc": "Mniej bolu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
+        "desc": "Mniej bólu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
       }
     ],
     "pricingPlans": [
       {
-        "name": "Start Bez Bolu",
+        "name": "Start Bez Bólu",
         "subtitle": "Pierwsze 4 tygodnie pod kontrola.",
         "price": "299 zl",
         "period": "/ mies",
@@ -2470,7 +2470,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
           "Plan medyczny pod objawy",
           "Korekta techniki 1x tygodniowo"
         ],
-        "ctaLabel": "Wybieram Start Bez Bolu"
+        "ctaLabel": "Wybieram Start Bez Bólu"
       },
       {
         "name": "Ruch + Sila",
@@ -2501,7 +2501,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy moge trenowac przy bolu plecow lub kolan?",
+        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -2513,12 +2513,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Nie zawsze. Start mozliwy jest rowniez w domu z podstawowym sprzetem."
       },
       {
-        "q": "Czy jest kontakt miedzy treningami?",
-        "a": "Tak, szybkie korekty miedzy sesjami pomagaja utrzymac bezpieczny progres."
+        "q": "Czy jest kontakt między treningami?",
+        "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bolu",
-    "leadMagnetText": "Krotki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -2548,11 +2548,11 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Wspolpraca oparta o analize ruchu, bezpieczna progresje i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "Fizjoterapia Chaustowicz - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciazeniami i z celem bezpiecznego powrotu do formy. Priorytet na stronie: Dodac cennik 3 pakietow, sekcje opinii i szybka rezerwacje konsultacji.",
+    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Dodać cennik 3 pakietów, sekcje opinii i szybką rezerwację konsultacji.",
     "nicheLabel": "trening medyczny / fizjo",
-    "quickWin": "Dodac cennik 3 pakietow, sekcje opinii i szybka rezerwacje konsultacji.",
+    "quickWin": "Dodać cennik 3 pakietów, sekcje opinii i szybką rezerwację konsultacji.",
     "researchCue": "Profil lokalny: Fizjoterapia Chaustowicz",
     "researchSource": "https://chaustowicz.pl/",
     "researchConfidence": "high",
@@ -2562,21 +2562,21 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Najpierw diagnoza ruchowa i jasny plan pierwszych 4 tygodni."
       },
       {
-        "title": "Sciezka bol -> forma",
-        "desc": "Plan prowadzi od bezpiecznych wzorcow ruchu do regularnego treningu."
+        "title": "Ścieżka bol -> forma",
+        "desc": "Plan prowadzi od bezpiecznych wzorców ruchu do regularnego treningu."
       },
       {
         "title": "Cotygodniowa korekta",
-        "desc": "Regulujemy obciazenie i technike na podstawie realnych reakcji ciala."
+        "desc": "Regulujemy obciążenie i technikę na podstawie realnych reakcji ciała."
       },
       {
         "title": "Wyniki mierzalne",
-        "desc": "Mniej bolu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
+        "desc": "Mniej bólu, lepszy zakres ruchu i stabilna poprawa sprawnosci."
       }
     ],
     "pricingPlans": [
       {
-        "name": "Start Bez Bolu",
+        "name": "Start Bez Bólu",
         "subtitle": "Pierwsze 4 tygodnie pod kontrola.",
         "price": "299 zl",
         "period": "/ mies",
@@ -2585,7 +2585,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
           "Plan medyczny pod objawy",
           "Korekta techniki 1x tygodniowo"
         ],
-        "ctaLabel": "Wybieram Start Bez Bolu"
+        "ctaLabel": "Wybieram Start Bez Bólu"
       },
       {
         "name": "Ruch + Sila",
@@ -2616,7 +2616,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy moge trenowac przy bolu plecow lub kolan?",
+        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -2628,12 +2628,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Nie zawsze. Start mozliwy jest rowniez w domu z podstawowym sprzetem."
       },
       {
-        "q": "Czy jest kontakt miedzy treningami?",
-        "a": "Tak, szybkie korekty miedzy sesjami pomagaja utrzymac bezpieczny progres."
+        "q": "Czy jest kontakt między treningami?",
+        "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bolu",
-    "leadMagnetText": "Krotki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#06b6d4",
       "accentDark": "#0e7490",
@@ -2662,10 +2662,10 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "facebook": "https://www.facebook.com/trenertorun",
     "rating": 5.0,
     "heroTitleTop": "TRENING 1:1",
-    "heroTitleAccent": "POD TWOJ CEL.",
-    "heroText": "Indywidualna wspolpraca oparta o jasny plan, regularne korekty i prosta sciezke do startu.",
+    "heroTitleAccent": "POD TWÓJ CEL.",
+    "heroText": "Indywidualna współpraca oparta o jasny plan, regularne korekty i prostą ścieżkę do startu.",
     "aboutHeading": "Fitpaulis - trening personalny w Toruniu.",
-    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrozenie i cotygodniowe korekty. Priorytet na stronie: Przeniesc kontakt na skrzynke domenowa dla mocniejszego wizerunku premium.",
+    "aboutText": "Oferta skupia sie na klarownym procesie: konsultacja, plan, wdrożenie i cotygodniowe korekty. Priorytet na stronie: Przeniesc kontakt na skrzynke domenowa dla mocniejszego wizerunku premium.",
     "nicheLabel": "trening personalny 1:1",
     "quickWin": "Przeniesc kontakt na skrzynke domenowa dla mocniejszego wizerunku premium.",
     "researchCue": "Profil lokalny: Fitpaulis",
@@ -2677,8 +2677,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Ustalamy cel, poziom startowy i realny harmonogram."
       },
       {
-        "title": "Jasna oferta 3 pakietow",
-        "desc": "Klient od razu widzi roznice miedzy pakietami i wybiera poziom wsparcia."
+        "title": "Jasna oferta 3 pakietów",
+        "desc": "Klient od razu widzi roznice między pakietami i wybiera poziom wsparcia."
       },
       {
         "title": "Cotygodniowy monitoring",
@@ -2686,13 +2686,13 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "title": "Kontakt biezacy",
-        "desc": "Szybkie odpowiedzi i konkretne wskazowki do wdrozenia."
+        "desc": "Szybkie odpowiedzi i konkretne wskazówki do wdrożenia."
       }
     ],
     "pricingPlans": [
       {
         "name": "Start 1:1",
-        "subtitle": "Plan i wdrozenie podstaw.",
+        "subtitle": "Plan i wdrożenie podstaw.",
         "price": "299 zl",
         "period": "/ mies",
         "features": [
@@ -2704,14 +2704,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "Prowadzenie 1:1",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
         "features": [
           "Wszystko z pakietu Start",
           "Cotygodniowy raport i korekty",
-          "Wsparcie zywieniowe",
+          "Wsparcie żywieniowe",
           "Kontakt biezacy"
         ],
         "ctaLabel": "Wybieram Prowadzenie 1:1"
@@ -2724,31 +2724,31 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Priorytetowe wsparcie",
           "Strategia 90 dni",
-          "Pelna personalizacja"
+          "Pełna personalizacja"
         ],
         "ctaLabel": "Wybieram VIP Hybrid"
       }
     ],
     "faqItems": [
       {
-        "q": "Czy moge zaczac od zera?",
+        "q": "Czy mogę zacząć od zera?",
         "a": "Tak, plan jest skalowany do poziomu i aktualnej sprawnosci."
       },
       {
         "q": "Jak szybko odpisujesz po zgloszeniu?",
-        "a": "Najczesciej w ciagu 24 godzin z propozycja pierwszego kroku."
+        "a": "Najczęśćiej w ciagu 24 godzin z propozycja pierwszego kroku."
       },
       {
-        "q": "Czy wspolpraca jest tylko stacjonarna?",
+        "q": "Czy współpraca jest tylko stacjonarna?",
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiac?",
-        "a": "Start od konsultacji, wdrozenie planu i cotygodniowe korekty."
+        "q": "Jak wyglada pierwszy miesiąc?",
+        "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni wspolpracy",
-    "leadMagnetText": "Krotki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
+    "leadMagnetTitle": "Pobierz plan startowy: pierwsze 7 dni współpracy",
+    "leadMagnetText": "Krótki przewodnik jak ruszyc z treningiem 1:1 i utrzymac regularnosc.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -2778,18 +2778,18 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING + ODZYWIANIE",
     "heroTitleAccent": "SPOJNY PLAN DZIALANIA.",
-    "heroText": "Laczymy trening, odzywianie i monitoring postepu, zeby wynik byl stabilny i realny do utrzymania.",
+    "heroText": "Laczymy trening, odżywianie i monitoring postepu, zeby wynik byl stabilny i realny do utrzymania.",
     "aboutHeading": "Przyjazny Dietetyk Toruń – Radosław Siałkowski - trening personalny w Toruniu.",
-    "aboutText": "Model wspolpracy dla osob, ktore chca poprawic sylwetke i zdrowie metaboliczne bez losowych metod. Priorytet na stronie: Dodac cennik 3 pakietow i uproscic sciezke do kontaktu.",
-    "nicheLabel": "trening + odzywianie",
-    "quickWin": "Dodac cennik 3 pakietow i uproscic sciezke do kontaktu.",
+    "aboutText": "Model współpracy dla osob, które chcą poprawic sylwetkę i zdrowie metaboliczne bez losowych metod. Priorytet na stronie: Dodać cennik 3 pakietów i uprościć ścieżkę do kontaktu.",
+    "nicheLabel": "trening + odżywianie",
+    "quickWin": "Dodać cennik 3 pakietów i uprościć ścieżkę do kontaktu.",
     "researchCue": "Profil lokalny: Przyjazny Dietetyk Toruń – Radosław Siałkowski",
     "researchSource": "https://przyjazny-dietetyk.pl/",
     "researchConfidence": "high",
     "valueProps": [
       {
         "title": "Plan 2w1",
-        "desc": "Trening i odzywianie ustawione pod jeden cel i jeden harmonogram."
+        "desc": "Trening i odżywianie ustawione pod jeden cel i jeden harmonogram."
       },
       {
         "title": "Regularny monitoring",
@@ -2800,7 +2800,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "desc": "Praktyczne zalecenia i nawyki bez skrajnosci."
       },
       {
-        "title": "Jasna sciezka startu",
+        "title": "Jasna ścieżka startu",
         "desc": "Od pierwszej konsultacji wiesz, co robic i jak mierzyc efekt."
       }
     ],
@@ -2812,14 +2812,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "period": "/ mies",
         "features": [
           "Plan treningowy",
-          "Zalecenia zywieniowe",
+          "Zalecenia żywieniowe",
           "Kontrola postepu 1x tydzien"
         ],
         "ctaLabel": "Wybieram Start Fit"
       },
       {
         "name": "Prowadzenie Kompleksowe",
-        "subtitle": "Najczesciej wybierany pakiet.",
+        "subtitle": "Najczęśćiej wybierany pakiet.",
         "price": "599 zl",
         "period": "/ mies",
         "featured": true,
@@ -2847,14 +2847,14 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "faqItems": [
       {
         "q": "Czy musze liczyc kazda kalorie?",
-        "a": "Nie. Na start stawiamy na najwazniejsze nawyki i prosty system monitoringu."
+        "a": "Nie. Na start stawiamy na najważniejsze nawyki i prosty system monitoringu."
       },
       {
-        "q": "Jak laczycie trening i odzywianie?",
-        "a": "Plan treningowy i zywieniowy sa ustawione pod ten sam cel i ten sam horyzont czasu."
+        "q": "Jak laczycie trening i odżywianie?",
+        "a": "Plan treningowy i żywieniowy sa ustawione pod ten sam cel i ten sam horyzont czasu."
       },
       {
-        "q": "Czy moge zaczac, jesli mam nieregularny tryb pracy?",
+        "q": "Czy mogę zacząć, jesli mam nieregularny tryb pracy?",
         "a": "Tak, plan jest dopasowywany do realnego tygodnia i mozliwosci."
       },
       {
@@ -2862,8 +2862,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Co tydzien analizujemy postep i aktualizujemy plan dzialania."
       }
     ],
-    "leadMagnetTitle": "Pobierz plan startowy: trening + odzywianie",
-    "leadMagnetText": "Praktyczny przewodnik, jak polaczyc trening i nawyki zywieniowe bez chaosu.",
+    "leadMagnetTitle": "Pobierz plan startowy: trening + odżywianie",
+    "leadMagnetText": "Praktyczny przewodnik, jak polaczyc trening i nawyki żywieniowe bez chaosu.",
     "theme": {
       "accent": "#eab308",
       "accentDark": "#a16207",

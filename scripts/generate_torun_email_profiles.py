@@ -629,6 +629,180 @@ def quick_win_override(name_key: str, niche: str) -> dict:
     return out
 
 
+POLISH_REPLACEMENTS = [
+    ("TWOJ", "TWÓJ"),
+    ("Twoj", "Twój"),
+    ("twoj", "twój"),
+    ("Twoja", "Twoja"),
+    ("Twoje", "Twoje"),
+    ("Swoj", "Swój"),
+    ("swoj", "swój"),
+    ("prosta sciezke", "prostą ścieżkę"),
+    ("Prosta sciezke", "Prostą ścieżkę"),
+    ("prosta ścieżkę", "prostą ścieżkę"),
+    ("Prosta ścieżkę", "Prostą ścieżkę"),
+    ("uproscic", "uprościć"),
+    ("Uproscic", "Uprościć"),
+    ("chca", "chcą"),
+    ("Chca", "Chcą"),
+    ("ktore", "które"),
+    ("Ktore", "Które"),
+    ("ktory", "który"),
+    ("Ktory", "Który"),
+    ("ktorym", "którym"),
+    ("Ktorym", "Którym"),
+    ("sylwetke", "sylwetkę"),
+    ("Sylwetke", "Sylwetkę"),
+    ("technika", "technika"),
+    ("moge", "mogę"),
+    ("Moge", "Mogę"),
+    ("zaczac", "zacząć"),
+    ("Zaczac", "Zacząć"),
+    ("bolu", "bólu"),
+    ("Bolu", "Bólu"),
+    ("plecow", "pleców"),
+    ("Plecow", "Pleców"),
+    ("miesni", "mięśni"),
+    ("Miesni", "Mięśni"),
+    ("cwiczen", "ćwiczeń"),
+    ("Cwiczen", "Ćwiczeń"),
+    ("cwiczyc", "ćwiczyć"),
+    ("Cwiczyc", "Ćwiczyć"),
+    ("kontuzji", "kontuzji"),
+    ("przeciazen", "przeciążeń"),
+    ("Przeciazen", "Przeciążeń"),
+    ("powrotu", "powrotu"),
+    ("powrot", "powrót"),
+    ("Powrot", "Powrót"),
+    ("powrotu", "powrotu"),
+    ("uzupelnic", "uzupełnić"),
+    ("Uzupelnic", "Uzupełnić"),
+    ("dodac", "dodać"),
+    ("Dodac", "Dodać"),
+    ("pakietow", "pakietów"),
+    ("Pakietow", "Pakietów"),
+    ("szybka", "szybką"),
+    ("Szybka", "Szybką"),
+    ("rezerwacje", "rezerwację"),
+    ("Rezerwacje", "Rezerwację"),
+    ("kalendarz", "kalendarz"),
+    ("wzorcow", "wzorców"),
+    ("Wzorcow", "Wzorców"),
+    ("obciazenie", "obciążenie"),
+    ("Obciazenie", "Obciążenie"),
+    ("technike", "technikę"),
+    ("Technike", "Technikę"),
+    ("ciala", "ciała"),
+    ("Ciala", "Ciała"),
+    ("obciazen", "obciążeń"),
+    ("Obciazen", "Obciążeń"),
+    ("kontrole", "kontrolę"),
+    ("Kontrole", "Kontrolę"),
+    ("spojn", "spójn"),
+    ("najwazniejsze", "najważniejsze"),
+    ("Najwazniejsze", "Najważniejsze"),
+    ("czesc", "część"),
+    ("Czesc", "Część"),
+    ("miesiac", "miesiąc"),
+    ("Miesiac", "Miesiąc"),
+    ("miesiacu", "miesiącu"),
+    ("Miesiacu", "Miesiącu"),
+    ("wspolne", "wspólne"),
+    ("Wspolne", "Wspólne"),
+    ("Wspolpraca", "Współpraca"),
+    ("wspolpraca", "współpraca"),
+    ("Wspolpracy", "Współpracy"),
+    ("wspolpracy", "współpracy"),
+    ("sciezke", "ścieżkę"),
+    ("Sciezke", "Ścieżkę"),
+    ("sciezka", "ścieżka"),
+    ("Sciezka", "Ścieżka"),
+    ("sciezki", "ścieżki"),
+    ("Sciezki", "Ścieżki"),
+    ("sciezce", "ścieżce"),
+    ("Sciezce", "Ścieżce"),
+    ("wskazowki", "wskazówki"),
+    ("Wskazowki", "Wskazówki"),
+    ("wiecej", "więcej"),
+    ("Wiecej", "Więcej"),
+    ("miedzy", "między"),
+    ("Miedzy", "Między"),
+    ("krotki", "krótki"),
+    ("Krotki", "Krótki"),
+    ("korekta", "korekta"),
+    ("najczesciej", "najczęściej"),
+    ("Najczesciej", "Najczęściej"),
+    ("odzywianie", "odżywianie"),
+    ("Odzywianie", "Odżywianie"),
+    ("odzywiania", "odżywiania"),
+    ("Odzywiania", "Odżywiania"),
+    ("zywieniowe", "żywieniowe"),
+    ("Zywieniowe", "Żywieniowe"),
+    ("zywieniowy", "żywieniowy"),
+    ("Zywieniowy", "Żywieniowy"),
+    ("wdrozenie", "wdrożenie"),
+    ("Wdrozenie", "Wdrożenie"),
+    ("wdrozenia", "wdrożenia"),
+    ("Wdrozenia", "Wdrożenia"),
+    ("pelna", "pełna"),
+    ("Pelna", "Pełna"),
+    ("progresje", "progresję"),
+    ("Progresje", "Progresję"),
+    ("analize", "analizę"),
+    ("Analize", "Analizę"),
+    ("miesiecy", "miesięcy"),
+    ("Miesiecy", "Miesięcy"),
+    ("miesieczny", "miesięczny"),
+    ("Miesieczny", "Miesięczny"),
+    ("miesiecznego", "miesięcznego"),
+    ("Miesiecznego", "Miesięcznego"),
+    ("umow", "umów"),
+    ("Umow", "Umów"),
+]
+
+
+def polishify(value: str) -> str:
+    out = value
+    for old, new in POLISH_REPLACEMENTS:
+        out = out.replace(old, new)
+    return out
+
+
+def polishify_profile(profile: dict) -> dict:
+    profile["brandTagline"] = polishify(profile["brandTagline"])
+    profile["heroTitleTop"] = polishify(profile["heroTitleTop"])
+    profile["heroTitleAccent"] = polishify(profile["heroTitleAccent"])
+    profile["heroText"] = polishify(profile["heroText"])
+    profile["aboutHeading"] = polishify(profile["aboutHeading"])
+    profile["aboutText"] = polishify(profile["aboutText"])
+    profile["nicheLabel"] = polishify(profile["nicheLabel"])
+    profile["quickWin"] = polishify(profile["quickWin"])
+    profile["researchCue"] = polishify(profile["researchCue"])
+    profile["leadMagnetTitle"] = polishify(profile["leadMagnetTitle"])
+    profile["leadMagnetText"] = polishify(profile["leadMagnetText"])
+
+    profile["valueProps"] = [
+        {"title": polishify(item["title"]), "desc": polishify(item["desc"])}
+        for item in profile["valueProps"]
+    ]
+    profile["pricingPlans"] = [
+        {
+            **plan,
+            "name": polishify(plan["name"]),
+            "subtitle": polishify(plan["subtitle"]),
+            "ctaLabel": polishify(plan["ctaLabel"]),
+            "features": [polishify(feature) for feature in plan["features"]],
+        }
+        for plan in profile["pricingPlans"]
+    ]
+    profile["faqItems"] = [
+        {"q": polishify(item["q"]), "a": polishify(item["a"])}
+        for item in profile["faqItems"]
+    ]
+
+    return profile
+
+
 def read_rows() -> list[dict]:
     with SOURCE_CSV.open("r", encoding="utf-8", newline="") as f:
         rows = list(csv.DictReader(f))
@@ -706,6 +880,8 @@ def build_profiles(rows: list[dict]) -> tuple[dict, dict, list[tuple[str, str]]]
             "leadMagnetText": preset["lead_magnet_text"],
             "theme": palette,
         }
+
+        profile = polishify_profile(profile)
 
         profiles[slug] = profile
         quick_overrides[slug] = quick_win_override(name_key, niche)
