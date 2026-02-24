@@ -6,7 +6,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Karolina Łapińska Trenerka Medyczna",
     "brandName": "Karolina Łapińska Trenerka Medyczna",
     "navName": "Karolina Łapińska Trenerka Medyczna",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Toruń",
     "category": "Trener osobisty",
@@ -18,9 +18,9 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 4.8,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczną progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "Karolina Łapińska Trenerka Medyczna - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Dodać cennik 3 pakietów i uzupełnić linki social (IG/FB).",
+    "aboutText": "Praca z osóbami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Dodać cennik 3 pakietów i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
     "quickWin": "Dodać cennik 3 pakietów i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Karolina Łapińska Trenerka Medyczna",
@@ -86,7 +86,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
+        "q": "Czy mogę trenować przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -102,8 +102,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
-    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checklistę: 7 kroków treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenować bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#06b6d4",
       "accentDark": "#0e7490",
@@ -121,7 +121,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Kany Personal",
     "brandName": "Kany Personal",
     "navName": "Kany Personal",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "CityFit Toruń Plaza, Broniewskiego 90, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -213,7 +213,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -236,7 +236,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "HAS ACADEMY Studio Treningu Personalnego",
     "brandName": "HAS ACADEMY Studio Treningu Personalnego",
     "navName": "HAS ACADEMY Studio Treningu Personalnego",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Podgórna 42/14, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -328,7 +328,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -351,7 +351,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "FIT ROOM by Zawada",
     "brandName": "FIT ROOM by Zawada",
     "navName": "FIT ROOM by Zawada",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "świętej Faustyny 16/3, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -443,7 +443,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -466,7 +466,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "PoProstu Siłka - Nikola Detmer (Trening Medyczny)",
     "brandName": "PoProstu Siłka - Nikola Detmer (Trening Medyczny)",
     "navName": "PoProstu Siłka",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Chabrowa 22, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -478,9 +478,9 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczną progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "PoProstu Siłka - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
+    "aboutText": "Praca z osóbami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
     "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: PoProstu Siłka - Nikola Detmer (Trening Medyczny)",
@@ -546,7 +546,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
+        "q": "Czy mogę trenować przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -562,8 +562,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
-    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checklistę: 7 kroków treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenować bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -581,7 +581,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Trener Personalny Piotr Siemiński",
     "brandName": "Trener Personalny Piotr Siemiński",
     "navName": "Trener Personalny Piotr Siemiński",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Generała Józefa Bema 73/89, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -673,7 +673,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -696,7 +696,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Trener Personalny Paweł Barański",
     "brandName": "Trener Personalny Paweł Barański",
     "navName": "Trener Personalny Paweł Barański",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Broniewskiego 90, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -788,7 +788,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -811,7 +811,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Trener Personalny Sebastian Trenuje",
     "brandName": "Trener Personalny Sebastian Trenuje",
     "navName": "Trener Personalny Sebastian Trenuje",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Stanisława Żółkiewskiego 15, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -903,7 +903,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -926,7 +926,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Body Development Mateusz Golus",
     "brandName": "Body Development Mateusz Golus",
     "navName": "Body Development Mateusz Golus",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "ZDROFIT, Stanisława Żółkiewskiego 15, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -1018,7 +1018,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -1041,7 +1041,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Pure Power Studio Treningu Personalnego",
     "brandName": "Pure Power Studio Treningu Personalnego",
     "navName": "Pure Power Studio Treningu Personalnego",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Marii Skłodowskiej-Curie 41A/14, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -1133,7 +1133,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -1156,7 +1156,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Radek Skonieczny - Trener Personalny",
     "brandName": "Radek Skonieczny - Trener Personalny",
     "navName": "Radek Skonieczny",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Toruń",
     "category": "Trener osobisty",
@@ -1248,7 +1248,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -1271,7 +1271,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "JUST Pilates Toruń - Justyna Krauze",
     "brandName": "JUST Pilates Toruń - Justyna Krauze",
     "navName": "JUST Pilates Toruń",
-    "brandTagline": "Trener osobisty / Pilates",
+    "brandTagline": "Trener osóbisty / Pilates",
     "city": "Toruń",
     "address": "Szosa Lubicka 164A, 87-100 Toruń",
     "category": "Trener osobisty / Pilates",
@@ -1283,9 +1283,9 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczną progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "JUST Pilates Toruń - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
+    "aboutText": "Praca z osóbami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
     "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: JUST Pilates Toruń - Justyna Krauze",
@@ -1351,7 +1351,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
+        "q": "Czy mogę trenować przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -1367,8 +1367,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
-    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checklistę: 7 kroków treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenować bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#22c55e",
       "accentDark": "#15803d",
@@ -1386,7 +1386,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Anaboliczny trener",
     "brandName": "Anaboliczny trener",
     "navName": "Anaboliczny trener",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Strzałowa, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -1398,7 +1398,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "METAMORFOZA",
     "heroTitleAccent": "KROK PO KROKU.",
-    "heroText": "Program pod redukcje lub budowe sylwetki z jasnym procesem, kontrola postepu i wsparciem 1:1.",
+    "heroText": "Program pod redukcję lub budowę sylwetki z jasnym procesem, kontrolą postępu i wsparciem 1:1.",
     "aboutHeading": "Anaboliczny trener - trening personalny w Toruniu.",
     "aboutText": "Współpraca skupiona na realnych efektach, prostym planie i utrzymaniu regularnosci na co dzien. Priorytet na stronie: Dodać szybką rezerwację konsultacji i mocniejsze CTA na stronie glownej.",
     "nicheLabel": "metamorfoza sylwetki",
@@ -1433,7 +1433,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Plan treningowy pod cel",
           "Podstawy odżywiania i nawykow",
-          "Kontrola postepu raz w tygodniu"
+          "Kontrolą postępu raz w tygodniu"
         ],
         "ctaLabel": "Wybieram Start Sylwetka"
       },
@@ -1453,7 +1453,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
       },
       {
         "name": "VIP Metamorfoza",
-        "subtitle": "Dla osob z ambitnym celem.",
+        "subtitle": "Dla osób z ambitnym celem.",
         "price": "999 zl",
         "period": "/ mies",
         "features": [
@@ -1466,7 +1466,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy dam rade, jesli zaczynam od zera?",
+        "q": "Czy dam radę, jeśli zaczynam od zera?",
         "a": "Tak, plan jest skalowany do poziomu startowego i mozliwosci tygodnia."
       },
       {
@@ -1478,12 +1478,12 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Nie. Priorytetem sa nawyki i plan, który da sie utrzymac dlugoterminowo."
       },
       {
-        "q": "Jak wyglada kontakt?",
+        "q": "Jak wygląda kontakt?",
         "a": "Kontakt biezacy i cotygodniowy raport pomagaja utrzymac tempo progresu."
       }
     ],
     "leadMagnetTitle": "Pobierz plan: pierwsze 30 dni metamorfozy",
-    "leadMagnetText": "Gotowy start pod redukcje lub budowe sylwetki z checklistami i prostymi zasadami.",
+    "leadMagnetText": "Gotowy start pod redukcję lub budowę sylwetki z checklistami i prostymi zasadami.",
     "theme": {
       "accent": "#06b6d4",
       "accentDark": "#0e7490",
@@ -1593,7 +1593,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -1616,7 +1616,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "4Ever Young Studio Treningowe",
     "brandName": "4Ever Young Studio Treningowe",
     "navName": "4Ever Young Studio Treningowe",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Polna 148, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -1708,7 +1708,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -1731,7 +1731,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "I'M STUDIO Trening Personalny Terapia Ruchem",
     "brandName": "I'M STUDIO Trening Personalny Terapia Ruchem",
     "navName": "I'M STUDIO Trening Personalny Terapia Ruchem",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Sukiennicza 4, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -1823,7 +1823,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -1846,7 +1846,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Adam Zieliński",
     "brandName": "Adam Zieliński",
     "navName": "Adam Zieliński",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Bolesława Chrobrego 145, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -1938,7 +1938,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -2053,7 +2053,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -2076,7 +2076,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Twardy Fitness Center",
     "brandName": "Twardy Fitness Center",
     "navName": "Twardy Fitness Center",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Stanisława Żółkiewskiego 15, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -2168,7 +2168,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -2191,7 +2191,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "DRYLA PRO",
     "brandName": "DRYLA PRO",
     "navName": "DRYLA PRO",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Chrobrego 94, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -2283,7 +2283,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -2306,7 +2306,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "TRENNER Nina Nadolny",
     "brandName": "TRENNER Nina Nadolny",
     "navName": "TRENNER Nina Nadolny",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Studzienna 41, 87-100 Toruń",
     "category": "Trener osobisty",
@@ -2398,7 +2398,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -2421,7 +2421,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Masterfizjotrener",
     "brandName": "Masterfizjotrener",
     "navName": "Masterfizjotrener",
-    "brandTagline": "Trener osobisty / Fizjoterapeuta",
+    "brandTagline": "Trener osóbisty / Fizjoterapeuta",
     "city": "Toruń",
     "address": "Szosa Chełmińska 177, 87-100 Toruń",
     "category": "Trener osobisty / Fizjoterapeuta",
@@ -2433,9 +2433,9 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczną progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "Masterfizjotrener - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
+    "aboutText": "Praca z osóbami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "nicheLabel": "trening medyczny / fizjo",
     "quickWin": "Uruchomic 1-page landing i uzupełnić linki social (IG/FB).",
     "researchCue": "Profil lokalny: Masterfizjotrener",
@@ -2501,7 +2501,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
+        "q": "Czy mogę trenować przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -2517,8 +2517,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
-    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checklistę: 7 kroków treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenować bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#f97316",
       "accentDark": "#c2410c",
@@ -2548,9 +2548,9 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING MEDYCZNY",
     "heroTitleAccent": "BEZ BOLU I CHAOSU.",
-    "heroText": "Współpraca oparta o analizę ruchu, bezpieczna progresję i plan dopasowany do codziennego rytmu.",
+    "heroText": "Współpraca oparta o analizę ruchu, bezpieczną progresję i plan dopasowany do codziennego rytmu.",
     "aboutHeading": "Fizjoterapia Chaustowicz - trening personalny w Toruniu.",
-    "aboutText": "Praca z osobami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Dodać cennik 3 pakietów, sekcje opinii i szybką rezerwację konsultacji.",
+    "aboutText": "Praca z osóbami po kontuzjach, z przeciążeńiami i z celem bezpiecznego powrótu do formy. Priorytet na stronie: Dodać cennik 3 pakietów, sekcje opinii i szybką rezerwację konsultacji.",
     "nicheLabel": "trening medyczny / fizjo",
     "quickWin": "Dodać cennik 3 pakietów, sekcje opinii i szybką rezerwację konsultacji.",
     "researchCue": "Profil lokalny: Fizjoterapia Chaustowicz",
@@ -2616,7 +2616,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     ],
     "faqItems": [
       {
-        "q": "Czy mogę trenowac przy bólu pleców lub kolan?",
+        "q": "Czy mogę trenować przy bólu pleców lub kolan?",
         "a": "Tak, plan startuje od bezpiecznych zakresow i stopniowej progresji."
       },
       {
@@ -2632,8 +2632,8 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Tak, szybkie korekty między sesjami pomagaja utrzymac bezpieczny progres."
       }
     ],
-    "leadMagnetTitle": "Pobierz checkliste: 7 krokow treningu bez bólu",
-    "leadMagnetText": "Krótki przewodnik jak trenowac bezpiecznie i wracac do formy bez improwizacji.",
+    "leadMagnetTitle": "Pobierz checklistę: 7 kroków treningu bez bólu",
+    "leadMagnetText": "Krótki przewodnik jak trenować bezpiecznie i wracac do formy bez improwizacji.",
     "theme": {
       "accent": "#06b6d4",
       "accentDark": "#0e7490",
@@ -2651,7 +2651,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "fullName": "Fitpaulis",
     "brandName": "Fitpaulis",
     "navName": "Fitpaulis",
-    "brandTagline": "Trener osobisty",
+    "brandTagline": "Trener osóbisty",
     "city": "Toruń",
     "address": "Toruń (brak adresu)",
     "category": "Trener osobisty",
@@ -2743,7 +2743,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Mozliwy jest model stacjonarny, online lub hybrydowy."
       },
       {
-        "q": "Jak wyglada pierwszy miesiąc?",
+        "q": "Jak wygląda pierwszy miesiąc?",
         "a": "Start od konsultacji, wdrożenie planu i cotygodniowe korekty."
       }
     ],
@@ -2778,9 +2778,9 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
     "rating": 5.0,
     "heroTitleTop": "TRENING + ODZYWIANIE",
     "heroTitleAccent": "SPOJNY PLAN DZIALANIA.",
-    "heroText": "Laczymy trening, odżywianie i monitoring postepu, zeby wynik byl stabilny i realny do utrzymania.",
+    "heroText": "Laczymy trening, odżywianie i monitoring postępu, zeby wynik byl stabilny i realny do utrzymania.",
     "aboutHeading": "Przyjazny Dietetyk Toruń – Radosław Siałkowski - trening personalny w Toruniu.",
-    "aboutText": "Model współpracy dla osob, które chcą poprawic sylwetkę i zdrowie metaboliczne bez losowych metod. Priorytet na stronie: Dodać cennik 3 pakietów i uprościć ścieżkę do kontaktu.",
+    "aboutText": "Model współpracy dla osób, które chcą poprawić sylwetkę i zdrowie metaboliczne bez losowych metod. Priorytet na stronie: Dodać cennik 3 pakietów i uprościć ścieżkę do kontaktu.",
     "nicheLabel": "trening + odżywianie",
     "quickWin": "Dodać cennik 3 pakietów i uprościć ścieżkę do kontaktu.",
     "researchCue": "Profil lokalny: Przyjazny Dietetyk Toruń – Radosław Siałkowski",
@@ -2813,7 +2813,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "features": [
           "Plan treningowy",
           "Zalecenia żywieniowe",
-          "Kontrola postepu 1x tydzien"
+          "Kontrolą postępu 1x tydzien"
         ],
         "ctaLabel": "Wybieram Start Fit"
       },
@@ -2854,7 +2854,7 @@ export const torunTrainerProfiles: Record<string, TrainerProfile> = {
         "a": "Plan treningowy i żywieniowy sa ustawione pod ten sam cel i ten sam horyzont czasu."
       },
       {
-        "q": "Czy mogę zacząć, jesli mam nieregularny tryb pracy?",
+        "q": "Czy mogę zacząć, jeśli mam nieregularny tryb pracy?",
         "a": "Tak, plan jest dopasowywany do realnego tygodnia i mozliwosci."
       },
       {
