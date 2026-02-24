@@ -124,6 +124,8 @@ type OutreachPlan = {
 const STORAGE_KEY = 'trainer_crm_state_v4';
 const BYDGOSZCZ_PROJECT_ID = 'project-trenerzy-personalni-bydgoszcz';
 const TORUN_PROJECT_ID = 'project-trenerzy-personalni-torun';
+const TORUN_VERCEL_PROJECT = 'trenerzy-personalni-torun';
+const TORUN_VERCEL_BASE_URL = 'https://trenerzy-personalni-torun.vercel.app';
 const EMAIL_FILTERS = ['all', 'verified', 'not_found'] as const;
 const WORKFLOW_FILTERS = ['all', 'new', 'review', 'ready_to_send', 'sent', 'follow_up', 'closed'] as const;
 const DEPLOY_GROUP_FILTERS = ['all', 'new_deploy', 'old_deploy'] as const;
@@ -307,6 +309,7 @@ function buildTorunSeedLeads(projectId: string): Lead[] {
 
       const email = (row.email || '').split(';')[0]?.trim() || '';
       const emailStatus: Lead['emailStatus'] = email ? 'verified' : 'not_found';
+      const vercelUrl = `${TORUN_VERCEL_BASE_URL}/?trainer=${slug}`;
 
       return {
         id: uid('lead'),
@@ -321,8 +324,8 @@ function buildTorunSeedLeads(projectId: string): Lead[] {
         website: row.strona_www || '',
         facebook: row.facebook || '',
         instagram: row.instagram || '',
-        vercelProject: '',
-        vercelUrl: '',
+        vercelProject: TORUN_VERCEL_PROJECT,
+        vercelUrl,
         priority: 'medium',
         owner: '',
         tags: ['torun_2024'],
@@ -376,16 +379,10 @@ function normalizeLead(lead: Lead): Lead {
 
 function buildLocalTrainerUrl(slug: string): string {
   if (typeof window === 'undefined') {
-    return `http://127.0.0.1:5173/?trainer=${slug}`;
+    return `http://127.0.0.1:3000/?trainer=${slug}`;
   }
 
-  const host = window.location.hostname;
-  const isLocalhost = host === 'localhost' || host === '127.0.0.1';
-  if (isLocalhost) {
-    return `${window.location.origin}/?trainer=${slug}`;
-  }
-
-  return `http://127.0.0.1:5173/?trainer=${slug}`;
+  return `${window.location.origin}/?trainer=${slug}`;
 }
 
 function initialState(): CrmState {
