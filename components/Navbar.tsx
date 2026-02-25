@@ -3,6 +3,85 @@ import { Menu, X, Dumbbell } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollToSection';
 import currentTrainer from '../data/currentTrainer';
 
+const NAME_STOPWORDS = new Set([
+  'trener',
+  'personalny',
+  'osobisty',
+  'trening',
+  'medyczny',
+  'dietetyk',
+  'psychodietetyk',
+  'fizjoterapia',
+  'fizjoterapeuta',
+  'terapia',
+  'ruchowa',
+  'kobiet',
+  'poznan',
+  'poznań',
+  'boxing',
+  'coach',
+  'studio',
+  'body',
+  'movement',
+  'endifit',
+  'klucznik',
+  'power',
+  'herjoy',
+]);
+
+const NAME_TOKEN_REGEX = /^[A-ZĄĆĘŁŃÓŚŹŻ][A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż-]+$/;
+
+const normalizeToken = (token: string): string => {
+  if (token === token.toUpperCase()) {
+    return `${token.charAt(0)}${token.slice(1).toLowerCase()}`;
+  }
+  return token;
+};
+
+const getDisplayName = (raw: string): string => {
+  const source = raw.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+  const segments = [
+    source,
+    ...source.split(/[|\-–—/]+/).map((part) => part.trim()).filter(Boolean),
+  ];
+
+  const candidates: string[] = [];
+
+  segments.forEach((segment) => {
+    const tokens = segment.split(/\s+/).filter(Boolean);
+    let streak: string[] = [];
+
+    const flush = () => {
+      if (streak.length >= 2 && streak.length <= 3) {
+        candidates.push(streak.join(' '));
+      }
+      streak = [];
+    };
+
+    tokens.forEach((token) => {
+      const clean = token.replace(/[.,:;!?]/g, '');
+      const lower = clean.toLowerCase();
+      if (NAME_TOKEN_REGEX.test(clean) && !NAME_STOPWORDS.has(lower)) {
+        streak.push(normalizeToken(clean));
+        if (streak.length > 3) {
+          streak = streak.slice(1);
+        }
+      } else {
+        flush();
+      }
+    });
+
+    flush();
+  });
+
+  if (candidates.length > 0) {
+    candidates.sort((a, b) => b.split(' ').length - a.split(' ').length);
+    return candidates[0];
+  }
+
+  return source.split(' ').slice(0, 2).join(' ') || raw;
+};
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,6 +128,11 @@ const Navbar: React.FC = () => {
     { name: 'FAQ', href: '#faq' },
   ];
 
+  const headerName =
+    (currentTrainer.slug.startsWith('poznan-') || currentTrainer.slug.startsWith('torun-'))
+    ? getDisplayName(currentTrainer.navName || currentTrainer.fullName)
+    : currentTrainer.navName;
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -62,7 +146,7 @@ const Navbar: React.FC = () => {
             <Dumbbell className="text-zinc-950 w-6 h-6" />
           </div>
           <span className="text-2xl font-black tracking-tighter text-white">
-            {currentTrainer.navName.toUpperCase().split(' ')[0]}<span className="text-brand-500">{currentTrainer.navName.toUpperCase().split(' ').slice(1).join(' ')}</span>
+            {headerName.toUpperCase().split(' ')[0]}<span className="text-brand-500">{headerName.toUpperCase().split(' ').slice(1).join(' ')}</span>
           </span>
         </a>
 

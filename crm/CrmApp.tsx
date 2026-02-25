@@ -29,6 +29,7 @@ import wave4Replacement2CsvRaw from '../data/deploy_reports/wave4-replacement2_d
 import redeployResultsCsvRaw from '../reports/redeploy_meta_refresh_results.csv?raw';
 import outreachPlaybookCsvRaw from '../outreach/personalized_outreach_playbook.csv?raw';
 import torunLeadsCsvRaw from '../data/torun_trenerzy_personalny_2024.csv?raw';
+import poznanLeadsCsvRaw from '../data/poznan_trenerzy_personalny_2026.csv?raw';
 
 type Project = {
   id: string;
@@ -124,6 +125,7 @@ type OutreachPlan = {
 const STORAGE_KEY = 'trainer_crm_state_v4';
 const BYDGOSZCZ_PROJECT_ID = 'project-trenerzy-personalni-bydgoszcz';
 const TORUN_PROJECT_ID = 'project-trenerzy-personalni-torun';
+const POZNAN_PROJECT_ID = 'project-trenerzy-personalni-poznan';
 const TORUN_VERCEL_PROJECT = 'trenerzy-personalni-torun';
 const TORUN_VERCEL_BASE_URL = 'https://trenerzy-personalni-torun.vercel.app';
 const EMAIL_FILTERS = ['all', 'verified', 'not_found'] as const;
@@ -140,6 +142,10 @@ function uid(prefix: string): string {
 }
 
 function getDefaultProjectId(projects: Project[]): string {
+  const poznanProject = projects.find((project) => project.id === POZNAN_PROJECT_ID);
+  if (poznanProject) {
+    return poznanProject.id;
+  }
   const torunProject = projects.find((project) => project.id === TORUN_PROJECT_ID);
   return torunProject?.id || projects[0]?.id || '';
 }
@@ -307,7 +313,7 @@ function buildTorunSeedLeads(projectId: string): Lead[] {
       }
       usedSlugs.add(slug);
 
-      const email = (row.email || '').split(';')[0]?.trim() || '';
+      const email = (row.email || '').split(/[;,]/)[0]?.trim() || '';
       const emailStatus: Lead['emailStatus'] = email ? 'verified' : 'not_found';
       const vercelUrl = `${TORUN_VERCEL_BASE_URL}/?trainer=${slug}`;
 
@@ -329,6 +335,52 @@ function buildTorunSeedLeads(projectId: string): Lead[] {
         priority: 'medium',
         owner: '',
         tags: ['torun_2024'],
+        nextActionDate: '',
+        updatedAt: nowIso(),
+      } satisfies Lead;
+    });
+
+  return leads.sort((a, b) => a.title.localeCompare(b.title));
+}
+
+function buildPoznanSeedLeads(projectId: string): Lead[] {
+  const records = parseCsvObjects(poznanLeadsCsvRaw);
+  const usedSlugs = new Set<string>();
+
+  const leads = records
+    .filter((row) => row.title)
+    .map((row, i) => {
+      const normalizedSlug = slugify(row.title || '') || `lead-${i + 1}`;
+      const baseSlug = `poznan-${normalizedSlug}`;
+      let slug = baseSlug;
+      let suffix = 2;
+      while (usedSlugs.has(slug)) {
+        slug = `${baseSlug}-${suffix}`;
+        suffix += 1;
+      }
+      usedSlugs.add(slug);
+
+      const email = (row.email || '').split(/[;,]/)[0]?.trim() || '';
+      const emailStatus: Lead['emailStatus'] = email ? 'verified' : 'not_found';
+
+      return {
+        id: uid('lead'),
+        projectId,
+        deploymentStatus: 'imported',
+        slug,
+        title: row.title || slug,
+        email,
+        emailStatus,
+        workflowStatus: email ? 'review' : 'new',
+        phone: row.phone || '',
+        website: row.website || '',
+        facebook: row.facebook || '',
+        instagram: row.instagram || '',
+        vercelProject: '',
+        vercelUrl: '',
+        priority: 'medium',
+        owner: '',
+        tags: ['poznan_2026'],
         nextActionDate: '',
         updatedAt: nowIso(),
       } satisfies Lead;
@@ -401,10 +453,21 @@ function initialState(): CrmState {
     createdAt: ts,
     updatedAt: ts,
   };
+  const poznanProject: Project = {
+    id: POZNAN_PROJECT_ID,
+    name: 'Trenerzy personalni - Poznan',
+    description: 'Projekt: solo trenerzy personalni z Poznania (manualny follow-up maili).',
+    createdAt: ts,
+    updatedAt: ts,
+  };
 
   return {
-    projects: [bydgoszczProject, torunProject],
-    leads: [...buildSeedLeads(BYDGOSZCZ_PROJECT_ID), ...buildTorunSeedLeads(TORUN_PROJECT_ID)],
+    projects: [bydgoszczProject, torunProject, poznanProject],
+    leads: [
+      ...buildSeedLeads(BYDGOSZCZ_PROJECT_ID),
+      ...buildTorunSeedLeads(TORUN_PROJECT_ID),
+      ...buildPoznanSeedLeads(POZNAN_PROJECT_ID),
+    ],
     notes: [],
     activity: [],
     imports: [],
@@ -465,6 +528,13 @@ function syncLeadsWithSeed(state: CrmState): CrmState {
       createdAt: nowIso(),
       updatedAt: nowIso(),
     },
+    {
+      id: POZNAN_PROJECT_ID,
+      name: 'Trenerzy personalni - Poznan',
+      description: 'Projekt: solo trenerzy personalni z Poznania (manualny follow-up maili).',
+      createdAt: nowIso(),
+      updatedAt: nowIso(),
+    },
   ];
 
   const existingIds = new Set(state.projects.map((project) => project.id));
@@ -478,6 +548,7 @@ function syncLeadsWithSeed(state: CrmState): CrmState {
   let merged = { ...state, projects: mergedProjects };
   merged = mergeProjectSeedLeads(merged, BYDGOSZCZ_PROJECT_ID, buildSeedLeads(BYDGOSZCZ_PROJECT_ID));
   merged = mergeProjectSeedLeads(merged, TORUN_PROJECT_ID, buildTorunSeedLeads(TORUN_PROJECT_ID));
+  merged = mergeProjectSeedLeads(merged, POZNAN_PROJECT_ID, buildPoznanSeedLeads(POZNAN_PROJECT_ID));
   return merged;
 }
 
@@ -633,7 +704,7 @@ export default function CrmApp() {
 
   const syncFromSourceCsv = React.useCallback(() => {
     setState((prev) => syncLeadsWithSeed(prev));
-    setActiveProjectId((prev) => prev || TORUN_PROJECT_ID);
+    setActiveProjectId((prev) => prev || POZNAN_PROJECT_ID);
     setSelectedLeadId('');
     setEmailFilter('all');
     setWorkflowFilter('all');

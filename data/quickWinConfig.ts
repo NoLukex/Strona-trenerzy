@@ -1,4 +1,5 @@
 import { torunTrainerQuickWinOverrides } from './torunTrainerQuickWinOverrides';
+import { poznanTrainerQuickWinOverrides } from './poznanTrainerQuickWinOverrides';
 
 export type HeroMode =
   | 'default'
@@ -153,6 +154,7 @@ const quickWinOverrides: Record<string, Partial<QuickWinConfig>> = {
     singleContactCta: true,
   },
   ...(torunTrainerQuickWinOverrides as Record<string, Partial<QuickWinConfig>>),
+  ...(poznanTrainerQuickWinOverrides as Record<string, Partial<QuickWinConfig>>),
 };
 
 export const getQuickWinConfig = (slug: string): QuickWinConfig => ({
