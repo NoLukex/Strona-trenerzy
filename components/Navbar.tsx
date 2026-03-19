@@ -146,7 +146,9 @@ const Navbar: React.FC = () => {
             <Dumbbell className="text-zinc-950 w-6 h-6" />
           </div>
           <span className="text-2xl font-black tracking-tighter text-white">
-            {headerName.toUpperCase().split(' ')[0]}<span className="text-brand-500">{headerName.toUpperCase().split(' ').slice(1).join(' ')}</span>
+            {headerName.toUpperCase().split(' ')[0]}
+            {headerName.toUpperCase().split(' ').length > 1 ? ' ' : ''}
+            <span className="text-brand-500">{headerName.toUpperCase().split(' ').slice(1).join(' ')}</span>
           </span>
         </a>
 

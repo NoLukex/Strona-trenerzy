@@ -1,5 +1,20 @@
 # Vercel deploy for all trainers
 
+## Gdansk single deploy
+
+For Gdansk v1 use one Vercel project for the whole city and publish trainer pages under `/t/<slug>`.
+
+- Build command: `npm run build`
+- Output directory: `dist`
+- Optional env: `VITE_GDANSK_BASE_URL=https://twoj-projekt.vercel.app`
+- Public trainer URL shape: `https://twoj-projekt.vercel.app/t/gdansk-...`
+
+Regenerate runtime data before deploy:
+
+```bash
+python scripts/generate_gdansk_email_profiles.py
+```
+
 ## 1) Prepare profiles
 
 Run once after updating CSV:

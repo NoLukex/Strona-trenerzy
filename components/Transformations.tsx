@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollToSection';
 import currentTrainer from '../data/currentTrainer';
+import { fixMojibake } from '../utils/fixMojibake';
 
 type StorySeed = {
   name: string;
@@ -34,56 +35,56 @@ const storySets: Record<string, StorySeed[]> = {
     {
       name: 'Robert',
       age: 39,
-      result: '-80% bolu',
+      result: '-80% bólu',
       time: '8 tygodni',
-      type: 'Kregoslup',
+      type: 'Kręgosłup',
       quote:
-        'Po pracy przy biurku bol odcinka ledzwiowego byl codziennoscia. Po wdrozeniu planu ruchu i mobilnosci moge cwiczyc bez strachu o nawrot objawow.',
+        'Po pracy przy biurku ból odcinka lędźwiowego był codziennością. Po wdrożeniu planu ruchu i mobilności mogę ćwiczyć bez strachu o nawrót objawów.',
     },
     {
       name: 'Kasia',
       age: 44,
-      result: 'Pelny zakres',
+      result: 'Pełny zakres',
       time: '10 tygodni',
       type: 'Kolano',
       quote:
-        'Wczesniej kazde wejscie po schodach konczylo sie dyskomfortem. Dzis chodze bez bolu i regularnie trenuje silowo.',
+        'Wcześniej każde wejście po schodach kończyło się dyskomfortem. Dziś chodzę bez bólu i regularnie trenuję siłowo.',
     },
     {
       name: 'Marcin',
       age: 31,
-      result: '+12 kg sila',
-      time: '4 miesiace',
-      type: 'Powrot po kontuzji',
+      result: '+12 kg siła',
+      time: '4 miesiące',
+      type: 'Powrót po kontuzji',
       quote:
-        'Po urazie barku balem sie wyciskania. Plan etapowy i kontrola techniki pozwolily wrocic do mocnych treningow.',
+        'Po urazie barku bałem się wyciskania. Plan etapowy i kontrola techniki pozwoliły wrócić do mocnych treningów.',
     },
     {
       name: 'Iza',
       age: 35,
       result: 'Lepsza postura',
       time: '6 tygodni',
-      type: 'Ruch bez bolu',
+      type: 'Ruch bez bólu',
       quote:
-        'Najbardziej zaskoczylo mnie to, jak drobne korekty techniki zmienily codzienne funkcjonowanie i samopoczucie.',
+        'Najbardziej zaskoczyło mnie to, jak drobne korekty techniki zmieniły codzienne funkcjonowanie i samopoczucie.',
     },
     {
       name: 'Damian',
       age: 29,
-      result: 'Bez nawrotow',
-      time: '3 miesiace',
+      result: 'Bez nawrotów',
+      time: '3 miesiące',
       type: 'Stabilizacja',
       quote:
-        'Zamiast przypadkowych cwiczen dostalem jasna kolejnosc i obciazenia. Wreszcie czulem, ze wiem co i po co robie.',
+        'Zamiast przypadkowych ćwiczeń dostałem jasną kolejność i obciążenia. Wreszcie czułem, że wiem co i po co robię.',
     },
     {
       name: 'Ewa',
       age: 47,
       result: '-9 kg',
-      time: '5 miesiecy',
+      time: '5 miesięcy',
       type: 'Forma + zdrowie',
       quote:
-        'Najpierw priorytetem byl bol i sprawnosc, potem sylwetka. Takie podejscie pozwolilo utrzymac regularnosc.',
+        'Najpierw priorytetem był ból i sprawność, potem sylwetka. Takie podejście pozwoliło utrzymać regularność.',
     },
   ],
   'metamorfoza sylwetki': [
@@ -91,55 +92,55 @@ const storySets: Record<string, StorySeed[]> = {
       name: 'Tomek',
       age: 34,
       result: '-24 kg',
-      time: '6 miesiecy',
+      time: '6 miesięcy',
       type: 'Redukcja',
       quote:
-        'Myslalem, ze po 30. roku zycia wszystko idzie wolniej. Kluczowe okazaly sie regularnosc i dobrze ustawiony plan.',
+        'Myślałem, że po 30. roku życia wszystko idzie wolniej. Kluczowe okazały się regularność i dobrze ustawiony plan.',
     },
     {
       name: 'Magda',
       age: 28,
       result: '+6 kg',
-      time: '8 miesiecy',
+      time: '8 miesięcy',
       type: 'Modelowanie sylwetki',
       quote:
-        'Dzieki prowadzeniu 1:1 przestalam skakac po planach z internetu. Progres byl stabilny i bez cofania efektow.',
+        'Dzięki prowadzeniu 1:1 przestałam skakać po planach z internetu. Progres był stabilny i bez cofania efektów.',
     },
     {
       name: 'Piotr',
       age: 41,
       result: 'Rekompozycja',
-      time: '4 miesiace',
-      type: 'Sila + forma',
+      time: '4 miesiące',
+      type: 'Siła + forma',
       quote:
-        'Polaczenie treningu i nawykow zywieniowych dalo lepszy efekt niz moje poprzednie proby na wlasna reke.',
+        'Połączenie treningu i nawyków żywieniowych dało lepszy efekt niż moje poprzednie próby na własną rękę.',
     },
     {
       name: 'Natalia',
       age: 32,
       result: '-13 cm',
-      time: '3 miesiace',
+      time: '3 miesiące',
       type: 'Talia',
       quote:
-        'Najwieksza roznice zrobily proste zasady, ktore bylam w stanie utrzymac przy pracy i zyciu rodzinnym.',
+        'Największą różnicę zrobiły proste zasady, które byłam w stanie utrzymać przy pracy i życiu rodzinnym.',
     },
     {
       name: 'Krzysztof',
       age: 26,
       result: '+7 kg',
-      time: '7 miesiecy',
-      type: 'Masa miesniowa',
+      time: '7 miesięcy',
+      type: 'Masa mięśniowa',
       quote:
-        'W koncu przestalem trenowac przypadkowo. Plan byl konkretny, a korekty robione na biezaco.',
+        'W końcu przestałem trenować przypadkowo. Plan był konkretny, a korekty robione na bieżąco.',
     },
     {
       name: 'Monika',
       age: 37,
       result: '-11 kg',
-      time: '5 miesiecy',
-      type: 'Powrot do formy',
+      time: '5 miesięcy',
+      type: 'Powrót do formy',
       quote:
-        'Program byl dopasowany do realnego tygodnia. Bez skrajnosci, ale z efektem, ktory utrzymal sie po zakonczeniu wspolpracy.',
+        'Program był dopasowany do realnego tygodnia. Bez skrajności, ale z efektem, który utrzymał się po zakończeniu współpracy.',
     },
   ],
   'sport wytrzymalosciowy': [
@@ -150,52 +151,52 @@ const storySets: Record<string, StorySeed[]> = {
       time: '12 tygodni',
       type: '10 km',
       quote:
-        'Dzieki monitorowaniu obciazen i regeneracji poprawilem wynik bez przetrenowania i bez kryzysow w trakcie sezonu.',
+        'Dzięki monitorowaniu obciążeń i regeneracji poprawiłem wynik bez przetrenowania i bez kryzysów w trakcie sezonu.',
     },
     {
       name: 'Aneta',
       age: 30,
       result: 'Pierwszy start',
-      time: '4 miesiace',
+      time: '4 miesiące',
       type: 'Triathlon sprint',
       quote:
-        'Dostalam jasna rozpiske, co robic tydzien po tygodniu. Start byl spokojny i bez improwizacji.',
+        'Dostałam jasną rozpiskę, co robić tydzień po tygodniu. Start był spokojny i bez improwizacji.',
     },
     {
       name: 'Marek',
       age: 42,
       result: '+18% FTP',
-      time: '5 miesiecy',
+      time: '5 miesięcy',
       type: 'Kolarstwo',
       quote:
-        'Najbardziej docenilem laczenie treningu wytrzymalosciowego z silowym. Czuje stabilny progres przez caly sezon.',
+        'Najbardziej doceniłem łączenie treningu wytrzymałościowego z siłowym. Czuję stabilny progres przez cały sezon.',
     },
     {
       name: 'Karolina',
       age: 33,
       result: '-6 min',
       time: '10 tygodni',
-      type: 'Polmaraton',
+      type: 'Półmaraton',
       quote:
-        'Wreszcie trenowalam pod cel i termin, a nie pod przypadkowe inspiracje. Wynik i samopoczucie mocno na plus.',
+        'Wreszcie trenowałam pod cel i termin, a nie pod przypadkowe inspiracje. Wynik i samopoczucie mocno na plus.',
     },
     {
       name: 'Adam',
       age: 27,
-      result: 'Bez urazow',
-      time: '6 miesiecy',
+      result: 'Bez urazów',
+      time: '6 miesięcy',
       type: 'Przygotowanie sezonowe',
       quote:
-        'W poprzednich sezonach lapalem przeciazenia. Teraz plan i kontrola regeneracji utrzymaly ciaglosc treningu.',
+        'W poprzednich sezonach łapałem przeciążenia. Teraz plan i kontrola regeneracji utrzymały ciągłość treningu.',
     },
     {
       name: 'Paulina',
       age: 35,
-      result: '+22% wydolnosc',
-      time: '4 miesiace',
+      result: '+22% wydolność',
+      time: '4 miesiące',
       type: 'MTB',
       quote:
-        'Dokladne mikrocykle i feedback co tydzien daly mi pewnosc, ze wszystko idzie we wlasciwym kierunku.',
+        'Dokładne mikrocykle i feedback co tydzień dały mi pewność, że wszystko idzie we właściwym kierunku.',
     },
   ],
   'trening + odzywianie': [
@@ -203,55 +204,55 @@ const storySets: Record<string, StorySeed[]> = {
       name: 'Marta',
       age: 33,
       result: '-14 kg',
-      time: '5 miesiecy',
+      time: '5 miesięcy',
       type: 'Forma + nawyki',
       quote:
-        'Najwiekszy plus to spojny plan treningu i jedzenia. Wczesniej probowalam laczyc to sama i szybko tracilam motywacje.',
+        'Największy plus to spójny plan treningu i jedzenia. Wcześniej próbowałam łączyć to sama i szybko traciłam motywację.',
     },
     {
       name: 'Daniel',
       age: 40,
       result: '-10 cm',
-      time: '4 miesiace',
+      time: '4 miesiące',
       type: 'Redukcja centralna',
       quote:
-        'Drobne zmiany nawykow i regularne raporty daly efekt bez radykalnych diet i bez efektu jojo.',
+        'Drobne zmiany nawyków i regularne raporty dały efekt bez radykalnych diet i bez efektu jojo.',
     },
     {
       name: 'Klaudia',
       age: 29,
       result: '+4 kg',
-      time: '6 miesiecy',
-      type: 'Sila i sylwetka',
+      time: '6 miesięcy',
+      type: 'Siła i sylwetka',
       quote:
-        'Dostalam plan dopasowany do pracy zmianowej. W koncu jadlam i trenowalam tak, by to bylo do utrzymania.',
+        'Dostałam plan dopasowany do pracy zmianowej. W końcu jadłam i trenowałam tak, by to było do utrzymania.',
     },
     {
-      name: 'Michal',
+      name: 'Michał',
       age: 38,
       result: '-8 kg',
-      time: '3 miesiace',
+      time: '3 miesiące',
       type: 'Restart formy',
       quote:
-        'Program byl prosty i konkretny. Co tydzien wiedzialem, czy idziemy zgodnie z planem i co poprawic.',
+        'Program był prosty i konkretny. Co tydzień wiedziałem, czy idziemy zgodnie z planem i co poprawić.',
     },
     {
       name: 'Ola',
       age: 31,
       result: '-16 cm',
-      time: '5 miesiecy',
+      time: '5 miesięcy',
       type: 'Sylwetka',
       quote:
-        'Najbardziej pomogla regularna korekta planu. Bez tego bardzo latwo byloby sie zablokowac po kilku tygodniach.',
+        'Najbardziej pomogła regularna korekta planu. Bez tego bardzo łatwo byłoby się zablokować po kilku tygodniach.',
     },
     {
       name: 'Sebastian',
       age: 45,
       result: '-12 kg',
-      time: '6 miesiecy',
+      time: '6 miesięcy',
       type: 'Zdrowie metaboliczne',
       quote:
-        'To pierwsza wspolpraca, w ktorej plan byl realistyczny. Mniej chaosu, wiecej systemu i spokojny, trwaly progres.',
+        'To pierwsza współpraca, w której plan był realistyczny. Mniej chaosu, więcej systemu i spokojny, trwały progres.',
     },
   ],
   'trening personalny 1:1': [
@@ -259,19 +260,19 @@ const storySets: Record<string, StorySeed[]> = {
       name: 'Marek',
       age: 29,
       result: '-10 kg',
-      time: '4 miesiace',
+      time: '4 miesiące',
       type: 'Redukcja',
       quote:
-        'Dzieki prowadzeniu 1:1 przestalem zgadywac co robic na treningu. Kazdy tydzien mial jasny cel i to dalo efekt.',
+        'Dzięki prowadzeniu 1:1 przestałem zgadywać co robić na treningu. Każdy tydzień miał jasny cel i to dało efekt.',
     },
     {
       name: 'Ania',
       age: 35,
       result: '+5 kg',
-      time: '7 miesiecy',
-      type: 'Sila i sylwetka',
+      time: '7 miesięcy',
+      type: 'Siła i sylwetka',
       quote:
-        'Wspolpraca byla dopasowana do mojego grafiku. Malo chaosu, duzo konkretu i stale wsparcie po drodze.',
+        'Współpraca była dopasowana do mojego grafiku. Mało chaosu, dużo konkretu i stałe wsparcie po drodze.',
     },
     {
       name: 'Kamil',
@@ -280,34 +281,34 @@ const storySets: Record<string, StorySeed[]> = {
       time: '10 tygodni',
       type: 'Kondycja',
       quote:
-        'Najwazniejsze bylo to, ze plan byl realny. Trening przestal byc dodatkowym obowiazkiem, a stal sie rutyna.',
+        'Najważniejsze było to, że plan był realny. Trening przestał być dodatkowym obowiązkiem, a stał się rutyną.',
     },
     {
       name: 'Joanna',
       age: 31,
       result: '-11 cm',
-      time: '3 miesiace',
+      time: '3 miesiące',
       type: 'Modelowanie',
       quote:
-        'Regularne check-iny i szybkie korekty pomogly utrzymac tempo. Efekty byly widoczne juz po kilku tygodniach.',
+        'Regularne check-iny i szybkie korekty pomogły utrzymać tempo. Efekty były widoczne już po kilku tygodniach.',
     },
     {
-      name: 'Pawel',
+      name: 'Paweł',
       age: 37,
       result: '+6 kg',
-      time: '8 miesiecy',
-      type: 'Masa miesniowa',
+      time: '8 miesięcy',
+      type: 'Masa mięśniowa',
       quote:
-        'Po raz pierwszy mialem plan z prawdziwego zdarzenia i wiedzialem, jak progresowac bez przestojow.',
+        'Po raz pierwszy miałem plan z prawdziwego zdarzenia i wiedziałem, jak progresować bez przestojów.',
     },
     {
       name: 'Ewelina',
       age: 34,
       result: '-9 kg',
-      time: '5 miesiecy',
-      type: 'Powrot do formy',
+      time: '5 miesięcy',
+      type: 'Powrót do formy',
       quote:
-        'To byl system krok po kroku. Zero skrajnosci, za to regularnosc i wyniki, ktore zostaly na dluzej.',
+        'To był system krok po kroku. Zero skrajności, za to regularność i wyniki, które zostały na dłużej.',
     },
   ],
 };
@@ -321,26 +322,69 @@ const storyImages = [
   'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1887&auto=format&fit=crop',
 ];
 
-const storyIcons = [
-  TrendingUp,
-  Trophy,
-  Zap,
-  Heart,
-  UserCheck,
-  Activity,
-];
+const storyIcons = [TrendingUp, Trophy, Zap, Heart, UserCheck, Activity];
+
+const normalizeNiche = (value: string): string =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
+const getStoriesIntro = () => {
+  const niche = normalizeNiche(currentTrainer.nicheLabel || '');
+
+  if (niche.includes('medyczny') || niche.includes('fizjo')) {
+    return {
+      label: 'Typowe Efekty Współpracy',
+      title: 'Tak zwykle wygląda droga od dyskomfortu do spokojniejszego, pewniejszego ruchu.',
+      text: 'Te historie pokazują typ zmian, jakich najczęściej szukają osoby rozpoczynające współpracę 1:1.',
+      cta: 'Sprawdź, czy to model dla Ciebie',
+    };
+  }
+
+  if (niche.includes('sport') || niche.includes('motoryczne')) {
+    return {
+      label: 'Typowe Efekty Współpracy',
+      title: 'Tutaj liczy się lepszy wynik, mniejszy chaos treningowy i większa kontrola progresu.',
+      text: 'To przykłady rezultatów, które dobrze oddają sportowy kierunek współpracy i regularny progres.',
+      cta: 'Porozmawiaj o swoim celu',
+    };
+  }
+
+  if (niche.includes('kobiet')) {
+    return {
+      label: 'Typowe Efekty Współpracy',
+      title: 'Najczęściej zaczyna się od regularności, a potem przychodzą forma, siła i pewność siebie.',
+      text: 'Poniżej widzisz przykłady efektów, które dobrze oddają charakter współpracy 1:1.',
+      cta: 'Umów konsultację',
+    };
+  }
+
+  return {
+    label: 'Typowe Efekty Współpracy',
+    title: 'Efekt zwykle nie bierze się z jednego treningu, tylko z dobrze poprowadzonego procesu.',
+    text: 'Poniżej są przykładowe historie, które dobrze pokazują typ progresu budowanego w procesie 1:1.',
+    cta: 'Dołącz do współpracy',
+  };
+};
 
 const Transformations: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
+  const intro = getStoriesIntro();
 
   const transformations = useMemo<Story[]>(() => {
-    const key = currentTrainer.nicheLabel || 'trening personalny 1:1';
+    const key = normalizeNiche(currentTrainer.nicheLabel || 'trening personalny 1:1');
     const baseStories = storySets[key] || storySets['trening personalny 1:1'];
     return baseStories.map((item, idx) => {
       const Icon = storyIcons[idx % storyIcons.length];
       return {
         id: idx + 1,
         ...item,
+        name: fixMojibake(item.name),
+        result: fixMojibake(item.result),
+        time: fixMojibake(item.time),
+        type: fixMojibake(item.type),
+        quote: fixMojibake(item.quote),
         image: storyImages[idx % storyImages.length],
         icon: <Icon className="text-brand-500" size={20} />,
       };
@@ -359,12 +403,12 @@ const Transformations: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-brand-500 font-bold tracking-wider uppercase text-sm">Przykladowe historie</span>
+            <span className="text-brand-500 font-bold tracking-wider uppercase text-sm">{intro.label}</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mt-2">
-              Zobacz format <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">prezentacji efektow</span>
+              {fixMojibake(intro.title)}
             </h2>
             <p className="text-zinc-400 mt-4 text-lg">
-              Ponizej sa przykladowe case studies dobrane do typu wspolpracy, w ktorym specjalizuje sie {currentTrainer.fullName}.
+              {fixMojibake(intro.text)}
             </p>
           </div>
           <a
@@ -372,7 +416,7 @@ const Transformations: React.FC = () => {
             onClick={handleScrollToContact}
             className="px-6 py-3 border border-zinc-700 hover:bg-brand-500 hover:text-black hover:border-brand-500 text-white rounded-lg transition-all font-bold flex items-center gap-2 group"
           >
-            Dolacz do nich <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            {fixMojibake(intro.cta)} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
 
@@ -381,7 +425,7 @@ const Transformations: React.FC = () => {
             <div key={item.id} className="group relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-[4/5] bg-zinc-900 border border-zinc-800">
               <img
                 src={item.image}
-                alt={`Metamorfoza ${item.name}`}
+                alt={`Metamorfoza ${fixMojibake(item.name)}`}
                 loading="lazy"
                 decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
@@ -405,22 +449,22 @@ const Transformations: React.FC = () => {
                       <Star size={12} fill="currentColor" />
                     </div>
                     <p className="text-zinc-300 text-sm italic leading-relaxed border-l-2 border-brand-500 pl-3">
-                      "{item.quote}"
+                      "{fixMojibake(item.quote)}"
                     </p>
                   </div>
 
                   <h3 className="text-3xl font-black text-white mb-4">
-                    {item.name}, <span className="text-zinc-500 text-xl font-bold">{item.age} l.</span>
+                    {fixMojibake(item.name)}, <span className="text-zinc-500 text-xl font-bold">{item.age} l.</span>
                   </h3>
 
                   <div className="flex gap-4">
                     <div className="bg-brand-500 text-zinc-950 px-4 py-2 rounded-lg font-bold">
                       <p className="text-[10px] uppercase opacity-70 mb-0.5">Wynik</p>
-                      <p className="text-lg leading-none">{item.result}</p>
+                      <p className="text-lg leading-none">{fixMojibake(item.result)}</p>
                     </div>
                     <div className="bg-zinc-800 text-white px-4 py-2 rounded-lg border border-zinc-700">
                       <p className="text-[10px] uppercase text-zinc-400 mb-0.5">Czas</p>
-                      <p className="text-lg leading-none font-bold">{item.time}</p>
+                      <p className="text-lg leading-none font-bold">{fixMojibake(item.time)}</p>
                     </div>
                   </div>
                 </div>
@@ -436,11 +480,11 @@ const Transformations: React.FC = () => {
           >
             {showAll ? (
               <>
-                Pokaz mniej <ChevronUp size={16} />
+                Pokaż mniej <ChevronUp size={16} />
               </>
             ) : (
               <>
-                Zobacz wiecej podopiecznych <ChevronDown size={16} />
+                Zobacz więcej historii <ChevronDown size={16} />
               </>
             )}
           </button>

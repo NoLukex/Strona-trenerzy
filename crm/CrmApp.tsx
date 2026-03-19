@@ -30,6 +30,8 @@ import redeployResultsCsvRaw from '../reports/redeploy_meta_refresh_results.csv?
 import outreachPlaybookCsvRaw from '../outreach/personalized_outreach_playbook.csv?raw';
 import torunLeadsCsvRaw from '../data/torun_trenerzy_personalny_2024.csv?raw';
 import poznanLeadsCsvRaw from '../data/poznan_trenerzy_personalny_2026.csv?raw';
+import gdanskLeadsCsvRaw from '../data/gdansk_trenerzy_personalni_2026.csv?raw';
+import { gdanskTrainerProfiles } from '../data/gdanskTrainerProfiles';
 
 type Project = {
   id: string;
@@ -126,8 +128,10 @@ const STORAGE_KEY = 'trainer_crm_state_v4';
 const BYDGOSZCZ_PROJECT_ID = 'project-trenerzy-personalni-bydgoszcz';
 const TORUN_PROJECT_ID = 'project-trenerzy-personalni-torun';
 const POZNAN_PROJECT_ID = 'project-trenerzy-personalni-poznan';
+const GDANSK_PROJECT_ID = 'project-trenerzy-personalni-gdansk';
 const TORUN_VERCEL_PROJECT = 'trenerzy-personalni-torun';
 const TORUN_VERCEL_BASE_URL = 'https://trenerzy-personalni-torun.vercel.app';
+const GDANSK_VERCEL_PROJECT = 'trenerzy-personalni-gdansk';
 const EMAIL_FILTERS = ['all', 'verified', 'not_found'] as const;
 const WORKFLOW_FILTERS = ['all', 'new', 'review', 'ready_to_send', 'sent', 'follow_up', 'closed'] as const;
 const DEPLOY_GROUP_FILTERS = ['all', 'new_deploy', 'old_deploy'] as const;
@@ -142,6 +146,10 @@ function uid(prefix: string): string {
 }
 
 function getDefaultProjectId(projects: Project[]): string {
+  const gdanskProject = projects.find((project) => project.id === GDANSK_PROJECT_ID);
+  if (gdanskProject) {
+    return gdanskProject.id;
+  }
   const poznanProject = projects.find((project) => project.id === POZNAN_PROJECT_ID);
   if (poznanProject) {
     return poznanProject.id;
@@ -158,6 +166,173 @@ function slugify(value: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .replace(/-{2,}/g, '-');
+}
+
+function slugifyPolish(value: string): string {
+  return slugify(
+    value
+      .replaceAll('ą', 'a')
+      .replaceAll('ć', 'c')
+      .replaceAll('ę', 'e')
+      .replaceAll('ł', 'l')
+      .replaceAll('ń', 'n')
+      .replaceAll('ó', 'o')
+      .replaceAll('ś', 's')
+      .replaceAll('ź', 'z')
+      .replaceAll('ż', 'z')
+      .replaceAll('Ą', 'A')
+      .replaceAll('Ć', 'C')
+      .replaceAll('Ę', 'E')
+      .replaceAll('Ł', 'L')
+      .replaceAll('Ń', 'N')
+      .replaceAll('Ó', 'O')
+      .replaceAll('Ś', 'S')
+      .replaceAll('Ź', 'Z')
+      .replaceAll('Ż', 'Z'),
+  );
+}
+
+function prettifyLeadHandle(value: string): string {
+  return value
+    .trim()
+    .replace(/^@/, '')
+    .replace(/[-_.]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function getGdanskDisplayTitle(row: Record<string, string>): string {
+  const title = (row.title || '').trim();
+  const titleKey = title.toLowerCase();
+  if (!['instagram', 'facebook', 'aleo', 'sites google'].includes(titleKey)) {
+    return title;
+  }
+
+  const source = row.website || row.instagram || row.facebook || '';
+  const emailLocal = (row.email || '').split('@')[0]?.trim() || '';
+  const emailCandidate = prettifyLeadHandle(emailLocal);
+
+  try {
+    const parsed = new URL(source.startsWith('http') ? source : `https://${source}`);
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, '');
+    const parts = parsed.pathname.split('/').filter(Boolean);
+
+    if (host.endsWith('instagram.com')) {
+      const handle = parts.at(-1)?.toLowerCase() === 'channel' ? parts.at(-2) || '' : parts[0] || '';
+      return prettifyLeadHandle(handle) || emailCandidate || title;
+    }
+
+    if (host.endsWith('facebook.com')) {
+      if (parts[0]?.toLowerCase() !== 'profile.php') {
+        return emailCandidate || prettifyLeadHandle(parts[0] || '') || title;
+      }
+    }
+
+    if (!host.endsWith('sites.google.com')) {
+      const stem = host.split('.')[0] || '';
+      return emailCandidate || prettifyLeadHandle(stem) || title;
+    }
+  } catch {
+    return emailCandidate || title;
+  }
+
+  return emailCandidate || title;
+}
+
+function firstSeedEmail(value: string): string {
+  return (value || '').split(/[;,]/)[0]?.trim().toLowerCase() || '';
+}
+
+function normalizeProfileUrl(value: string): string {
+  const raw = (value || '').split(/[;,]/)[0]?.trim() || '';
+  if (!raw) {
+    return '';
+  }
+
+  try {
+    const parsed = new URL(raw.startsWith('http') ? raw : `https://${raw}`);
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, '');
+    const path = parsed.pathname.replace(/\/+$/, '');
+    return `${host}${path}${parsed.search}`;
+  } catch {
+    return raw.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
+  }
+}
+
+const gdanskGeneratedProfiles = Object.values(gdanskTrainerProfiles);
+
+const gdanskProfileByEmail = new Map(
+  gdanskGeneratedProfiles
+    .filter((profile) => firstSeedEmail(profile.email))
+    .map((profile) => [firstSeedEmail(profile.email), profile]),
+);
+
+const gdanskProfileByUrl = new Map(
+  gdanskGeneratedProfiles.flatMap((profile) =>
+    [profile.website, profile.instagram, profile.facebook]
+      .map((value) => normalizeProfileUrl(value || ''))
+      .filter(Boolean)
+      .map((key) => [key, profile] as const),
+  ),
+);
+
+const gdanskProfileByTitle = new Map(
+  gdanskGeneratedProfiles.flatMap((profile) =>
+    [profile.fullName, profile.brandName, profile.navName]
+      .map((value) => (value || '').trim())
+      .filter(Boolean)
+      .map((value) => [slugifyPolish(value), profile] as const),
+  ),
+);
+
+function findGeneratedGdanskProfile(row: Record<string, string>) {
+  const email = firstSeedEmail(row.email || '');
+  if (email && gdanskProfileByEmail.has(email)) {
+    return gdanskProfileByEmail.get(email);
+  }
+
+  const urlCandidates = [row.website || '', row.instagram || '', row.facebook || '']
+    .map((value) => normalizeProfileUrl(value))
+    .filter(Boolean);
+
+  for (const candidate of urlCandidates) {
+    const profile = gdanskProfileByUrl.get(candidate);
+    if (profile) {
+      return profile;
+    }
+  }
+
+  const titleCandidates = [getGdanskDisplayTitle(row), row.title || '']
+    .map((value) => slugifyPolish(value || ''))
+    .filter(Boolean);
+
+  for (const candidate of titleCandidates) {
+    const profile = gdanskProfileByTitle.get(candidate);
+    if (profile) {
+      return profile;
+    }
+  }
+
+  return undefined;
+}
+
+function getRuntimeBaseUrl(projectId: string): string {
+  const configuredGdanskBase = (import.meta.env.VITE_GDANSK_BASE_URL || '').trim();
+  if (projectId === GDANSK_PROJECT_ID && configuredGdanskBase) {
+    return configuredGdanskBase.replace(/\/+$/, '');
+  }
+  if (typeof window !== 'undefined') {
+    return window.location.origin;
+  }
+  return projectId === GDANSK_PROJECT_ID ? 'http://127.0.0.1:4173' : TORUN_VERCEL_BASE_URL;
+}
+
+function buildProjectTrainerUrl(projectId: string, slug: string): string {
+  return `${getRuntimeBaseUrl(projectId)}/t/${slug}`;
 }
 
 function parseCsv(raw: string): string[][] {
@@ -362,6 +537,7 @@ function buildPoznanSeedLeads(projectId: string): Lead[] {
 
       const email = (row.email || '').split(/[;,]/)[0]?.trim() || '';
       const emailStatus: Lead['emailStatus'] = email ? 'verified' : 'not_found';
+      const vercelUrl = `${TORUN_VERCEL_BASE_URL}/?trainer=${slug}`;
 
       return {
         id: uid('lead'),
@@ -376,11 +552,60 @@ function buildPoznanSeedLeads(projectId: string): Lead[] {
         website: row.website || '',
         facebook: row.facebook || '',
         instagram: row.instagram || '',
-        vercelProject: '',
-        vercelUrl: '',
+        vercelProject: TORUN_VERCEL_PROJECT,
+        vercelUrl,
         priority: 'medium',
         owner: '',
         tags: ['poznan_2026'],
+        nextActionDate: '',
+        updatedAt: nowIso(),
+      } satisfies Lead;
+    });
+
+  return leads.sort((a, b) => a.title.localeCompare(b.title));
+}
+
+function buildGdanskSeedLeads(projectId: string): Lead[] {
+  const records = parseCsvObjects(gdanskLeadsCsvRaw);
+  const usedSlugs = new Set<string>();
+
+  const leads = records
+    .filter((row) => row.title)
+    .map((row, i) => {
+      const generatedProfile = findGeneratedGdanskProfile(row);
+      const title = generatedProfile?.fullName || getGdanskDisplayTitle(row);
+      const normalizedSlug = slugifyPolish(title || '') || `lead-${i + 1}`;
+      const baseSlug = generatedProfile?.slug || `gdansk-${normalizedSlug}`;
+      let slug = baseSlug;
+      let suffix = 2;
+      while (usedSlugs.has(slug)) {
+        slug = `${baseSlug}-${suffix}`;
+        suffix += 1;
+      }
+      usedSlugs.add(slug);
+
+      const email = (row.email || '').split(/[;,]/)[0]?.trim() || '';
+      const emailStatus: Lead['emailStatus'] = email ? 'verified' : 'not_found';
+      const vercelUrl = buildProjectTrainerUrl(projectId, slug);
+
+      return {
+        id: uid('lead'),
+        projectId,
+        deploymentStatus: 'imported',
+        slug,
+        title: title || slug,
+        email,
+        emailStatus,
+        workflowStatus: email ? 'review' : 'new',
+        phone: row.phone || '',
+        website: row.website || '',
+        facebook: row.facebook || '',
+        instagram: row.instagram || '',
+        vercelProject: GDANSK_VERCEL_PROJECT,
+        vercelUrl,
+        priority: 'medium',
+        owner: '',
+        tags: ['gdansk_2026'],
         nextActionDate: '',
         updatedAt: nowIso(),
       } satisfies Lead;
@@ -431,10 +656,10 @@ function normalizeLead(lead: Lead): Lead {
 
 function buildLocalTrainerUrl(slug: string): string {
   if (typeof window === 'undefined') {
-    return `http://127.0.0.1:3000/?trainer=${slug}`;
+    return `http://127.0.0.1:4173/t/${slug}`;
   }
 
-  return `${window.location.origin}/?trainer=${slug}`;
+  return `${window.location.origin}/t/${slug}`;
 }
 
 function initialState(): CrmState {
@@ -460,13 +685,21 @@ function initialState(): CrmState {
     createdAt: ts,
     updatedAt: ts,
   };
+  const gdanskProject: Project = {
+    id: GDANSK_PROJECT_ID,
+    name: 'Trenerzy personalni - Gdansk',
+    description: 'Projekt: baza leadow trenerow personalnych z Gdanska.',
+    createdAt: ts,
+    updatedAt: ts,
+  };
 
   return {
-    projects: [bydgoszczProject, torunProject, poznanProject],
+    projects: [bydgoszczProject, torunProject, poznanProject, gdanskProject],
     leads: [
       ...buildSeedLeads(BYDGOSZCZ_PROJECT_ID),
       ...buildTorunSeedLeads(TORUN_PROJECT_ID),
       ...buildPoznanSeedLeads(POZNAN_PROJECT_ID),
+      ...buildGdanskSeedLeads(GDANSK_PROJECT_ID),
     ],
     notes: [],
     activity: [],
@@ -494,10 +727,10 @@ function mergeProjectSeedLeads(state: CrmState, projectId: string, seedLeads: Le
       title: existing.title && existing.title !== existing.slug ? existing.title : seedLead.title,
       email: seedLead.email || existing.email,
       emailStatus: seedLead.email ? seedLead.emailStatus : existing.emailStatus,
-      phone: existing.phone || seedLead.phone,
-      website: existing.website || seedLead.website,
-      facebook: existing.facebook || seedLead.facebook,
-      instagram: existing.instagram || seedLead.instagram,
+      phone: seedLead.phone,
+      website: seedLead.website,
+      facebook: seedLead.facebook,
+      instagram: seedLead.instagram,
       vercelProject: seedLead.vercelProject || existing.vercelProject,
       vercelUrl: seedLead.vercelUrl || existing.vercelUrl,
       priority: existing.priority || seedLead.priority,
@@ -535,6 +768,13 @@ function syncLeadsWithSeed(state: CrmState): CrmState {
       createdAt: nowIso(),
       updatedAt: nowIso(),
     },
+    {
+      id: GDANSK_PROJECT_ID,
+      name: 'Trenerzy personalni - Gdansk',
+      description: 'Projekt: baza leadow trenerow personalnych z Gdanska.',
+      createdAt: nowIso(),
+      updatedAt: nowIso(),
+    },
   ];
 
   const existingIds = new Set(state.projects.map((project) => project.id));
@@ -549,6 +789,7 @@ function syncLeadsWithSeed(state: CrmState): CrmState {
   merged = mergeProjectSeedLeads(merged, BYDGOSZCZ_PROJECT_ID, buildSeedLeads(BYDGOSZCZ_PROJECT_ID));
   merged = mergeProjectSeedLeads(merged, TORUN_PROJECT_ID, buildTorunSeedLeads(TORUN_PROJECT_ID));
   merged = mergeProjectSeedLeads(merged, POZNAN_PROJECT_ID, buildPoznanSeedLeads(POZNAN_PROJECT_ID));
+  merged = mergeProjectSeedLeads(merged, GDANSK_PROJECT_ID, buildGdanskSeedLeads(GDANSK_PROJECT_ID));
   return merged;
 }
 
@@ -888,6 +1129,11 @@ export default function CrmApp() {
   );
 
   const activeProject = state.projects.find((project) => project.id === activeProjectId) || null;
+
+  React.useEffect(() => {
+    const projectName = activeProject?.name || 'CRM';
+    document.title = `${projectName} | CRM`;
+  }, [activeProject?.name]);
 
   const metrics = React.useMemo(() => {
     const actionable = projectLeads.filter((lead) => lead.deploymentStatus !== 'excluded_non_person');
@@ -1516,7 +1762,7 @@ export default function CrmApp() {
                           </td>
                           <td className="px-3 py-3 align-top text-xs">
                             <div className="flex flex-col gap-1">
-                              <a className="inline-flex items-center gap-1 text-emerald-300 hover:underline" href={localTrainerUrl} target="_blank" rel="noreferrer"><ExternalLink className="h-3 w-3" /> Localhost</a>
+                              <a className="inline-flex items-center gap-1 text-emerald-300 hover:underline" href={localTrainerUrl} target="_blank" rel="noreferrer"><ExternalLink className="h-3 w-3" /> Open app</a>
                               {lead.vercelUrl ? <a className="inline-flex items-center gap-1 text-sky-300 hover:underline" href={lead.vercelUrl} target="_blank" rel="noreferrer"><ExternalLink className="h-3 w-3" /> Vercel</a> : <span className="text-slate-500">Brak Vercel</span>}
                               {lead.website ? <a className="inline-flex items-center gap-1 text-slate-300 hover:underline" href={lead.website} target="_blank" rel="noreferrer"><ExternalLink className="h-3 w-3" /> Website</a> : <span className="text-slate-500">Brak WWW</span>}
                             </div>
@@ -1661,7 +1907,7 @@ export default function CrmApp() {
                         <ExternalLink className="h-3.5 w-3.5" /> Open vercel
                       </a>
                       <a href={localTrainerUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-1 rounded-lg border border-emerald-700 bg-emerald-950/30 px-2 py-2 font-semibold text-emerald-300 hover:bg-emerald-900/40">
-                        <ExternalLink className="h-3.5 w-3.5" /> Open localhost
+                        <ExternalLink className="h-3.5 w-3.5" /> Open app
                       </a>
                     </div>
                         </>

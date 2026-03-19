@@ -9,35 +9,35 @@ const FAQ: React.FC = () => {
 
   const defaultFaqs = [
     {
-      q: "Czy muszę chodzić na siłownię?",
-      a: "Nie. Układam plany treningowe również do wykonania w domu, z minimalnym sprzętem lub masą własnego ciała."
+      q: 'Czy muszę chodzić na siłownię?',
+      a: 'Nie. Plany treningowe można dopasować również do domu, podstawowego sprzętu albo pracy z ciężarem własnego ciała.',
     },
     {
-      q: "Czy dieta jest bardzo restrykcyjna?",
-      a: "Jestem zwolennikiem diety 80/20. 80% to zdrowe, nieprzetworzone produkty, a 20% to miejsce na Twoje ulubione przyjemności. Dieta ma być stylem życia, a nie katorgą."
+      q: 'Czy dieta jest bardzo restrykcyjna?',
+      a: 'Nie. Chodzi o model, który da się utrzymać, a nie o chwilową katorgę. Najpierw ustawiamy podstawy i rytm działania.',
     },
     {
-      q: "Jak wygląda kontakt?",
-      a: "W pakiecie opieki 1:1 kontaktujemy się przez WhatsApp na bieżąco. Dodatkowo raz w tygodniu wysyłasz mi raport, na który odpowiadam szczegółową analizą wideo lub głosową."
+      q: 'Jak wygląda kontakt?',
+      a: 'Na starcie ustalamy najlepszą formę kontaktu i jasne zasady współpracy, tak żebyś od razu wiedział, co dzieje się dalej.',
     },
     {
-      q: "Kiedy zobaczę pierwsze efekty?",
-      a: "Pierwsze zmiany w samopoczuciu odczujesz już po tygodniu. Wizualne zmiany zazwyczaj pojawiają się po 3-4 tygodniach regularnej pracy."
-    }
+      q: 'Kiedy zobaczę pierwsze efekty?',
+      a: 'Pierwsze zmiany zwykle widać najpierw w samopoczuciu, energii i regularności. Na mocniejsze efekty wizualne trzeba kilku tygodni spokojnej pracy.',
+    },
   ];
 
-  const faqsBase = (currentTrainer.faqItems && currentTrainer.faqItems.length > 0)
+  const faqsBase = currentTrainer.faqItems && currentTrainer.faqItems.length > 0
     ? currentTrainer.faqItems
     : defaultFaqs;
 
   const beginnerFaqs = [
     {
-      q: 'Nigdy nie cwiczylem regularnie. Czy dam rade?',
-      a: 'Tak. Zaczynamy od prostego planu i lekkiego progu wejscia, zeby od pierwszego tygodnia zlapac regularnosc.',
+      q: 'Nigdy nie ćwiczyłem regularnie. Czy dam radę?',
+      a: 'Tak. Zaczynamy od prostego planu i lekkiego progu wejścia, żeby od pierwszego tygodnia złapać regularność.',
     },
     {
-      q: 'Ile czasu tygodniowo musze zarezerwowac?',
-      a: 'Na start zwykle wystarcza 2-3 treningi tygodniowo plus krotki check-in postepu.',
+      q: 'Ile czasu tygodniowo muszę zarezerwować?',
+      a: 'Na start zwykle wystarczą 2-3 treningi tygodniowo plus krótki check-in postępu.',
     },
   ];
 
@@ -52,14 +52,14 @@ const FAQ: React.FC = () => {
 
         {quickWin.showBeginnerFaqIntro && (
           <div className="mb-6 rounded-xl border border-zinc-800 bg-zinc-950 p-4 text-sm text-zinc-300">
-            Sekcja dla poczatkujacych: odpowiedzi na najczestsze obawy przed pierwszym treningiem.
+            Sekcja dla początkujących: odpowiedzi na najczęstsze obawy przed pierwszym treningiem.
           </div>
         )}
-        
+
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <div key={idx} className="border border-zinc-800 rounded-lg bg-zinc-950 overflow-hidden">
-              <button 
+              <button
                 className="w-full flex justify-between items-center p-6 text-left hover:bg-zinc-900 transition-colors"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 aria-expanded={openIndex === idx}
@@ -69,7 +69,7 @@ const FAQ: React.FC = () => {
                 <span className="font-bold text-white">{faq.q}</span>
                 {openIndex === idx ? <Minus className="text-brand-500" /> : <Plus className="text-zinc-500" />}
               </button>
-               
+
               {openIndex === idx && (
                 <div
                   id={`faq-content-${idx}`}

@@ -5,33 +5,69 @@ import currentTrainer from '../data/currentTrainer';
 import { getQuickWinConfig } from '../data/quickWinConfig';
 import { saveLeadIntent } from '../utils/leadIntent';
 
+const sanitizeHeroCopy = (value: string): string =>
+  value
+    .replace(/Na stronie ma byc od razu jasne, /g, '')
+    .replace(/Na stronie ma byc jasne, ze /g, '')
+    .replace(/Najmocniejszy kierunek tej strony to /g, '')
+    .replace(/ma brzmiec jak trener lub marka[^.]*\./gi, '')
+    .replace(/brzmiec jak osoba lub marka, ktora /g, '')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) prowadzi wspolprace 1:1 /i, 'Dostajesz wspolprace 1:1 ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) prowadzi trening personalny /i, 'Dostajesz trening personalny ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) prowadzi trening dla kobiet /i, 'Dostajesz trening dla kobiet ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) prowadzi trening medyczny /i, 'Dostajesz trening medyczny ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) prowadzi kobiecy trening 1:1 /i, 'Dostajesz kobiecy trening 1:1 ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) komunikuje /i, 'Tutaj dostajesz ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) sprzedaje /i, 'Tutaj dostajesz ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) stawia na /i, 'Dostajesz ')
+    .replace(/^([A-Z][A-Za-z0-9& .'-]+?) laczy /i, 'To miejsce laczy ')
+    .replace(/^[Ww]spolprace 1:1 /i, 'Dostajesz wspolprace 1:1 ')
+    .replace(/^[Tt]rening dla kobiet /i, 'Dostajesz trening dla kobiet ')
+    .replace(/^[Tt]rening personalny /i, 'Dostajesz trening personalny ')
+    .replace(/^[Tt]rening medyczny /i, 'Dostajesz trening medyczny ')
+    .replace(/^[Tt]rening 1:1 /i, 'Dostajesz trening 1:1 ')
+    .replace(/^[Kk]obiecy trening 1:1 /i, 'Dostajesz kobiecy trening 1:1 ')
+    .replace(/^To oferta dla osob, ktore chca /i, 'Jesli chcesz ')
+    .replace(/^To model dla osob, ktore chca /i, 'Jesli chcesz ')
+    .replace(/^To miejsce jest dla osob, ktore chca /i, 'Jesli chcesz ')
+    .replace(/^To miejsce jest dla kobiet, ktore chca /i, 'Jesli chcesz ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const finalizeHeroDirectVoice = (value: string): string =>
+  sanitizeHeroCopy(value).replace(/^[a-z]/, (match) => match.toUpperCase());
 const Hero: React.FC = () => {
   const quickWin = getQuickWinConfig(currentTrainer.slug);
-  const [quizChoice, setQuizChoice] = React.useState<'Redukcja' | 'Sila i masa' | 'Powrot do sprawnosci'>('Redukcja');
+  const heroHeadlineLength = `${currentTrainer.heroTitleTop} ${currentTrainer.heroTitleAccent}`.trim().length;
+  const heroHeadlineSizeClass =
+    heroHeadlineLength > 42
+      ? 'text-5xl md:text-6xl lg:text-[4.35rem]'
+      : 'text-5xl md:text-7xl';
+  const [quizChoice, setQuizChoice] = React.useState<'Redukcja' | 'Siła i masa' | 'Powrót do sprawności'>('Redukcja');
 
   const pricingPreview =
     currentTrainer.pricingPlans && currentTrainer.pricingPlans.length > 0
       ? currentTrainer.pricingPlans.slice(0, 3)
       : [
-          { name: 'Start', price: '299 zl', subtitle: 'Pierwszy krok' },
-          { name: 'Prowadzenie 1:1', price: '599 zl', subtitle: 'Regularna opieka' },
-          { name: 'Premium', price: '999 zl', subtitle: 'Pelna opieka' },
+          { name: 'Start', price: '299 zł', subtitle: 'Pierwszy krok' },
+          { name: 'Prowadzenie 1:1', price: '599 zł', subtitle: 'Regularna opieka' },
+          { name: 'Premium', price: '999 zł', subtitle: 'Pełna opieka' },
         ];
 
   const quickQuizMap = {
     Redukcja: {
       recommendation: pricingPreview[0] || pricingPreview[1],
-      goal: 'Redukcja tkanki tluszczowej',
+      goal: 'Redukcja tkanki tłuszczowej',
       timeline: 'Start w 2 tygodnie',
     },
-    'Sila i masa': {
+    'Siła i masa': {
       recommendation: pricingPreview[1] || pricingPreview[0],
-      goal: 'Budowa masy i sily',
+      goal: 'Budowa masy i siły',
       timeline: 'Start w 2-4 tygodnie',
     },
-    'Powrot do sprawnosci': {
+    'Powrót do sprawności': {
       recommendation: pricingPreview[2] || pricingPreview[1],
-      goal: 'Powrot po przerwie lub przeciagzeniu',
+      goal: 'Powrót po przerwie lub przeciążeniu',
       timeline: 'Start od konsultacji',
     },
   };
@@ -66,7 +102,7 @@ const Hero: React.FC = () => {
             href="#contact"
             onClick={(e) =>
               handleContactIntent(e, {
-                goal: 'Chce schudnac',
+                goal: 'Chcę schudnąć',
                 track: 'redukcja',
                 source: 'quick-win-split-cta',
               })
@@ -80,15 +116,15 @@ const Hero: React.FC = () => {
             href="#contact"
             onClick={(e) =>
               handleContactIntent(e, {
-                goal: 'Pozbycie sie bolu plecow',
-                consultationType: 'Konsultacja plecy i ruch',
+                goal: 'Pozbycie się bólu pleców',
+                consultationType: 'Konsultacja: plecy i ruch',
                 track: 'bol-plecow',
                 source: 'quick-win-split-cta',
               })
             }
             className="px-6 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-white font-bold text-base rounded-xl transition-all flex items-center justify-between gap-2"
           >
-            Pozbadz sie bolu plecow
+            Pozbądź się bólu pleców
             <ChevronRight className="w-5 h-5" />
           </a>
         </div>
@@ -142,8 +178,8 @@ const Hero: React.FC = () => {
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
           <article className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col">
-            <p className="text-sm font-bold text-white mb-1">Sciezka sport / kickboxing</p>
-            <p className="text-zinc-400 text-sm mb-3 flex-1">Rozwoj mocy, dynamiki i przygotowania pod trening kontaktowy.</p>
+            <p className="text-sm font-bold text-white mb-1">Ścieżka sport / kickboxing</p>
+            <p className="text-zinc-400 text-sm mb-3 flex-1">Rozwój mocy, dynamiki i przygotowania pod trening kontaktowy.</p>
             <button
               onClick={(e) =>
                 handleContactIntent(e, {
@@ -153,13 +189,11 @@ const Hero: React.FC = () => {
                 })
               }
               className="rounded-lg border border-zinc-700 py-2.5 text-white font-bold hover:border-brand-500 hover:text-brand-400"
-            >
-              Wchodze w sport
-            </button>
+            >Wchodzę w sport</button>
           </article>
           <article className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col">
-            <p className="text-sm font-bold text-white mb-1">Sciezka forma / sylwetka</p>
-            <p className="text-zinc-400 text-sm mb-3 flex-1">Redukcja, modelowanie sylwetki i poprawa codziennej sprawnosci.</p>
+            <p className="text-sm font-bold text-white mb-1">Ścieżka forma / sylwetka</p>
+            <p className="text-zinc-400 text-sm mb-3 flex-1">Redukcja, modelowanie sylwetki i poprawa codziennej sprawności.</p>
             <button
               onClick={(e) =>
                 handleContactIntent(e, {
@@ -169,9 +203,7 @@ const Hero: React.FC = () => {
                 })
               }
               className="rounded-lg border border-zinc-700 py-2.5 text-white font-bold hover:border-brand-500 hover:text-brand-400"
-            >
-              Wchodze w forme
-            </button>
+            >Wchodzę w formę</button>
           </article>
         </div>
       );
@@ -180,7 +212,7 @@ const Hero: React.FC = () => {
     if (quickWin.heroMode === 'promise-packages') {
       return (
         <div id={quickWin.hideBasePricing ? 'pricing' : undefined} className="space-y-4 mt-2 scroll-mt-24">
-          <p className="text-sm text-zinc-400">Jeden cel: stabilny progres. Wybierz pakiet i przejdz do jednego formularza kontaktu.</p>
+          <p className="text-sm text-zinc-400">Jeden cel: stabilny progres. Wybierz pakiet i przejdź do jednego formularza kontaktu.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {pricingPreview.slice(0, 3).map((plan) => (
               <div key={plan.name} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
@@ -199,9 +231,7 @@ const Hero: React.FC = () => {
               })
             }
             className="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold text-lg rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
-          >
-            Umow konsultacje
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          >Umów konsultację<ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       );
@@ -209,9 +239,9 @@ const Hero: React.FC = () => {
 
     if (quickWin.heroMode === 'goal-paths') {
       const paths = [
-        { name: 'Redukcja', goal: 'Redukcja tkanki tluszczowej' },
-        { name: 'Masa i sila', goal: 'Budowa masy miesniowej' },
-        { name: 'Powrot do formy', goal: 'Powrot po przerwie' },
+        { name: 'Redukcja', goal: 'Redukcja tkanki tłuszczowej' },
+        { name: 'Masa i siła', goal: 'Budowa masy mięśniowej' },
+        { name: 'Powrót do formy', goal: 'Powrót po przerwie' },
       ];
 
       return (
@@ -229,7 +259,7 @@ const Hero: React.FC = () => {
                 className="rounded-xl border border-zinc-700 bg-zinc-900 p-3 text-left hover:border-brand-500 transition-colors min-h-[44px] cursor-pointer"
               >
                 <p className="text-white font-bold text-sm">{path.name}</p>
-                <p className="text-zinc-400 text-xs mt-1">Wybierz i przejdz do formularza.</p>
+                <p className="text-zinc-400 text-xs mt-1">Wybierz i przejdź do formularza.</p>
               </button>
             ))}
           </div>
@@ -238,7 +268,7 @@ const Hero: React.FC = () => {
             onClick={(e) => handleContactIntent(e, { source: 'quick-win-goal-path-hero-main' })}
             className="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold text-lg rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
           >
-            Przejdz do formularza kwalifikacyjnego
+            Przejdź do formularza kwalifikacyjnego
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
@@ -252,9 +282,7 @@ const Hero: React.FC = () => {
             href="#contact"
             onClick={(e) => handleContactIntent(e, { source: 'quick-win-single-cta' })}
             className="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold text-lg rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
-          >
-            Umow konsultacje
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          >Umów konsultację<ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       );
@@ -267,7 +295,7 @@ const Hero: React.FC = () => {
           onClick={(e) => handleScrollToSection(e, 'contact')}
           className="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-zinc-950 font-bold text-lg rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
         >
-          Bezplatna Konsultacja
+          Bezpłatna konsultacja
           <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </a>
         <a
@@ -287,7 +315,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-zinc-900 via-zinc-950 to-transparent opacity-50 z-0 hidden lg:block" />
       <div className="absolute top-20 right-20 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl z-0 animate-pulse" />
       
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         
         {/* Text Content */}
         <div className="flex flex-col justify-center gap-8">
@@ -301,7 +329,7 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight">
+          <h1 className={`${heroHeadlineSizeClass} font-black text-white leading-[1.12] md:leading-[1.08] tracking-[-0.01em] text-balance max-w-[13ch]`}>
             {currentTrainer.heroTitleTop} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">
               {currentTrainer.heroTitleAccent}
@@ -309,7 +337,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-lg text-zinc-400 max-w-lg leading-relaxed">
-            {currentTrainer.heroText}
+            {finalizeHeroDirectVoice(currentTrainer.heroText)}
           </p>
 
           {renderHeroActions()}
@@ -346,7 +374,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Hero Image / Visual */}
-        <div className="relative hidden lg:flex justify-center items-end h-full">
+          <div className="relative hidden lg:flex justify-center items-center self-center h-full py-2">
             <div className="relative z-10 w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl shadow-brand-900/20 group">
                 <img 
                     src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" 
@@ -376,8 +404,8 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Decorative Grid */}
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-none border border-zinc-800 opacity-20" style={{ backgroundImage: 'radial-gradient(#3f3f46 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-        </div>
+            <div className="absolute -bottom-6 -right-10 w-64 h-64 bg-none border border-zinc-800 opacity-20" style={{ backgroundImage: 'radial-gradient(#3f3f46 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+          </div>
 
       </div>
     </section>

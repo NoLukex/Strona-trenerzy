@@ -49,7 +49,7 @@ const buildSeoDescription = () => {
   const lead = `${currentTrainer.brandName} - trener personalny`; 
   const city = currentTrainer.city ? `w ${currentTrainer.city}` : '';
   const tagline = currentTrainer.brandTagline || 'trening 1:1 i online';
-  return `${lead} ${city}. ${tagline}. Umow konsultacje i zacznij trening.`.replace(/\s+/g, ' ').trim();
+  return `${lead} ${city}. ${tagline}. Umów konsultację i zacznij trening.`.replace(/\s+/g, ' ').trim();
 };
 
 function App() {
@@ -127,7 +127,7 @@ function App() {
         href="#main-content"
         className="skip-link fixed left-4 top-4 z-[60] rounded-md bg-brand-500 px-4 py-2 font-bold text-zinc-950"
       >
-        Przejdz do tresci
+        Przejdź do treści
       </a>
       <Navbar />
       

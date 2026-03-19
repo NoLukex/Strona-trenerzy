@@ -241,8 +241,5 @@ export const poznanTrainerQuickWinOverrides = {
     "heroMode": "single-cta",
     "contactMode": "qualification-3q",
     "singleContactCta": true
-  },
-  "poznan-boxing-coach-palkhouski-trener-boksu-poznan": {
-    "showPricingCaseStudies": true
   }
 } as const;

@@ -8,13 +8,6 @@ export const poznanTop20ManualOverrides: Record<string, TrainerProfileOverride> 
     aboutHeading: 'Tomasz Lesnikowski - terapia ruchem i trening medyczny w Poznaniu.',
     aboutText: 'Najwazniejszy quick win: naprawa formularza kontaktowego i test calej sciezki zapisu. Strona ma duzy ruch i mocne opinie, wiec kazde niedzialajace pole to utracony lead.',
   },
-  'poznan-boxing-coach-palkhouski-trener-boksu-poznan': {
-    heroTitleTop: 'TRENING BOKSU',
-    heroTitleAccent: 'Z KONKRETNYM PLANEM.',
-    heroText: 'Trening 1:1 i grupowy pod technike, kondycje i pewnosc siebie. Start od poziomu klienta, bez przypadkowych jednostek.',
-    aboutHeading: 'Palkhouski - trening boksu i przygotowanie motoryczne w Poznaniu.',
-    aboutText: 'Priorytet quick win: wymiana licznikow 0/1 na realne dane i mocniejsze social proof. Przy takiej skali opinii ta zmiana bezposrednio podnosi konwersje.',
-  },
   'poznan-terapeuta-ruchowy-trener-medyczny-trener-personalny-adam-andrzejewski': {
     heroTitleTop: 'TRENING MEDYCZNY 1:1',
     heroTitleAccent: 'OD DIAGNOZY DO FORMY.',

@@ -10,40 +10,40 @@ const Pricing: React.FC = () => {
   const defaultPlans = [
     {
       name: 'Plan Treningowy',
-      subtitle: 'Dla tych, ktorzy potrzebuja tylko mapy.',
-      price: '199 zl',
+      subtitle: 'Dla tych, którzy potrzebują tylko mapy.',
+      price: '199 zł',
       period: '/ msc',
       features: [
         'Indywidualny plan treningowy',
-        'Atlas cwiczen wideo',
-        'Raz w miesiacu korekta planu',
+        'Atlas ćwiczeń wideo',
+        'Raz w miesiącu korekta planu',
       ],
       ctaLabel: 'Wybieram plan treningowy',
     },
     {
       name: 'Opieka 1:1 Online',
-      subtitle: 'Kompleksowe prowadzenie dla najlepszych efektow.',
-      price: '349 zl',
+      subtitle: 'Kompleksowe prowadzenie dla najlepszych efektów.',
+      price: '349 zł',
       period: '/ msc',
       features: [
         'Wszystko z pakietu podstawowego',
-        'Plan zywieniowy / makroskladniki',
+        'Plan żywieniowy / makroskładniki',
         'Cotygodniowe raporty i analiza',
         'Kontakt WhatsApp w godzinach 8-20',
       ],
-      ctaLabel: 'Wybieram opieke 1:1',
+      ctaLabel: 'Wybieram opiekę 1:1',
       featured: true,
     },
     {
       name: 'VIP Hybryda',
-      subtitle: 'Polaczenie online z treningami personalnymi.',
-      price: '999 zl',
+      subtitle: 'Połączenie online z treningami personalnymi.',
+      price: '999 zł',
       period: '/ msc',
       features: [
-        'Pelna opieka online',
+        'Pełna opieka online',
         '4 treningi personalne (Bydgoszcz)',
-        'Analiza skladu ciala co miesiac',
-        'Wspolne zakupy / edukacja',
+        'Analiza składu ciała co miesiąc',
+        'Wspólne zakupy / edukacja',
       ],
       ctaLabel: 'Wybieram pakiet VIP',
     },
@@ -109,7 +109,7 @@ const Pricing: React.FC = () => {
                     ? 'w-full py-3 bg-brand-500 text-zinc-950 rounded-lg text-center font-bold hover:bg-brand-400 transition-colors cursor-pointer min-h-[44px]'
                     : 'w-full py-3 border border-zinc-700 text-white rounded-lg text-center font-bold hover:bg-zinc-800 transition-colors cursor-pointer min-h-[44px]'}
                 >
-                  {quickWin.singleContactCta ? 'Umow konsultacje' : plan.ctaLabel}
+                  {quickWin.singleContactCta ? 'Umów konsultację' : plan.ctaLabel}
                 </a>
               </div>
             );

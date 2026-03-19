@@ -21,50 +21,50 @@ interface QuickWinBlocksProps {
 }
 
 const fallbackPlans = [
-  { name: 'Start', subtitle: 'Bezpieczny start wspolpracy', price: '299 zl' },
-  { name: 'Prowadzenie 1:1', subtitle: 'Regularny progres i opieka', price: '599 zl' },
-  { name: 'Pakiet premium', subtitle: 'Prowadzenie z priorytetem', price: '999 zl' },
+  { name: 'Start', subtitle: 'Bezpieczny start współpracy', price: '299 zł' },
+  { name: 'Prowadzenie 1:1', subtitle: 'Regularny progres i opieka', price: '599 zł' },
+  { name: 'Pakiet premium', subtitle: 'Prowadzenie z priorytetem', price: '999 zł' },
 ];
 
 const painRecommendations: Record<string, { label: string; goal: string; consultationType: string }> = {
   ledzwia: {
-    label: 'Kregoslup i przeciazenia ledzwi',
-    goal: 'Powrot do treningu bez bolu plecow',
+    label: 'Kręgosłup i przeciążenia lędźwi',
+    goal: 'Powrót do treningu bez bólu pleców',
     consultationType: 'Konsultacja ruchowa 30 min',
   },
   kolano: {
-    label: 'Bol kolana przy przysiadach lub bieganiu',
-    goal: 'Stabilizacja kolana i bezpieczny powrot',
+    label: 'Ból kolana przy przysiadach lub bieganiu',
+    goal: 'Stabilizacja kolana i bezpieczny powrót',
     consultationType: 'Konsultacja techniczna 30 min',
   },
   bark: {
     label: 'Dyskomfort barku przy wyciskaniu',
-    goal: 'Odbudowa zakresu i sily barku',
-    consultationType: 'Konsultacja mobilnosc + sila 30 min',
+    goal: 'Odbudowa zakresu i siły barku',
+    consultationType: 'Konsultacja mobilność + siła 30 min',
   },
   inny: {
-    label: 'Inny problem lub kilka objawow',
-    goal: 'Pelna diagnostyka startowa',
+    label: 'Inny problem lub kilka objawów',
+    goal: 'Pełna diagnostyka startowa',
     consultationType: 'Konsultacja kompleksowa 45 min',
   },
 };
 
 const weekPlan = [
   {
-    title: 'Tydzien 1',
-    desc: 'Wywiad, pomiary startowe i plan dzialania pod cel.',
+    title: 'Tydzień 1',
+    desc: 'Wywiad, pomiary startowe i plan działania pod cel.',
   },
   {
-    title: 'Tydzien 2',
-    desc: 'Nauka techniki i pierwsza korekta obciazen.',
+    title: 'Tydzień 2',
+    desc: 'Nauka techniki i pierwsza korekta obciążeń.',
   },
   {
-    title: 'Tydzien 3',
-    desc: 'Stabilizacja nawykow i regularny check-in.',
+    title: 'Tydzień 3',
+    desc: 'Stabilizacja nawyków i regularny check-in.',
   },
   {
-    title: 'Tydzien 4',
-    desc: 'Podsumowanie progresu i plan na kolejny miesiac.',
+    title: 'Tydzień 4',
+    desc: 'Podsumowanie progresu i plan na kolejny miesiąc.',
   },
 ];
 
@@ -82,7 +82,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
   const [painArea, setPainArea] = React.useState<keyof typeof painRecommendations>('ledzwia');
   const [seasonGoal, setSeasonGoal] = React.useState('Poprawa wyniku');
   const [seasonWindow, setSeasonWindow] = React.useState('12+ tygodni');
-  const [seasonFrequency, setSeasonFrequency] = React.useState('4 treningi / tydzien');
+  const [seasonFrequency, setSeasonFrequency] = React.useState('4 treningi / tydzień');
 
   const recommendation = painRecommendations[painArea];
 
@@ -142,9 +142,9 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
       score += 1;
     }
 
-    if (seasonFrequency === '4 treningi / tydzien' || seasonFrequency === '5 treningow / tydzien') {
+    if (seasonFrequency === '4 treningi / tydzień' || seasonFrequency === '5 treningów / tydzień') {
       score += 2;
-    } else if (seasonFrequency === '3 treningi / tydzien') {
+    } else if (seasonFrequency === '3 treningi / tydzień') {
       score += 1;
     }
 
@@ -164,8 +164,8 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
           <section className="py-14 bg-zinc-900 border-y border-zinc-800">
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
-                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Plan wdrozenia</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Pierwsze 30 dni wspolpracy</h2>
+                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Plan wdrożenia</p>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Pierwsze 30 dni współpracy</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {weekPlan.map((item) => (
@@ -185,26 +185,26 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
                 <div>
                   <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Szybki profil</p>
-                  <h2 className="text-3xl md:text-4xl font-black text-white mt-2">3 efekty, na ktorych pracujemy</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-white mt-2">3 efekty, na których pracujemy</h2>
                 </div>
                 <button
                   onClick={() =>
                     goToContact({
-                      note: 'Prosze o oddzwonienie jeszcze dzisiaj.',
+                      note: 'Proszę o oddzwonienie jeszcze dzisiaj.',
                       consultationType: 'Szybka konsultacja telefoniczna',
                       source: 'quick-win-outcomes',
                     })
                   }
                   className="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-zinc-950 font-black min-h-[44px] cursor-pointer"
                 >
-                  Oddzwonie dzis
+                  Oddzwonię dziś
                 </button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
                   { value: '-6 do -12 kg', label: 'Realny progres sylwetki' },
-                  { value: '+25%', label: 'Wiecej sily i sprawnosci' },
-                  { value: '4-8 tyg.', label: 'Pierwsze wyrazne efekty' },
+                  { value: '+25%', label: 'Więcej siły i sprawności' },
+                  { value: '4-8 tyg.', label: 'Pierwsze wyraźne efekty' },
                 ].map((item) => (
                   <article key={item.label} className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
                     <p className="text-2xl font-black text-white">{item.value}</p>
@@ -220,25 +220,25 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
           <section className="py-14 bg-zinc-900 border-b border-zinc-800">
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
-                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Sciezki celu</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Wybierz swoj tor wspolpracy</h2>
+                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Ścieżki celu</p>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Wybierz swój tor współpracy</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
                   {
                     title: 'Redukcja i forma',
-                    desc: 'Dla osob, ktore chca schudnac i poprawic sylwetke.',
+                    desc: 'Dla osób, które chcą schudnąć i poprawić sylwetkę.',
                     goal: 'Redukcja i poprawa sylwetki',
                   },
                   {
-                    title: 'Sila i masa',
-                    desc: 'Dla osob, ktore chca budowac sile i miesnie etapowo.',
-                    goal: 'Budowa masy miesniowej i sily',
+                    title: 'Siła i masa',
+                    desc: 'Dla osób, które chcą budować siłę i mięśnie etapowo.',
+                    goal: 'Budowa masy mięśniowej i siły',
                   },
                   {
-                    title: 'Powrot do sprawnosci',
-                    desc: 'Dla osob po przerwie, przeciazeniu lub z bolem.',
-                    goal: 'Powrot do sprawnosci i regularnosci',
+                    title: 'Powrót do sprawności',
+                    desc: 'Dla osób po przerwie, przeciążeniu lub z bólem.',
+                    goal: 'Powrót do sprawności i regularności',
                   },
                 ].map((path) => (
                   <article key={path.title} className="bg-zinc-950 border border-zinc-800 rounded-xl p-5 flex flex-col">
@@ -254,7 +254,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
                       }
                       className="w-full rounded-lg border border-zinc-700 py-2.5 text-white font-bold hover:border-brand-500 hover:text-brand-400 transition-colors min-h-[44px] cursor-pointer"
                     >
-                      Wybieram te sciezke
+                      Wybieram tę ścieżkę
                     </button>
                   </article>
                 ))}
@@ -268,14 +268,14 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
                 <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Pierwszy trening 1:1</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Jak wyglada pierwsza sesja</h2>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Jak wygląda pierwsza sesja</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {[
                   { title: 'Krok 1', desc: 'Krotki wywiad o celu i ograniczeniach.' },
                   { title: 'Krok 2', desc: 'Ocena ruchu i test wzorcow podstawowych.' },
                   { title: 'Krok 3', desc: 'Pierwszy trening dopasowany do poziomu.' },
-                  { title: 'Krok 4', desc: 'Plan na tydzien + jasne kolejne kroki.' },
+                  { title: 'Krok 4', desc: 'Plan na tydzień + jasne kolejne kroki.' },
                 ].map((item) => (
                   <article key={item.title} className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
                     <h3 className="text-white font-bold mb-1">{item.title}</h3>
@@ -298,13 +298,13 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
                 <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Case studies</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">3 przyklady obok pakietow</h2>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">3 przykłady obok pakietów</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
                   { result: '-9 kg', time: '12 tygodni', context: 'Redukcja + utrzymanie energii' },
-                  { result: '+18 kg', time: '16 tygodni', context: 'Sila i masa bez przestojow' },
-                  { result: 'Bez bolu', time: '8 tygodni', context: 'Powrot po przeciazeniu kregoslupa' },
+                  { result: '+18 kg', time: '16 tygodni', context: 'Siła i masa bez przestojów' },
+                  { result: 'Bez bólu', time: '8 tygodni', context: 'Powrót po przeciążeniu kręgosłupa' },
                 ].map((item) => (
                   <article key={`${item.result}-${item.time}`} className="bg-zinc-950 border border-zinc-800 rounded-xl p-5">
                     <p className="text-2xl text-white font-black">{item.result}</p>
@@ -321,23 +321,23 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
           <section className="py-14 bg-zinc-950 border-b border-zinc-800">
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
-                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Podwojne case studies</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Osobno: bol/kontuzja i sylwetka</h2>
+                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Podwójne case studies</p>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Osobno: ból/kontuzja i sylwetka</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <article className="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">Sciezka bol / kontuzja</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">Ścieżka ból / kontuzja</h3>
                   <ul className="space-y-3 text-sm text-zinc-300">
-                    <li>- Bark po urazie: 10 tygodni do treningu bez bolu.</li>
-                    <li>- Odcinek ledzwiowy: redukcja objawow o ~70% w 6 tygodni.</li>
-                    <li>- Kolano: bezpieczny powrot do biegania po 8 tygodniach.</li>
+                    <li>- Bark po urazie: 10 tygodni do treningu bez bólu.</li>
+                    <li>- Odcinek lędźwiowy: redukcja objawów o ~70% w 6 tygodni.</li>
+                    <li>- Kolano: bezpieczny powrót do biegania po 8 tygodniach.</li>
                   </ul>
                 </article>
                 <article className="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">Sciezka sylwetka</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">Ścieżka sylwetka</h3>
                   <ul className="space-y-3 text-sm text-zinc-300">
-                    <li>- Redukcja -11 kg i utrzymanie efektu po 4 miesiacach.</li>
-                    <li>- Budowa +5 kg miesni przy regularnych check-inach.</li>
+                    <li>- Redukcja -11 kg i utrzymanie efektu po 4 miesiącach.</li>
+                    <li>- Budowa +5 kg mięśni przy regularnych check-inach.</li>
                     <li>- Rekompozycja i poprawa sily w 12 tygodni.</li>
                   </ul>
                 </article>
@@ -382,7 +382,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
               </div>
               <div className="mt-5 bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-sm text-zinc-300 flex items-start gap-2">
                 <ClipboardCheck size={16} className="text-brand-500 mt-0.5" />
-                Co tydzien: check-in, raport i aktualizacja planu na kolejny mikrocykl.
+                Co tydzień: check-in, raport i aktualizacja planu na kolejny mikrocykl.
               </div>
             </div>
           </section>
@@ -423,16 +423,16 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs uppercase font-bold text-zinc-500 mb-2">Treningi / tydzien</label>
+                    <label className="block text-xs uppercase font-bold text-zinc-500 mb-2">Treningi / tydzień</label>
                     <select
                       value={seasonFrequency}
                       onChange={(e) => setSeasonFrequency(e.target.value)}
                       className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-white"
                     >
-                      <option>2 treningi / tydzien</option>
-                      <option>3 treningi / tydzien</option>
-                      <option>4 treningi / tydzien</option>
-                      <option>5 treningow / tydzien</option>
+                      <option>2 treningi / tydzień</option>
+                      <option>3 treningi / tydzień</option>
+                      <option>4 treningi / tydzień</option>
+                      <option>5 treningów / tydzień</option>
                     </select>
                   </div>
                 </article>
@@ -454,7 +454,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
                     }
                     className="mt-6 rounded-xl bg-brand-500 hover:bg-brand-400 text-zinc-950 font-black py-3 min-h-[44px] cursor-pointer"
                   >
-                    Umow konsultacje 60 min
+                    Um?w konsultacj? 60 min
                   </button>
                 </article>
               </div>
@@ -500,7 +500,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
                       }
                       className="rounded-lg border border-zinc-700 py-2.5 text-white font-bold hover:border-brand-500 hover:text-brand-400 transition-colors min-h-[44px] cursor-pointer"
                     >
-                      Umow konsultacje po tym wpisie
+                      Um?w konsultacj? po tym wpisie
                     </button>
                   </article>
                 ))}
@@ -519,8 +519,8 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
           <section className="py-14 bg-zinc-900 border-b border-zinc-800">
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
-                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Dla kogo ktory program</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Dopasuj pakiet do etapu, na ktorym jestes</h2>
+                <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Dla kogo który program</p>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Dopasuj pakiet do etapu, na którym jesteś</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {plans.map((plan, idx) => (
@@ -558,7 +558,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-6">
                 <article className="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-                  <p className="text-zinc-300 text-sm mb-4">Wybierz obszar, ktory teraz najbardziej przeszkadza Ci w treningu:</p>
+                  <p className="text-zinc-300 text-sm mb-4">Wybierz obszar, który teraz najbardziej przeszkadza Ci w treningu:</p>
                   <div className="space-y-3">
                     {(Object.keys(painRecommendations) as Array<keyof typeof painRecommendations>).map((key) => (
                       <label key={key} className="flex items-start gap-3 text-sm text-zinc-300">
@@ -592,7 +592,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
                     }
                     className="mt-6 rounded-xl bg-brand-500 hover:bg-brand-400 text-zinc-950 font-black py-3 min-h-[44px] cursor-pointer"
                   >
-                    Wybieram te konsultacje
+                    Wybieram tę konsultację
                   </button>
                 </article>
               </div>
@@ -605,7 +605,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-8">
                 <p className="text-brand-400 text-xs uppercase font-bold tracking-wide">Kalendarz konsultacji</p>
-                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Najblizsze wolne terminy</h2>
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Najbliższe wolne terminy</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
                 {consultationSlots.map((slot) => (
@@ -633,7 +633,7 @@ const QuickWinBlocks: React.FC<QuickWinBlocksProps> = ({ placement }) => {
               </div>
               <div className="mt-4 text-sm text-zinc-400 flex items-center gap-2">
                 <CalendarClock size={15} className="text-brand-400" />
-                Po wyborze terminu wypelnij formularz, a potwierdzenie wraca tego samego dnia.
+                Po wyborze terminu wypełnij formularz, a potwierdzenie wraca tego samego dnia.
               </div>
             </div>
           </section>

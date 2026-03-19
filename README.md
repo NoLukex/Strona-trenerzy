@@ -66,4 +66,6 @@ This repository contains one reusable website template for many personal trainer
 - Forms are ready for production flow, but in draft mode they store submissions locally.
 - To send leads to your backend later, set `VITE_LEAD_WEBHOOK_URL` in `.env.local`.
 - You can preview a specific trainer with `?trainer=<slug>` or `/t/<slug>`.
-- For Vercel per-client deployment set `VITE_CLIENT_SLUG=<slug>` in project env vars.
+- Gdansk single-deploy flow uses one app and trainer subpages at `/t/<slug>`.
+- Optional production base URL for Gdansk CRM links: set `VITE_GDANSK_BASE_URL=https://twoj-projekt.vercel.app`.
+- Legacy per-client deployment still supports `VITE_CLIENT_SLUG=<slug>` for older isolated projects.

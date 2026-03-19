@@ -4,13 +4,20 @@ import { submitLead } from '../services/leadService';
 import currentTrainer from '../data/currentTrainer';
 import { getQuickWinConfig } from '../data/quickWinConfig';
 
+const sanitizeLeadMagnetText = (value: string): string =>
+  value
+    .replace(/Lead magnet ma skracać dystans i pokazywać, że pierwszy etap współpracy jest prosty oraz dobrze poukładany\./g, 'Materiał startowy pokazuje, że pierwszy etap współpracy jest prosty, konkretny i łatwy do wdrożenia.')
+    .replace(/Uniwersalny punkt wejścia dla każdego trenera: lead magnet, szybka wartość i naturalne przejście do współpracy 1:1\./g, 'Krótki materiał startowy, który daje szybką wartość i naturalnie prowadzi do współpracy 1:1.')
+    .trim();
+
 const TrafficEssentials: React.FC = () => {
   const quickWin = getQuickWinConfig(currentTrainer.slug);
   const leadMagnetTitle = currentTrainer.leadMagnetTitle || 'Pobierz plan startowy na 7 dni';
-  const leadMagnetText = currentTrainer.leadMagnetText || 'Uniwersalny punkt wejscia dla kazdego trenera: lead magnet, szybka wartosc i naturalne przejscie do wspolpracy 1:1.';
+  const leadMagnetText =
+    sanitizeLeadMagnetText(currentTrainer.leadMagnetText || 'Uniwersalny punkt wejścia dla każdego trenera: lead magnet, szybka wartość i naturalne przejście do współpracy 1:1.');
 
   const [email, setEmail] = useState('');
-  const [goal, setGoal] = useState('Redukcja tkanki tluszczowej');
+  const [goal, setGoal] = useState('Redukcja tkanki tłuszczowej');
   const [timeline, setTimeline] = useState('');
   const [consent, setConsent] = useState(false);
   const [marketingConsent, setMarketingConsent] = useState(false);
@@ -23,7 +30,7 @@ const TrafficEssentials: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) {
-      setError('Podaj adres e-mail, aby odebrac material.');
+      setError('Podaj adres e-mail, aby odebrać materiał.');
       return;
     }
 
@@ -36,7 +43,7 @@ const TrafficEssentials: React.FC = () => {
         goal,
         timeline: timeline || undefined,
         note: quickWin.leadMagnetFollowup
-          ? 'Automatyczny follow-up: D+1, D+3, D+7.'
+          ? 'Krótka ścieżka startowa po zapisie.'
           : undefined,
         consent,
         marketingConsent,
@@ -47,7 +54,7 @@ const TrafficEssentials: React.FC = () => {
 
     if (!result.ok) {
       setLoading(false);
-      setError(result.error || 'Nie udalo sie zapisac formularza.');
+      setError(result.error || 'Nie udało się zapisać formularza.');
       return;
     }
 
@@ -66,17 +73,15 @@ const TrafficEssentials: React.FC = () => {
         <article className="bg-zinc-950 border border-zinc-800 rounded-2xl p-8">
           <div className="inline-flex items-center gap-2 text-brand-400 text-xs font-bold uppercase tracking-wide mb-4">
             <Download size={14} />
-            Darmowy material startowy
+            Darmowy materiał startowy
           </div>
           <h2 className="text-3xl font-black text-white mb-4">{leadMagnetTitle}</h2>
-          <p className="text-zinc-400 mb-6">
-            {leadMagnetText}
-          </p>
+          <p className="text-zinc-400 mb-6">{leadMagnetText}</p>
 
           {submitted ? (
             <div className="bg-zinc-900 border border-brand-500/40 rounded-xl p-4 text-brand-300 flex items-center gap-2">
               <CheckCircle2 size={18} />
-              Dziekujemy! Zgloszenie zapisane. Material startowy zostanie przeslany mailowo.
+              Dziękujemy. Zgłoszenie zapisane. Materiał startowy zostanie przesłany mailowo.
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -105,10 +110,10 @@ const TrafficEssentials: React.FC = () => {
                   onChange={(e) => setGoal(e.target.value)}
                   className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-white focus:border-brand-500 outline-none"
                 >
-                  <option>Redukcja tkanki tluszczowej</option>
-                  <option>Budowa masy miesniowej</option>
+                  <option>Redukcja tkanki tłuszczowej</option>
+                  <option>Budowa masy mięśniowej</option>
                   <option>Poprawa kondycji</option>
-                  <option>Powrot po kontuzji</option>
+                  <option>Powrót po kontuzji</option>
                 </select>
               </div>
 
@@ -116,7 +121,7 @@ const TrafficEssentials: React.FC = () => {
                 <>
                   <div>
                     <label htmlFor="lead-timeline" className="block text-xs font-bold uppercase text-zinc-500 mb-2">
-                      Kiedy chcesz zaczac?
+                      Kiedy chcesz zacząć?
                     </label>
                     <select
                       id="lead-timeline"
@@ -126,13 +131,13 @@ const TrafficEssentials: React.FC = () => {
                     >
                       <option value="">Wybierz termin</option>
                       <option>Od razu</option>
-                      <option>W ciagu 14 dni</option>
-                      <option>W ciagu miesiaca</option>
+                      <option>W ciągu 14 dni</option>
+                      <option>W ciągu miesiąca</option>
                       <option>Najpierw konsultacja</option>
                     </select>
                   </div>
                   <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-xs text-zinc-400">
-                    Po zapisie uruchamia sie automatyczny follow-up: D+1 (start), D+3 (korekta), D+7 (plan wdrozenia).
+                    Po zapisie dostajesz material i krotka wiadomosc z dalszym krokiem, zeby latwiej zaczac wspolprace.
                   </div>
                 </>
               )}
@@ -140,12 +145,12 @@ const TrafficEssentials: React.FC = () => {
                 <label className="flex items-start gap-3">
                   <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} required className="mt-1" />
                   <span>
-                    Wyrazam zgode na kontakt i znam <a className="text-brand-400 hover:underline" href="/polityka-prywatnosci.html" target="_blank" rel="noreferrer">Polityke prywatnosci</a>.
+                    Wyrażam zgodę na kontakt i znam <a className="text-brand-400 hover:underline" href="/polityka-prywatnosci.html" target="_blank" rel="noreferrer">politykę prywatności</a>.
                   </span>
                 </label>
                 <label className="flex items-start gap-3">
                   <input type="checkbox" checked={marketingConsent} onChange={(e) => setMarketingConsent(e.target.checked)} className="mt-1" />
-                  <span>Opcjonalnie: chce otrzymywac wskazowki i oferty e-mail.</span>
+                  <span>Opcjonalnie: chcę otrzymywać wskazówki i oferty e-mail.</span>
                 </label>
                 <input
                   type="text"
@@ -174,3 +179,5 @@ const TrafficEssentials: React.FC = () => {
 };
 
 export default TrafficEssentials;
+
+
